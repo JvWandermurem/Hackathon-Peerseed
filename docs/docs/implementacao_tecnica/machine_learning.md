@@ -3,7 +3,7 @@ sidebar_position: 6
 title: AgroScore
 ---
 
-## 1. Visão Geral e Objetivo
+## Visão Geral e Objetivo
 &emsp; O AgroScore é o motor de análise de crédito automatizada do Peerseed e um dos nossos principais diferenciais competitivos. Seu objetivo é prover uma avaliação de risco de crédito rápida, justa e baseada em dados, atendendo diretamente ao requisito `RF-AGR-002`.
 
 &emsp; Para o agricultor João, o AgroScore significa sair da subjetividade e da lentidão dos bancos tradicionais e receber uma resposta em horas, não semanas. 
@@ -11,7 +11,7 @@ title: AgroScore
 &emsp; Para a investidora Marina, o AgroScore traduz a complexidade de um perfil agrícola em uma métrica de risco clara e padronizada (de A a E), permitindo que ela tome decisões de investimento informadas e confiantes.
 
 ---
-## 2.  Foco em Interpretabilidade e Performance
+## Foco em Interpretabilidade e Performance
 &emsp; A escolha do tipo de modelo para o MVP é guiada por dois fatores críticos em sistemas de crédito, a **capacidade de explicar uma decisão** e a **velocidade da predição.**
 
 **Tipos de Modelos de Machine Learning**
@@ -23,7 +23,7 @@ title: AgroScore
 
 
 ---
-## 3. Fontes de Dados (Features)
+## Fontes de Dados (Features)
 O AgroScore é alimentado por um conjunto diversificado de dados para criar um perfil de risco 360º do agricultor.
 
 **Categorias de Features e Fontes de Dados**
@@ -36,7 +36,7 @@ O AgroScore é alimentado por um conjunto diversificado de dados para criar um p
 | **Dados de Crédito Externo**          | Score de crédito (Serasa/SPC), histórico de dívidas.                   | APIs de Bureaus de Crédito (**RNF-C-01**).                 |
 | **Dados de Comportamento na Plataforma** | Histórico de pagamento de empréstimos anteriores no Peerseed.          | Tabelas `cprs` e `parcelas` (PostgreSQL).                  |
 
-## 4. Ciclo de Vida do Modelo (MLOps) no MVP
+## Ciclo de Vida do Modelo (MLOps) no MVP
 
 Para o MVP, adotaremos um ciclo de vida semi-manual, focado na simplicidade e na validação rápida, com um caminho claro para automação futura.
 
@@ -65,14 +65,14 @@ Um dos devs do time de dados executa o arquivo python que realiza a limpeza dos 
 
 > Justificativa: Este é o padrão de implantação de menor latência e menor complexidade para o MVP, garantindo que as análises de crédito sejam processadas em segundos, conforme o RF-AGR-002.
 
-## 5. Monitoramento e Retreinamento
+## Monitoramento e Retreinamento
 Um modelo de ML pode se degradar com o tempo (model drift). Nossa estratégia de monitoramento no MVP será periódica e semi-manual.
 
 **Monitoramento de Performance:** A cada ciclo (ex: trimestralmente), analisaremos a performance real dos empréstimos concedidos. Compararemos a taxa de inadimplência prevista pelo modelo com a taxa real. Se a acurácia do modelo cair abaixo de um limiar pré-definido, o processo de retreinamento é acionado.
 
 **Retreinamento:** O processo de retreinamento segue o mesmo ciclo descrito no passo 4, utilizando um dataset atualizado com os dados mais recentes de performance dos empréstimos. Um novo artefato de modelo (agro_score_model_v2.pkl) é gerado e, após validação, a configuração do serviço em produção é atualizada para usar a nova versão.
 
-## 6. Evolução Futura (Pós-MVP)
+## Evolução Futura (Pós-MVP)
 Com a validação do negócio, o ciclo de MLOps evoluirá para uma pipeline mais automatizada:
 
 **Feature Store:** Centralização dos dados de features para garantir consistência entre treinamento и predição.

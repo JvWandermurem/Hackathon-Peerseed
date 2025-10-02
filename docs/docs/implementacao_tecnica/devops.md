@@ -4,7 +4,7 @@ title: DevOps
 ---
 import Admonition from '@theme/Admonition';
 
-## 1. Introdução
+## Introdução
 
 &emsp; DevOps no Peerseed é a ponte que conecta o desenvolvimento de software às operações de infraestrutura. Nosso objetivo é criar processos automatizados e integrados que nos permitam entregar valor aos nossos usuários, **João e Mariana**  de forma rápida, frequente e confiável.
 
@@ -20,7 +20,7 @@ Nossos principais objetivos são:
 
 ---
 
-## 2. Ferramentas e Tecnologias Principais
+## Ferramentas e Tecnologias Principais
 # Ferramentas e Padrões de Engenharia
 
 | Área                          | Ferramenta / Padrão           | Justificativa                                                                                             |
@@ -34,9 +34,9 @@ Nossos principais objetivos são:
 
 
 ---
-## 3. Detalhamento dos Processos DevOps
+## Detalhamento dos Processos DevOps
 
-### 3.1. Controle de Versão e Estratégia de Branches (GitHub Flow)
+### Controle de Versão e Estratégia de Branches (GitHub Flow)
 &emsp; A disciplina no controle de versão é a base de todo o processo. Adotaremos o GitHub Flow, uma estratégia simples e eficaz para o desenvolvimento contínuo.
 
 O `branch main`  sempre reflete o que está em produção. Ele é protegido e não permite pushes diretos.
@@ -47,7 +47,7 @@ Todo o desenvolvimento, seja uma nova feature ou uma correção de bug, é feito
 
 Quando o trabalho está concluído, um Pull Request (PR) é aberto para mesclar o branch de volta ao main.
 
-### 3.2. Infraestrutura como Código (IaC)
+### Infraestrutura como Código (IaC)
 Toda a nossa infraestrutura de nuvem,  o cluster Kubernetes, os bancos de dados, as redes (VPCs), as regras de firewall, é definida como código usando `Terraform`.
 
 Impactos:
@@ -58,7 +58,7 @@ Impactos:
 
 **Recuperação de Desastres:** Em caso de uma falha catastrófica, podemos recriar toda a nossa infraestrutura do zero, de forma rápida e automática, a partir do código Terraform (RNF-CF-03).
 
-### 3.3. Observabilidade
+### Observabilidade
 
 A observabilidade é como damos "olhos e ouvidos" ao nosso sistema em produção, em total conformidade com o RNF-M-03.
 

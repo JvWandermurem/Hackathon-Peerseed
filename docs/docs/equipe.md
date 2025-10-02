@@ -5,6 +5,7 @@ sidebar_position: 8
 ---
 
 # Membros da Equipe
+
 &emsp; O projeto Peerseed é composto por três alunos do Inteli – Instituto de Tecnologia e Liderança. A equipe combina experiência prática em tecnologia, empreendedorismo e design de produto: Abaixo, apresentamos os membros da equipe:
 
 ## Davi Nascimento de Jesus

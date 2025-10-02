@@ -7,7 +7,7 @@ sidebar_position: 6
 
 ## Introdução
 
-&emsp;A identidade visual do **Peerseed** foi concebida para transmitir os valores centrais da plataforma: **conexão P2P, confiança, impacto social no agro e sustentabilidade**. Cada escolha de cor, tipografia e símbolo foi pensada para reforçar a proposta de um ecossistema financeiro digital, justo e acessível.
+&emsp;A identidade visual do **Peerseed** foi concebida para transmitir os valores centrais da plataforma: conexão P2P, confiança, impacto social no agro e sustentabilidade. Cada escolha de cor, tipografia e símbolo foi pensada para reforçar a proposta de um ecossistema financeiro digital, justo e acessível.
 
 ---
 

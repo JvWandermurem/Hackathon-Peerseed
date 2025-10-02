@@ -27,7 +27,7 @@ Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma co
 <p style={{textAlign: 'center'}}> Arquitetura Nível C1</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/ArquiteturaC1.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c1.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -68,7 +68,7 @@ Este diagrama é fundamental para que qualquer pessoa, técnica ou não, entenda
 <p style={{textAlign: 'center'}}> Arquitetura Nível C2</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/ArquiteturaC2.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c2.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>

@@ -5,15 +5,15 @@ title: Segurança
 import Admonition from '@theme/Admonition';
 
 
-## 1. Introdução
+## Introdução
 
 &emsp; A segurança é o pilar fundamental que sustenta a confiança de agricultores e investidores na plataforma Peerseed. **Nossa abordagem é proativa, não reativa**, e segue os princípios de Segurança por Design (Secure by Design) e Defesa em Profundidade (Defense in Depth). Isso significa que a segurança não é uma camada externa, mas uma responsabilidade integrada em cada componente da nossa arquitetura: desde a infraestrutura e a rede até o código da aplicação e os processos de DevOps.
 
 ---
-## 2. A Tríade CIA
+## A Tríade CIA
 &emsp; A nossa estratégia de segurança é construída sobre a Tríade CIA, um modelo que representa os três objetivos mais importantes da segurança da informação.
 
-### 2.1. Confidencialidade (Confidentiality)
+### Confidencialidade (Confidentiality)
 
 - Garantir que os dados sejam acessíveis apenas por pessoas autorizadas.
 
@@ -31,7 +31,7 @@ Controles Implementados:
 
 **Mascaramento de Dados (LGPD):** Conforme definido em nosso plano de logging e em conformidade com a LGPD (RNF-S-04), dados sensíveis (como CPF) são automaticamente mascarados antes de serem escritos em qualquer log, prevenindo a exposição acidental.
 
-### 2.2. Integridade (Integrity)
+### Integridade (Integrity)
 
 - Garantir que os dados são precisos, consistentes e protegidos contra alterações não autorizadas.
 
@@ -47,7 +47,7 @@ Controles Implementados:
 
 **Assinaturas Digitais:** A integridade das sessões de usuário é garantida pela assinatura digital dos tokens JWT. A integridade jurídica dos contratos é garantida pela assinatura digital qualificada (ICP-Brasil) na CPR (`RF-AGR-003`, `RNF-S-03`).
 
-### 2.3. Disponibilidade (Availability)
+### Disponibilidade (Availability)
 - Garantir que a plataforma esteja operacional e acessível quando nossos usuários precisarem dela.
 
 - O acesso ao crédito e aos investimentos é sensível ao tempo. A plataforma precisa ser confiável.
@@ -63,7 +63,7 @@ Controles Implementados:
 **Proteção contra Ataques de Negação de Serviço (DDoS):** Utilizamos os serviços de proteção DDoS nativos do provedor de nuvem, implementados na camada de borda (API Gateway, Load Balancer), para mitigar ataques que visam tirar a plataforma do ar.
 
 ---
-## 3. Mitigação de Riscos: OWASP Top 10
+## Mitigação de Riscos: OWASP Top 10
 
 Nossa arquitetura e processos de desenvolvimento são projetados para mitigar proativamente os riscos de segurança mais comuns identificados pelo OWASP (Open Web Application Security Project).
 
@@ -102,11 +102,11 @@ Nossa arquitetura e processos de desenvolvimento são projetados para mitigar pr
 
 ---
 
-## 4. Análise de Trade-offs Arquiteturais
+## Análise de Trade-offs Arquiteturais
 
 &emsp; Toda arquitetura de software robusta é o resultado de uma série de decisões e, consequentemente, de trade-offs. Não existe uma solução "perfeita", mas sim uma solução ótima para um contexto específico. No Peerseed, fizemos escolhas conscientes para priorizar os aspectos mais críticos para uma plataforma fintech de crédito: confiança, segurança e integridade.
 
-### 4.1. Segurança vs. Usabilidade: A Prioridade da Confiança
+### Segurança vs. Usabilidade: A Prioridade da Confiança
 **O Trade-off:** Medidas de segurança mais rigorosas frequentemente introduzem etapas adicionais nos fluxos do usuário, criando uma fricção que pode impactar a simplicidade da experiência.
 
 **Nossa Decisão:** Em todos os momentos, priorizamos a segurança em detrimento da conveniência marginal, pois a confiança é o ativo mais valioso da nossa plataforma.
@@ -116,7 +116,7 @@ Exemplo 1: Autenticação de Dois Fatores (2FA): O requisito RF-CAD-003 (2FA obr
 Exemplo 2: Verificação de Identidade (KYC): O processo de onboarding, que exige o envio de documentos e selfie (RF-CAD-001), é o maior ponto de atrito na jornada inicial do usuário. Poderíamos ter um cadastro mais simples, mas isso abriria a plataforma para fraudes e impediria a conformidade regulatória. Escolhemos conscientemente essa barreira inicial para garantir um ecossistema seguro e legal para todos os participantes, protegendo os investimentos de Marina e a legitimidade dos empréstimos de João.
 </Admonition>
 
-### 4.2. Consistência Forte vs. Performance/Disponibilidade
+### Consistência Forte vs. Performance/Disponibilidade
 
 **O Trade-off:** Em sistemas distribuídos, existe um trade-off clássico (descrito pelo Teorema CAP) entre garantir que todos os dados estejam sempre 100% consistentes e ter a latência mais baixa ou a maior disponibilidade possível.
 

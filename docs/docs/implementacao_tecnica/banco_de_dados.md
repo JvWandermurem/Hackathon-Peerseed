@@ -7,7 +7,7 @@ title: Arquitetura de Dados
 
 &emsp; A arquitetura de dados do Peerseed foi projetada sob o princípio de Persistência Poliglota, utilizando a tecnologia mais adequada para cada tipo de dado. A arquitetura garante a integridade transacional para operações financeiras, alta performance para consultas frequentes e observabilidade completa do sistema. A estrutura suporta o ciclo de vida completo do crédito P2P, desde o cadastro do usuário até a liquidação dos investimentos.
 
-## 1. Banco de Dados Relacional (PostgreSQL)
+## Banco de Dados Relacional (PostgreSQL)
 
 &emsp;  O coração da persistência de dados é um banco de dados PostgreSQL, que serve como a fonte única da verdade para todos os dados estruturados e transacionais.
 
@@ -149,11 +149,11 @@ CREATE TABLE ledger_eventos (
 );
 
 ```
-## 2. Cache em Memória (Redis)
+## Cache em Memória (Redis)
 
 &emsp; O Redis, um repositório de dados em memória de alta performance, será utilizado como uma camada de cache distribuído para armazenar dados voláteis e de acesso frequente, com o objetivo de acelerar a resposta da aplicação e reduzir a carga sobre o PostgreSQL.
 
-### 2.1. Casos de Uso Detalhados
+### Casos de Uso Detalhados
 **Gerenciamento de Sessões:** Armazenar tokens de sessão de usuários logados `(RF-SEC-001)`, permitindo uma validação de sessão de baixíssima latência pela API Gateway e pelos microsserviços.
 
 **Cache de Leituras (Cache-Aside):** Guardar cópias temporárias de dados que são lidos com frequência, como a lista de ofertas do marketplace (para usuários não logados), detalhes de CPRs públicas, e dados de perfil de usuários que não mudam constantemente.
@@ -162,7 +162,7 @@ CREATE TABLE ledger_eventos (
 
 **Filas de Baixa Latência:** Para tarefas assíncronas simples que não exigem a robustez de um message broker completo (ex: "enviar notificação de boas-vindas após o cadastro").
 
-### 2.2. Estratégias de Implementação
+### Estratégias de Implementação
 
 **Padrão de Cache (Cache-Aside / Lazy Loading):**
 
@@ -187,7 +187,7 @@ Para garantir a consistência dos dados, duas estratégias serão usadas:
 
 **Invalidação Ativa (Event-Driven):** Para dados críticos, quando um registro for alterado no PostgreSQL (ex: o status de uma CPR muda para "FINANCIADO"), a aplicação emitirá um evento para explicitamente deletar a chave correspondente no Redis, forçando uma nova leitura do banco na próxima requisição.
 
-### 2.3. Considerações Operacionais
+### Considerações Operacionais
 
 **Estrutura de Chaves:** Será adotada uma convenção de nomenclatura de chaves para evitar colisões e facilitar a depuração. Ex: `session:{userId}`, `cpr:{cprId}:details`, `marketplace:offers:page:{pageNumber}`.
 
@@ -195,10 +195,10 @@ Para garantir a consistência dos dados, duas estratégias serão usadas:
 
 **Alta Disponibilidade:** Em produção, o Redis não será uma instância única. Será configurado em modo de alta disponibilidade usando Redis Sentinel ou um serviço gerenciado de nuvem (como AWS ElastiCache ou Google Memorystore) com replicação e failover automático, em conformidade com o RNF de disponibilidade **(RNF-CF-01)**.
 
-## 3. Logs Estruturados e Observabilidade
+## Logs Estruturados e Observabilidade
 A estratégia de observabilidade da Peerseed se baseia na emissão de logs estruturados em formato JSON para a saída padrão (stdout) de cada microsserviço. Esta abordagem desacopla os serviços da infraestrutura de logging, uma prática recomendada para garantir a manutenibilidade (RNF-M-03).
 
-### 3.1. Padrão de Estrutura do Log (Schema JSON)
+### Padrão de Estrutura do Log (Schema JSON)
 Para garantir que os logs sejam facilmente pesquisáveis e analisáveis, todo log gerado pela aplicação deve aderir a um schema comum:
 
 ```JSON
@@ -216,7 +216,7 @@ Para garantir que os logs sejam facilmente pesquisáveis e analisáveis, todo lo
   }
 }
 ```
-### 3.2. Arquitetura de Coleta e Armazenamento
+### Arquitetura de Coleta e Armazenamento
 
 &emsp; A aplicação em si é agnóstica ao armazenamento. Para o MVP local, os logs são exibidos no terminal e armazenos em um arquivo json. Em um ambiente de produção, um agente coletor (como Fluentd ou Vector) captura os logs de stdout e os encaminha para um sistema de gerenciamento de logs centralizado (como AWS CloudWatch, Google Cloud Logging ou uma stack ELK), que implementará as políticas de retenção e permitirá a criação de dashboards e alertas.
 
@@ -226,7 +226,7 @@ Para garantir que os logs sejam facilmente pesquisáveis e analisáveis, todo lo
 
 
 
-### 3.3. Estratégia de Retenção de Dados
+### Estratégia de Retenção de Dados
 Logs podem consumir um grande volume de armazenamento.
 
 A seguinte política de retenção será aplicada:
@@ -235,14 +235,14 @@ A seguinte política de retenção será aplicada:
 
 **1 ano "Cold":** Após 30 dias, os logs serão automaticamente exportados para um armazenamento de baixo custo (como AWS S3 Glacier ou Google Cloud Storage Archive) e mantidos por 1 ano para fins de auditoria e conformidade, sendo então permanentemente excluídos.
 
-### 3.4. Segurança e Mascaramento de Dados (LGPD)
+### Segurança e Mascaramento de Dados (LGPD)
 Para estar em conformidade com a LGPD `(RNF-S-04)`, a aplicação NÃO deve registrar dados sensíveis em texto claro.
 
 **Ação:** As bibliotecas de logging da aplicação devem ser configuradas com filtros de mascaramento de dados para redigir automaticamente informações como CPF, senhas, tokens de acesso e dados de cartão/conta bancária antes de o log ser escrito. 
 
 > Exemplo: _"cpf": "123.***.***-00"._
 
-### 3.5. Monitoramento e Alertas
+### Monitoramento e Alertas
 Os logs estruturados no TimescaleDB serão a base para o monitoramento e alertas `(RNF-M-03)`.
 
 **Ação:** Ferramentas como o Grafana serão conectadas ao banco de dados para criar dashboards e configurar alertas baseados em consultas SQL. Por exemplo:
@@ -251,7 +251,7 @@ Os logs estruturados no TimescaleDB serão a base para o monitoramento e alertas
 
 **CRIAR GRÁFICO:** Tempo de processamento médio da análise de crédito (extraído do 'payload.tempo_de_processamento_ms').
 
-## 4. Conexão com os Requisitos Funcionais
+## Conexão com os Requisitos Funcionais
 
 Esta estrutura de armazenamento de dados foi projetada para atender diretamente aos requisitos funcionais e não funcionais:
 

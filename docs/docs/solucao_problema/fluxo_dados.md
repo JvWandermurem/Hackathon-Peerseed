@@ -4,14 +4,16 @@ title: Fluxo de Dados
 ---
 
 ## Introdução
-&emsp; O fluxo de dados descreve como as informações e valores circulam entre os diferentes atores (agricultores, investidores e administradores), os serviços internos da plataforma e os sistemas externos integrados (ex.: gateways de pagamento, registradoras de CPR, bureaus de crédito).
 
-&emsp;  Esses fluxos desenvolvidos pensados personas **João(Agricultor)** e **Mariana(Investidora)** para garantir que o sistema opere de forma consistente, segura e transparente, evitando falhas de comunicação e assegurando a rastreabilidade de cada operação.
+&emsp;O fluxo de dados descreve como as informações e valores circulam entre os diferentes atores (agricultores, investidores e administradores), os serviços internos da plataforma e os sistemas externos integrados (ex.: gateways de pagamento, registradoras de CPR, bureaus de crédito).
+
+&emsp;Esses fluxos desenvolvidos pensados personas **João(Agricultor)** e **Mariana(Investidora)** para garantir que o sistema opere de forma consistente, segura e transparente, evitando falhas de comunicação e assegurando a rastreabilidade de cada operação.
 
 &emsp;Para representar essas interações, foram elaborados seis fluxos principais: Solicitação e Aprovação de Crédito, Realização de Investimento, Pagamento de Parcela e Distribuição (Assíncrono), Venda no Mercado Secundário, Saque de Fundos (Off-Ramp) e Gestão de Inadimplência, cada um detalhando as etapas críticas de dados e integrações que sustentam a operação da plataforma.
 
-## 1. Fluxo de Solicitação e Aprovação de Crédito
-Este fluxo descreve a jornada do agricultor João desde o cadastro até ter sua proposta listada no marketplace. Ele demonstra a interação entre o usuário, o sistema automatizado e o "humano no loop" (Analista de Crédito).
+## Fluxo de Solicitação e Aprovação de Crédito
+
+&emsp;Este fluxo descreve a jornada do agricultor João desde o cadastro até ter sua proposta listada no marketplace. Ele demonstra a interação entre o usuário, o sistema automatizado e o "humano no loop" (Analista de Crédito).
 
 
 <p style={{textAlign: 'center'}}> Fluxo de Solicitação e Aprovação de Crédito</p>
@@ -78,8 +80,9 @@ sequenceDiagram
 ```
 </details>
 
-## 2. Fluxo de Realização de Investimento
-Este fluxo mostra a jornada da investidora Marina, desde o depósito de fundos (via Pix) até a alocação em uma oportunidade de crédito.
+## Fluxo de Realização de Investimento
+
+&emsp;Este fluxo mostra a jornada da investidora Marina, desde o depósito de fundos (via Pix) até a alocação em uma oportunidade de crédito.
 
 <p style={{textAlign: 'center'}}> Fluxo de Realização de Investimento</p>
 <div style={{margin: 15}}>
@@ -144,8 +147,9 @@ sequenceDiagram
 
 </Details>
 
-## 3. Fluxo de Pagamento de Parcela e Distribuição (Assíncrono)
-Este é o fluxo mais crítico do ponto de vista financeiro. Ele mostra como o pagamento de uma parcela pelo agricultor dispara um processo assíncrono para calcular taxas/impostos e distribuir o valor líquido para os investidores de forma segura e escalável.
+## Fluxo de Pagamento de Parcela e Distribuição (Assíncrono)
+
+&emsp;Este é o fluxo mais crítico do ponto de vista financeiro. Ele mostra como o pagamento de uma parcela pelo agricultor dispara um processo assíncrono para calcular taxas/impostos e distribuir o valor líquido para os investidores de forma segura e escalável.
 
 <p style={{textAlign: 'center'}}> Fluxo de Pagamento de Parcela e Distribuição</p>
 <div style={{margin: 15}}>
@@ -208,8 +212,9 @@ Este é o fluxo mais crítico do ponto de vista financeiro. Ele mostra como o pa
   ```
 </Details>
 
-## 4. Fluxo de Venda no Mercado Secundário
-Este fluxo detalha como uma investidora (Marina, a vendedora) pode vender sua cota de investimento (Token de Crédito) para outro investidor (Carlos, o comprador) antes do vencimento do contrato. É um processo de troca dentro da plataforma que garante a transferência segura e atômica tanto da cota quanto do valor em USDC.
+## Fluxo de Venda no Mercado Secundário
+
+&emsp;Este fluxo detalha como uma investidora (Marina, a vendedora) pode vender sua cota de investimento (Token de Crédito) para outro investidor (Carlos, o comprador) antes do vencimento do contrato. É um processo de troca dentro da plataforma que garante a transferência segura e atômica tanto da cota quanto do valor em USDC.
 
 <p style={{textAlign: 'center'}}> Fluxo de Venda no Mercado Secundário</p>
 <div style={{margin: 15}}>
@@ -276,23 +281,22 @@ Este fluxo detalha como uma investidora (Marina, a vendedora) pode vender sua co
     end
 
   ```
-  </Details>
+</Details>
 
-  ## 5.Fluxo de Saque de Fundos (Off-Ramp)
+## Fluxo de Saque de Fundos (Off-Ramp)
 
-  <p style={{textAlign: 'center'}}> Fluxo de Saque de Fundos</p>
-<div style={{margin: 15}}>
-  <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-        <br/>
-    </div>
-</div>
+<p style={{textAlign: 'center'}}> Fluxo de Saque de Fundos</p>
+  <div style={{margin: 15}}>
+    <div style={{textAlign: 'center'}}>
+          <img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+          <br/>
+      </div>
+  </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
-  Este fluxo mostra os dois caminhos que um investidor pode seguir para retirar seu saldo em USDC da plataforma: convertendo para Reais (BRL) e recebendo via Pix, ou transferindo diretamente para uma carteira de criptomoedas externa.
+&emsp;Este fluxo mostra os dois caminhos que um investidor pode seguir para retirar seu saldo em USDC da plataforma: convertendo para Reais (BRL) e recebendo via Pix, ou transferindo diretamente para uma carteira de criptomoedas externa.
 
-
-  > Nota: Para melhor visualização:
+> Nota: Para melhor visualização:
 
 > https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
 
@@ -350,18 +354,19 @@ Este fluxo detalha como uma investidora (Marina, a vendedora) pode vender sua co
     end
 
   ```
-  </Details>
+</Details>
 
-  ## 6. Fluxo de Gestão de Inadimplência
-Este é um fluxo de sistema, que não é iniciado diretamente por um usuário. Ele descreve o processo automático que a plataforma executa diariamente para identificar parcelas em atraso, aplicar as devidas penalidades e notificar todas as partes envolvidas, garantindo a gestão de risco do portfólio.
+## Fluxo de Gestão de Inadimplência
 
- <p style={{textAlign: 'center'}}> Fluxo de Gestão de Inadimplência</p>
-<div style={{margin: 15}}>
-  <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-        <br/>
-    </div>
-</div>
+&emsp;Este é um fluxo de sistema, que não é iniciado diretamente por um usuário. Ele descreve o processo automático que a plataforma executa diariamente para identificar parcelas em atraso, aplicar as devidas penalidades e notificar todas as partes envolvidas, garantindo a gestão de risco do portfólio.
+
+<p style={{textAlign: 'center'}}> Fluxo de Gestão de Inadimplência</p>
+  <div style={{margin: 15}}>
+    <div style={{textAlign: 'center'}}>
+          <img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+          <br/>
+      </div>
+  </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
 > Nota: Para melhor visualização:
@@ -396,4 +401,4 @@ sequenceDiagram
     end
     deactivate Contratos
   ```
-  </Details>
+</Details>

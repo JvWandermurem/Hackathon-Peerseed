@@ -16,12 +16,12 @@ title: Planejamento Infraestrutura
 - **Agnosticismo de Nuvem e Portabilidade:** A arquitetura é baseada em padrões de mercado e tecnologias de código aberto (como contêineres e Kubernetes) para garantir a portabilidade e evitar dependência excessiva de um único provedor de nuvem `(RNF-P-01)`.
 
 
-## 1. Provedor de Nuvem
+## Provedor de Nuvem
 &emsp;  Apesar de a arquitetura ser agnóstica, a implantação do MVP ocorrerá em um dos três principais provedores de nuvem globais: _Amazon Web Services (AWS), Google Cloud Platform (GCP) ou Microsoft Azure._
 
 &emsp;  A escolha de um provedor de grande porte garante uma infraestrutura de rede global e de baixa latência, o que significa que a plataforma será rápida e acessível para usuários em qualquer região do Brasil. Seja João em uma área rural com internet de menor velocidade, ou Marina em um grande centro urbano, a experiência será otimizada. Todos os provedores oferecem um free tier (camada gratuita) robusto, permitindo o desenvolvimento e lançamento do MVP com custos operacionais mínimos.
 
-### 1.1. Arquitetura de Computação
+### Arquitetura de Computação
 &emsp;  O núcleo da nossa infraestrutura de computação é a orquestração de contêineres com Kubernetes (K8s). Cada microsserviço da nossa aplicação é empacotado em um **contêiner** e gerenciado pelo **Kubernetes**.
 
 Importância e Impacto:
@@ -40,7 +40,7 @@ Importância e Impacto:
 
 > Decisão de Arquitetura: Iniciar com Managed Kubernetes como a base principal, pois oferece o melhor balanço entre controle, portabilidade e padrão de mercado.
 
-### 1.2. Arquitetura de Dados
+### Arquitetura de Dados
 
 &emsp; A estratégia é utilizar serviços gerenciados para todos os nossos armazenamentos de dados, seguindo o princípio de terceirizar a complexidade operacional para focar na segurança e integridade dos dados.
 
@@ -57,7 +57,7 @@ Importância e Impacto:
 **Cache Redis Gerenciado (AWS ElastiCache, Google Memorystore)**
 A velocidade percebida pelo usuário é um fator chave para a confiança. Para Marina, que explora dezenas de oportunidades no marketplace, cada milissegundo conta. O cache gerenciado garante que essas leituras frequentes sejam quase instantâneas, ajudando a cumprir o requisito de Tempo de Resposta da API `(RNF-ED-01)`.
 
-### 1.3. Arquitetura de Rede
+### Arquitetura de Rede
 &emsp; Utilizaremos o padrão de Virtual Private Cloud (VPC) com uma segmentação rigorosa de sub-redes.
 
 Este design é fundamental para a segurança.
@@ -68,7 +68,7 @@ Este design é fundamental para a segurança.
 
 Este modelo  garante a `João e Marina` que seus dados mais sensíveis (documentos, histórico financeiro, dados pessoais) estão protegidos em uma camada profunda da nossa infraestrutura, isolados de ameaças externas. Isso é uma implementação direta do princípio de `Segurança` por Design.
 
-### 1.4. API Gateway
+### API Gateway
 
 &emsp;Nenhuma requisição externa acessa nossos serviços diretamente. Todo o tráfego passa por um API Gateway Gerenciado.
 
