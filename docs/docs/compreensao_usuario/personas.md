@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Personas"
+title: "Personas"
 sidebar_position: 2
 ---
 
