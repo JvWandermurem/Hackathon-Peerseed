@@ -5,7 +5,7 @@
 </div>
 
 <p align="center">
-  <img src="img/logo_branca.svg" alt="Banner Peerseed - Agricultura e Tecnologia" width="800">
+  <img src="docs/docs/static/img/logo_branca.svg" alt="Banner Peerseed - Agricultura e Tecnologia" width="800">
 </p>
 <p align="center"><i>Uma nova era de crédito para o agronegócio brasileiro.</i></p>
 
@@ -43,7 +43,7 @@
 
 A documentação completa do projeto, incluindo arquitetura, fluxos e modelo de dados, pode ser encontrada em nosso site do Docusaurus.
 
-**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/peerseed/)**
+**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
 
 ### Problema Resolvido
 
@@ -99,7 +99,7 @@ peerseed/
 
 ### Documentação
 
-A documentação completa do Peerseed pode ser acessada através do link: **[Documentação Peerseed](https://jvwandermurem.github.io/peerseed/intro)**
+A documentação completa do Peerseed pode ser acessada através do link: **[Documentação Peerseed](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
 
 Para executar a documentação localmente (requer Node.js e npm):
 ```bash
