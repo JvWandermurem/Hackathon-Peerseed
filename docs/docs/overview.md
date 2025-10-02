@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Overview"
+slug: /
 sidebar_position: 0
 ---
 
