@@ -89,7 +89,7 @@ O sistema opera com base em conceitos-chave que garantem seu funcionamento e tra
 
 ```
 peerseed/
-├── perseed/      # Documentação completa do projeto (Docusaurus)
+├── docs/      # Documentação completa do projeto (Docusaurus)
 ├── README.md     # Este arquivo
 └──LICENSE
 ```
@@ -105,7 +105,7 @@ Para executar a documentação localmente (requer Node.js e npm):
 ```bash
 # Clone este repositório
 git clone [https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories](https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories)
-cd peerseed/peerseed/docs 
+cd peerseed/docs/docs 
 npm install
 npm run start
 ```
