@@ -3,6 +3,8 @@ sidebar_position: 4
 title: Estratégia de Distribuição
 ---
 
+## Contextualização
+
 &emsp;O PeerSeed exige uma estratégia de distribuição **híbrida**, que combine a escala do digital  com a capilaridade e a confiança do relacionamento no campo. A distribuição será segmentada para atender aos dois públicos distintos de clientes da plataforma - o agricultor e o investidor - ,        focando em onde cada um busca informação e confiança.O posicionamento do PeerSeed no mercado deve ser consistente, comunicando **segurança tecnológica, agilidade no crédito** e **retorno com impacto**
 
 :::info

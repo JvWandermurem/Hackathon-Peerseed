@@ -3,6 +3,8 @@ sidebar_position: 3
 title: Plano de Monetização
 ---
 
+## Contextualização
+
 &emsp;O plano de monetização do PeerSeed é um modelo **híbrido *fee-based***, projetado para gerar receita de ambos os lados do ecossistema (Agricultor e Investidor), garantindo a sustentabilidade e o alinhamento com o sucesso das operações de crédito.
 
 

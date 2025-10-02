@@ -2,7 +2,10 @@
 sidebar_position: 2
 title: Análise Financeira
 ---
-Esta seção consolida a análise de viabilidade do PeerSeed, traduzindo os resultados financeiros, arquitetônicos e de risco em um Plano de Ação Estratégico.
+
+## Contextualização
+
+&emsp;Esta seção consolida a análise de viabilidade do PeerSeed, traduzindo os resultados financeiros, arquitetônicos e de risco em um Plano de Ação Estratégico.
 
 ## Descrição do Projeto & Produto
 

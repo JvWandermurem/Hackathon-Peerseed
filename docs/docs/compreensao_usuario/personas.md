@@ -3,9 +3,9 @@ sidebar_label: "Personas"
 sidebar_position: 2
 ---
 
-# Personas
+## Representações de usuários
 
-## João – Agricultor Familiar
+### João – Agricultor Familiar
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
@@ -15,17 +15,17 @@ sidebar_position: 2
 </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
-### Quem é
+#### Quem é
 &emsp;João tem 41 anos e é agricultor familiar no Centro-Oeste do Brasil. Ele administra uma fazenda de 32 hectares dedicada ao plantio de milho e soja. Vive em uma região com acesso à internet de velocidade mediana, sujeito a oscilações, mas utiliza diariamente seu smartphone para gerenciar contatos e pesquisar informações relacionadas à produção e ao mercado.
 
-### Desafios
+#### Desafios
 &emsp;João encontra grande dificuldade para acessar crédito bancário. A burocracia, a exigência de garantias e o fato de possuir uma renda variável ligada ao ciclo agrícola o colocam em desvantagem frente às instituições financeiras tradicionais. Além disso, sente frustração por não ter seu trabalho sério e suas práticas sustentáveis reconhecidas.  
 
 
-### Objetivos
+#### Objetivos
 &emsp;Ele busca soluções mais ágeis, transparentes e digitais para financiar a compra de insumos e pequenas máquinas. Quer sentir que tem maior controle sobre seu destino financeiro, sendo recompensado pelo bom trabalho que já realiza. Para João, o crédito P2P representa uma alternativa justa, permitindo crescer com taxas adequadas e em relação direta com investidores que acreditam em seu potencial.
 
-### User Stories do João
+#### User Stories do João
 
 :::info
 **User Stories** são descrições curtas e simples das necessidades de um usuário, escritas do ponto de vista de quem utiliza a solução.  
@@ -46,7 +46,7 @@ Elas ajudam a equipe a entender **quem é o usuário, o que ele precisa e por qu
 
 ---
 
-## Marina – Investidora de Impacto
+### Marina – Investidora de Impacto
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
@@ -56,20 +56,20 @@ Elas ajudam a equipe a entender **quem é o usuário, o que ele precisa e por qu
 </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
-### Quem é
+#### Quem é
 &emsp;Marina tem 35 anos, mora em São Paulo e trabalha no setor de TI. Com perfil inovador e antenado, acompanha tendências em tecnologia, finanças digitais e sustentabilidade. Tem familiaridade com plataformas digitais de investimento e está sempre em busca de oportunidades que unam retorno financeiro e impacto positivo.
 
-### Desafios
+#### Desafios
 &emsp;Para Marina, o maior desafio é encontrar investimentos alternativos que ofereçam **transparência real** quanto aos riscos e que demonstrem claramente o impacto socioambiental gerado. Ela percebe que muitas opções no mercado ainda carecem de métricas confiáveis de impacto ou de mecanismos claros de rastreabilidade.
 
-### Objetivos
+#### Objetivos
 &emsp;Com perfil de risco moderado, Marina busca diversificar sua carteira além da renda fixa tradicional. O cenário ideal para ela é aquele que combina **rentabilidade atrativa** com **impacto positivo e mensurável**. Valoriza segurança, transparência proporcionada por tecnologias como blockchain e a possibilidade de **escolher e acompanhar os projetos** em que investe, enxergando no Peerseed uma solução inovadora.
 
 :::info
 De acordo com a **B3 (2024)**, o número de CPFs ativos em renda variável já ultrapassa **6 milhões no Brasil**, evidenciando o interesse crescente por alternativas de investimento além da poupança e da renda fixa tradicional.
 :::
 
-### User Stories
+#### User Stories
 
 | ID   | User Story |
 |------|------------|
@@ -87,6 +87,6 @@ De acordo com a **B3 (2024)**, o número de CPFs ativos em renda variável já u
 
 ---
 
-## Síntese
+### Síntese
 
 &emsp;Juntos, João e Marina representam os dois polos centrais do Peerseed: o tomador de crédito que precisa de soluções acessíveis e justas e a investidora que busca diversificação com impacto positivo. A plataforma conecta esses perfis de maneira transparente, utilizando tecnologia para gerar confiança mútua e benefícios concretos para ambos.

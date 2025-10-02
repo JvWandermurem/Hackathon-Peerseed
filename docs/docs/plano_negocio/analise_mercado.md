@@ -2,6 +2,9 @@
 sidebar_position: 1
 title: Análise de Mercado
 ---
+
+## Contextualização
+
 &emsp;A Análise de Mercado é uma etapa fundamental para entender o ambiente em que um produto ou serviço será inserido, permitindo identificar oportunidades, desafios e o comportamento dos consumidores. 
 
 ## Visão Geral do Setor

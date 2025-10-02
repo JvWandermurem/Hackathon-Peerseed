@@ -3,6 +3,8 @@ sidebar_position: 5
 title: Métricas de avaliação
 ---
 
+## Contextualização
+
 &emsp;Para medir o sucesso do PeerSeed, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (João e Marina).
 
 ## Indicadores Quantitativos (Desempenho e Financeiro)
