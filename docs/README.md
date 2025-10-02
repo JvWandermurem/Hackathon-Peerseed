@@ -5,7 +5,7 @@
 </div>
 
 <p align="center">
-  <img src="../static/logo_branca.svg" alt="Banner Peerseed - Agricultura e Tecnologia" width="800">
+  <img src="../docs/static/img/logo_branca.svg" alt="Banner Peerseed - Agricultura e Tecnologia" width="800">
 </p>
 <p align="center"><i>Uma nova era de crédito para o agronegócio brasileiro.</i></p>
 
