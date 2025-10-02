@@ -114,16 +114,16 @@ npm run start
 *[Instruções detalhadas de execução serão adicionadas com o avanço do desenvolvimento].*
 
 #### Pré-requisitos
-***PREENCHER FUTURAMENTE***
+***PREENCHER COM O INÍCIO DO DESENVOLVIMENTO***
 
 #### Instalação
 ```bash
-**PREENCHER FUTURAMENTE**
+**PREENCHER COM O INÍCIO DO DESENVOLVIMENTO**
 ```
 
 #### Execução
 ```bash
-**PREENCHER FUTURAMENTE**
+**PREENCHER COM O INÍCIO DO DESENVOLVIMENTO**
 ```
 
 ## 🗃 Histórico de Lançamentos
