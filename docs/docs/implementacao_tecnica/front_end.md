@@ -21,7 +21,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Home - Agricultor</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/home_agricultor.png").default} style={{width: 800}} alt="Tela Home" />
+        <img src={require("../../static/img/tela_home_agricultor.png").default} style={{width: 800}} alt="Tela Home" />
         <br/>
     </div>
 </div>
@@ -30,7 +30,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Home - Investidor</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/home_investidor.png").default} style={{width: 800}} alt="Tela Home" />
+        <img src={require("../../static/img/tela_home_investidor.png").default} style={{width: 800}} alt="Tela Home" />
         <br/>
     </div>
 </div>
@@ -46,7 +46,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela de Solicitar Empréstimo</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/solicitacao.png").default} style={{width: 800}} alt="Tela Solicitar Empréstimo" />
+        <img src={require("../../static/img/tela_solicitacao.png").default} style={{width: 800}} alt="Tela Solicitar Empréstimo" />
         <br/>
     </div>
 </div>
@@ -62,7 +62,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela de Score de Crédito</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/credit_score.png").default} style={{width: 800}} alt="Tela Score de Crédito" />
+        <img src={require("../../static/img/tela_credit_score.png").default} style={{width: 800}} alt="Tela Score de Crédito" />
         <br/>
     </div>
 </div>
@@ -78,7 +78,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Meus Contratos</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/contratos.png").default} style={{width: 800}} alt="Tela Meus Contratos" />
+        <img src={require("../../static/img/tela_contratos.png").default} style={{width: 800}} alt="Tela Meus Contratos" />
         <br/>
     </div>
 </div>
@@ -94,7 +94,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Pagamentos</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/pagamentos.png").default} style={{width: 800}} alt="Tela Pagamentos" />
+        <img src={require("../../static/img/tela_pagamentos.png").default} style={{width: 800}} alt="Tela Pagamentos" />
         <br/>
     </div>
 </div>
@@ -110,7 +110,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Marketplace</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/marketplace.png").default} style={{width: 800}} alt="Tela Marketplace" />
+        <img src={require("../../static/img/tela_marketplace.png").default} style={{width: 800}} alt="Tela Marketplace" />
         <br/>
     </div>
 </div>
@@ -126,7 +126,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Minhas Seeds</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/minhas_seeds.png").default} style={{width: 800}} alt="Tela Minhas Seeds" />
+        <img src={require("../../static/img/tela_minhas_seeds.png").default} style={{width: 800}} alt="Tela Minhas Seeds" />
         <br/>
     </div>
 </div>
@@ -143,7 +143,7 @@ sidebar_position: 2
 <p style={{textAlign: 'center'}}>Tela Carteira</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/carteira.png").default} style={{width: 800}} alt="Tela Carteira do Investidor" />
+        <img src={require("../../static/img/tela_carteira.png").default} style={{width: 800}} alt="Tela Carteira do Investidor" />
         <br/>
     </div>
 </div>
