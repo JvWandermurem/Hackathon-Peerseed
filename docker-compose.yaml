@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:15-alpine
@@ -12,16 +10,18 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
     networks:
       - peerseed_network
 
   servico_contas:
-    build: ./src/backend/servico_contas
+    build:
+      context: ./src/backend/servico_contas
     container_name: servico_contas
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_contas:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_contas
     ports:
       - "8001:8000"
     networks:
@@ -29,15 +29,17 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
   servico_analise_credito:
-    build: ./src/backend/servico_analise_credito
+    build:
+      context: ./src/backend/servico_analise_credito
     container_name: servico_analise_credito
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_analise_credito:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_analise_credito
     ports:
       - "8002:8000"
     networks:
@@ -45,15 +47,17 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
   servico_contratos:
-    build: ./src/backend/servico_contratos
+    build:
+      context: ./src/backend/servico_contratos
     container_name: servico_contratos
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_contratos:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_contratos
     ports:
       - "8003:8000"
     networks:
@@ -61,15 +65,17 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
   servico_marketplace:
-    build: ./src/backend/servico_marketplace
+    build:
+      context: ./src/backend/servico_marketplace
     container_name: servico_marketplace
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_marketplace:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_marketplace
     ports:
       - "8004:8000"
     networks:
@@ -77,15 +83,17 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
   servico_carteira_digital:
-    build: ./src/backend/servico_carteira_digital
+    build:
+      context: ./src/backend/servico_carteira_digital
     container_name: servico_carteira_digital
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_carteira_digital:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_carteira_digital
     ports:
       - "8005:8000"
     networks:
@@ -93,15 +101,17 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
   servico_telegram:
-    build: ./src/backend/servico_telegram
+    build:
+      context: ./src/backend/servico_telegram
     container_name: servico_telegram
-    # CORREÇÃO APLICADA AQUI
     command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./src/backend/servico_telegram:/app
+      - ./src/backend:/app
+    working_dir: /app/servico_telegram
     ports:
       - "8006:8000"
     networks:
@@ -109,6 +119,7 @@ services:
     depends_on:
       - db
     environment:
+      - PYTHONPATH=/app
       - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
 
 volumes:

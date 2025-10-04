@@ -1,7 +1,7 @@
 import uuid
 from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
-from .models import PerfilEnum
+from shared.database.models import PerfilEnum
 
 class Token(BaseModel):
     access_token: str
