@@ -7,7 +7,7 @@ import Admonition from '@theme/Admonition';
 
 ## Introdução
 
-&emsp; A segurança é o pilar fundamental que sustenta a confiança de agricultores e investidores na plataforma Peerseed. **Nossa abordagem é proativa, não reativa**, e segue os princípios de Segurança por Design (Secure by Design) e Defesa em Profundidade (Defense in Depth). Isso significa que a segurança não é uma camada externa, mas uma responsabilidade integrada em cada componente da nossa arquitetura: desde a infraestrutura e a rede até o código da aplicação e os processos de DevOps.
+&emsp; A segurança é o pilar fundamental que sustenta a confiança de agricultores e investidores na plataforma Reevo. **Nossa abordagem é proativa, não reativa**, e segue os princípios de Segurança por Design (Secure by Design) e Defesa em Profundidade (Defense in Depth). Isso significa que a segurança não é uma camada externa, mas uma responsabilidade integrada em cada componente da nossa arquitetura: desde a infraestrutura e a rede até o código da aplicação e os processos de DevOps.
 
 ---
 ## A Tríade CIA
@@ -104,7 +104,7 @@ Nossa arquitetura e processos de desenvolvimento são projetados para mitigar pr
 
 ## Análise de Trade-offs Arquiteturais
 
-&emsp; Toda arquitetura de software robusta é o resultado de uma série de decisões e, consequentemente, de trade-offs. Não existe uma solução "perfeita", mas sim uma solução ótima para um contexto específico. No Peerseed, fizemos escolhas conscientes para priorizar os aspectos mais críticos para uma plataforma fintech de crédito: confiança, segurança e integridade.
+&emsp; Toda arquitetura de software robusta é o resultado de uma série de decisões e, consequentemente, de trade-offs. Não existe uma solução "perfeita", mas sim uma solução ótima para um contexto específico. No Reevo, fizemos escolhas conscientes para priorizar os aspectos mais críticos para uma plataforma fintech de crédito: confiança, segurança e integridade.
 
 ### Segurança vs. Usabilidade: A Prioridade da Confiança
 **O Trade-off:** Medidas de segurança mais rigorosas frequentemente introduzem etapas adicionais nos fluxos do usuário, criando uma fricção que pode impactar a simplicidade da experiência.

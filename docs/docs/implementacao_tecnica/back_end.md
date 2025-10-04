@@ -4,13 +4,13 @@ title: Planejamento Backend
 ---
 
 ## Introdução
-&emsp; A arquitetura de backend do Peerseed é baseada em um conjunto de microsserviços independentes, escritos em Python. A escolha por esta abordagem visa garantir alta escalabilidade, resiliência e manutenibilidade, permitindo que equipes possam desenvolver, implantar e escalar cada domínio de negócio de forma autônoma.
+&emsp; A arquitetura de backend do Reevo é baseada em um conjunto de microsserviços independentes, escritos em Python. A escolha por esta abordagem visa garantir alta escalabilidade, resiliência e manutenibilidade, permitindo que equipes possam desenvolver, implantar e escalar cada domínio de negócio de forma autônoma.
 
 &emsp; Este documento estabelece a stack tecnológica padrão, a estrutura de diretórios e os padrões de comunicação que devem ser seguidos por todos os serviços de backend, a fim de manter a coesão e a qualidade técnica em todo o ecossistema.
 
 ## Stack Tecnológica Principal
 
-&emsp;Para garantir consistência e produtividade, todos os serviços de backend do Peerseed devem ser construídos utilizando a seguinte stack de tecnologias:
+&emsp;Para garantir consistência e produtividade, todos os serviços de backend do Reevo devem ser construídos utilizando a seguinte stack de tecnologias:
 
 | Componente              | Tecnologia/Padrão Recomendado | Principal Vantagem |
 |--------------------------|-------------------------------|--------------------|
@@ -73,7 +73,7 @@ Para assegurar a consistência e facilitar a navegação entre os projetos, todo
 
 ## Padrões de Comunicação entre Serviços
 
-&emsp;A comunicação no ecossistema de microsserviços do Peerseed segue dois padrões principais:
+&emsp;A comunicação no ecossistema de microsserviços do Reevo segue dois padrões principais:
 
 ### Comunicação Síncrona (RESTful APIs)
 **Quando usar:** Para interações de comando ou consulta que exigem uma resposta imediata.

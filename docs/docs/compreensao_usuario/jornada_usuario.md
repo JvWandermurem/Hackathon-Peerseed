@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Entendimento
 
-&emsp;A jornada de usuários do **Peerseed** reflete o caminho percorrido por agricultores em busca de crédito e por investidores que desejam diversificar sua carteira com impacto social. Ela permite visualizar cada etapa da experiência, os pontos de contato com a plataforma e os pensamentos das personas durante o processo. Assim, é possível identificar oportunidades de melhoria e criar soluções que realmente respondam às necessidades de ambos os lados do ecossistema P2P.
+&emsp;A jornada de usuários do **Reevo** reflete o caminho percorrido por agricultores em busca de crédito e por investidores que desejam diversificar sua carteira com impacto social. Ela permite visualizar cada etapa da experiência, os pontos de contato com a plataforma e os pensamentos das personas durante o processo. Assim, é possível identificar oportunidades de melhoria e criar soluções que realmente respondam às necessidades de ambos os lados do ecossistema P2P.
 
 ---
 
@@ -89,5 +89,5 @@ Recebe o valor investido mais a rentabilidade ao final do contrato ou vende a co
 
 ## Síntese
 
-&emsp;A jornada de João e Marina demonstra a complementaridade do modelo P2P: enquanto o agricultor busca crédito acessível e justo para sua produção, a investidora deseja diversificação, impacto e transparência. O **Peerseed** conecta essas necessidades em uma experiência digital fluida, criando confiança e valor para ambos.
+&emsp;A jornada de João e Marina demonstra a complementaridade do modelo P2P: enquanto o agricultor busca crédito acessível e justo para sua produção, a investidora deseja diversificação, impacto e transparência. O **Reevo** conecta essas necessidades em uma experiência digital fluida, criando confiança e valor para ambos.
 

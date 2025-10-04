@@ -48,7 +48,7 @@ Dados do ITT Brasil indicam que **apenas 15% do financiamento agrícola total** 
 
 | Plataforma de Crédito | Modelo | Público-Alvo | Diferenciais | Desafios |
 | :-------------------- | :----- | :----------- | :------------ | :------- |
-| PeerSeed | P2P tokenizado | PMEs e investidores varejo | Score multiplas dimensões, liberação escalonada, onboarding digital assistido | Captação inicial, escalabilidade, regulação |
+| Reevo | P2P tokenizado | PMEs e investidores varejo | Score multiplas dimensões, liberação escalonada, onboarding digital assistido | Captação inicial, escalabilidade, regulação |
 | TerraMagna | Financiamento distribuidores | Médios e grandes produtores | Análise satelital, forte garantia | Baixa presença nos PMEs |
 | Agrotoken | Tokenização de grãos | Grandes produtores e investidores institucionais | Auditoria externa, integração bancos | Difícil adoção por pequenos produtores |
 | CrowdFarming | Pré-financiamento via adoção | Nichos sustentáveis | Transparência, impacto social | Baixa escala, logística complexa |

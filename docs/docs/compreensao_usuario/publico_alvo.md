@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Entendimento do tópico
 
-&emsp;O **Peerseed** foi concebido para conectar agricultores pequenos e médios com pessoas físicas interessadas em investir diretamente no campo, criando um ecossistema de crédito mais ágil, transparente e sustentável. A análise do público-alvo considera tanto os produtores rurais que demandam financiamento quanto os investidores que oferecem capital, garantindo assim a complementaridade essencial para o modelo P2P.
+&emsp;O **Reevo** foi concebido para conectar agricultores pequenos e médios com pessoas físicas interessadas em investir diretamente no campo, criando um ecossistema de crédito mais ágil, transparente e sustentável. A análise do público-alvo considera tanto os produtores rurais que demandam financiamento quanto os investidores que oferecem capital, garantindo assim a complementaridade essencial para o modelo P2P.
 
 ---
 
@@ -21,15 +21,15 @@ sidebar_position: 1
 Segundo o Censo Agropecuário 2017 (IBGE), os agricultores familiares representam 77% dos estabelecimentos rurais no Brasil, mas acessam menos de 15% do crédito rural formal.
 :::
 
-&emsp;Além disso, cooperativas e associações rurais surgem como atores estratégicos. Elas concentram centenas de produtores e podem atuar como canais de captação de usuários do Peerseed, beneficiando-se da oferta de crédito mais justo e ágil. Dados da OCB (2023) indicam que cooperativas agropecuárias movimentaram mais de R$ 600 bilhões em 2023, reforçando sua relevância no setor.
+&emsp;Além disso, cooperativas e associações rurais surgem como atores estratégicos. Elas concentram centenas de produtores e podem atuar como canais de captação de usuários do Reevo, beneficiando-se da oferta de crédito mais justo e ágil. Dados da OCB (2023) indicam que cooperativas agropecuárias movimentaram mais de R$ 600 bilhões em 2023, reforçando sua relevância no setor.
 
 ---
 
 ## Investidores Pessoas Físicas
 
-&emsp;O outro lado do ecossistema do Peerseed é formado por pessoas físicas interessadas em investir pequenos valores diretamente em operações agrícolas. Esse grupo busca diversificação de portfólio, retornos potenciais superiores à renda fixa tradicional e impacto social positivo no campo.  
+&emsp;O outro lado do ecossistema do Reevo é formado por pessoas físicas interessadas em investir pequenos valores diretamente em operações agrícolas. Esse grupo busca diversificação de portfólio, retornos potenciais superiores à renda fixa tradicional e impacto social positivo no campo.  
 
-&emsp;Entre eles estão investidores locais, moradores de regiões rurais ou pequenas cidades, que veem no Peerseed uma forma de apoiar o desenvolvimento de suas comunidades. Também se destacam os pequenos e médios investidores urbanos, atraídos pelo modelo inovador, pela rastreabilidade via blockchain e pela clareza de modelos de risco transparentes.  
+&emsp;Entre eles estão investidores locais, moradores de regiões rurais ou pequenas cidades, que veem no Reevo uma forma de apoiar o desenvolvimento de suas comunidades. Também se destacam os pequenos e médios investidores urbanos, atraídos pelo modelo inovador, pela rastreabilidade via blockchain e pela clareza de modelos de risco transparentes.  
 
 :::info
 Segundo relatório da ANBIMA (2023), mais de 5 milhões de brasileiros já investem fora da poupança, e o interesse em alternativas ligadas a impacto social e ESG cresce a taxas anuais acima de 20%.

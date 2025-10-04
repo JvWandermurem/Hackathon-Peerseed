@@ -1,11 +1,11 @@
 <div align="center">
 
-# Peerseed
+# Reevo
 
 </div>
 
 <p align="center">
-  <img src="../docs/static/img/logo_branca.svg" alt="Banner Peerseed - Agricultura e Tecnologia" width="800">
+  <img src="../docs/static/img/logo_branca.svg" alt="Banner Reevo - Agricultura e Tecnologia" width="800">
 </p>
 <p align="center"><i>Uma nova era de crédito para o agronegócio brasileiro.</i></p>
 
@@ -39,22 +39,22 @@
 
 ## Descrição
 
-**Peerseed** é uma plataforma fintech de crédito P2P (peer-to-peer) projetada para conectar pequenos e médios produtores rurais brasileiros a pessoas físicas interessadas em investir diretamente no agronegócio. Utilizando análise de dados, IA e uma arquitetura de microsserviços em nuvem, nossa missão é criar um ecossistema de crédito mais ágil, transparente e sustentável.
+**Reevo** é uma plataforma fintech de crédito P2P (peer-to-peer) projetada para conectar pequenos e médios produtores rurais brasileiros a pessoas físicas interessadas em investir diretamente no agronegócio. Utilizando análise de dados, IA e uma arquitetura de microsserviços em nuvem, nossa missão é criar um ecossistema de crédito mais ágil, transparente e sustentável.
 
 A documentação completa do projeto, incluindo arquitetura, fluxos e modelo de dados, pode ser encontrada em nosso site do Docusaurus.
 
-**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
+**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Reevo/)**
 
 ### Problema Resolvido
 
-O agronegócio brasileiro enfrenta um paradoxo: enquanto o setor é uma potência, os pequenos e médios produtores rurais sofrem com um acesso restrito e burocrático ao crédito tradicional. Do outro lado, investidores buscam alternativas de investimento com impacto e transparência. O Peerseed resolve esse problema através de:
+O agronegócio brasileiro enfrenta um paradoxo: enquanto o setor é uma potência, os pequenos e médios produtores rurais sofrem com um acesso restrito e burocrático ao crédito tradicional. Do outro lado, investidores buscam alternativas de investimento com impacto e transparência. O Reevo resolve esse problema através de:
 
 - **Análise de crédito automatizada** para dar respostas rápidas aos agricultores.
 - **Criação de um marketplace** de investimento acessível e transparente.
 - **Oferta de liquidez** para investidores através de um mercado secundário.
 - **Redução da burocracia** e das altas taxas dos intermediários tradicionais.
 
-## Ecossistema Peerseed
+## Ecossistema Reevo
 
 O sistema opera com base em conceitos-chave que garantem seu funcionamento e transparência:
 
@@ -88,7 +88,7 @@ O sistema opera com base em conceitos-chave que garantem seu funcionamento e tra
 ## Estrutura de Pastas
 
 ```
-peerseed/
+Reevo/
 ├── docs/      # Documentação completa do projeto (Docusaurus)
 ├── README.md     # Este arquivo
 └──LICENSE
@@ -99,13 +99,13 @@ peerseed/
 
 ### Documentação
 
-A documentação completa do Peerseed pode ser acessada através do link: **[Documentação Peerseed](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
+A documentação completa do Reevo pode ser acessada através do link: **[Documentação Reevo](https://jvwandermurem.github.io/Hackathon-Reevo/)**
 
 Para executar a documentação localmente (requer Node.js e npm):
 ```bash
 # Clone este repositório
 git clone [https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories](https://docs.github.com/pt/repositories/creating-and-managing-repositories/quickstart-for-repositories)
-cd peerseed/docs/docs 
+cd Reevo/docs/docs 
 npm install
 npm run start
 ```

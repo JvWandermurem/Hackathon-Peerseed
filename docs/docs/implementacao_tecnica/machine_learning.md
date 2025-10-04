@@ -4,7 +4,7 @@ title: AgroScore
 ---
 
 ## Visão Geral e Objetivo
-&emsp; O AgroScore é o motor de análise de crédito automatizada do Peerseed e um dos nossos principais diferenciais competitivos. Seu objetivo é prover uma avaliação de risco de crédito rápida, justa e baseada em dados, atendendo diretamente ao requisito `RF-AGR-002`.
+&emsp; O AgroScore é o motor de análise de crédito automatizada do Reevo e um dos nossos principais diferenciais competitivos. Seu objetivo é prover uma avaliação de risco de crédito rápida, justa e baseada em dados, atendendo diretamente ao requisito `RF-AGR-002`.
 
 &emsp; Para o agricultor João, o AgroScore significa sair da subjetividade e da lentidão dos bancos tradicionais e receber uma resposta em horas, não semanas. 
 
@@ -16,7 +16,7 @@ title: AgroScore
 
 **Tipos de Modelos de Machine Learning**
 
-| Tipo de Modelo                               | Vantagens para o Peerseed                                                                                                                                     | Desvantagens                                                                                                                 |
+| Tipo de Modelo                               | Vantagens para o Reevo                                                                                                                                     | Desvantagens                                                                                                                 |
 |----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | **Modelos Clássicos** (Regressão Logística, Gradient Boosting) | - **Alta Interpretabilidade**: Permitem analisar a importância de cada variável (ex: "o histórico de crédito foi o fator mais importante"). Essencial para conformidade e feedback ao usuário.- **Alta Performance**: Rápidos para treinar e fazer predições, ideal para APIs (**RNF-ED-01**). | Podem não capturar relações não-lineares extremamente complexas nos dados.                                                   |
 | **Deep Learning** (Redes Neurais)            | - **Capacidade**: Aprende padrões muito complexos e não-lineares.                                                                                             | - **Baixa Interpretabilidade** ("Caixa-Preta"), dificultando explicação de decisões (risco regulatório e de negócio). **Mais Lento**: Exige mais dados e poder computacional para treinar e predizer. |
@@ -34,7 +34,7 @@ O AgroScore é alimentado por um conjunto diversificado de dados para criar um p
 | **Dados da Propriedade**              | Hectares, cultura principal, posse da terra (própria/arrendada).       | Formulário de Solicitação (**RF-AGR-001**).                |
 | **Dados Históricos de Produção**      | Faturamento do último ciclo (baseado em Notas Fiscais).                | Upload de Documentos (**RF-AGR-001**).                     |
 | **Dados de Crédito Externo**          | Score de crédito (Serasa/SPC), histórico de dívidas.                   | APIs de Bureaus de Crédito (**RNF-C-01**).                 |
-| **Dados de Comportamento na Plataforma** | Histórico de pagamento de empréstimos anteriores no Peerseed.          | Tabelas `cprs` e `parcelas` (PostgreSQL).                  |
+| **Dados de Comportamento na Plataforma** | Histórico de pagamento de empréstimos anteriores no Reevo.          | Tabelas `cprs` e `parcelas` (PostgreSQL).                  |
 
 ## Ciclo de Vida do Modelo (MLOps) no MVP
 
@@ -53,7 +53,7 @@ Um dos devs do time de dados executa o arquivo python que realiza a limpeza dos 
 
 **C. Versionamento e Armazenamento do Artefato**
 
-- O arquivo do modelo (.pkl) e o arquivo python que o gerou são versionados com Git. O artefato do modelo em si é armazenado em um serviço de Object Storage (compatível com S3), seguindo uma nomenclatura clara de versionamento (ex: s3://peerseed-models/agro_score_model_v1.pkl).
+- O arquivo do modelo (.pkl) e o arquivo python que o gerou são versionados com Git. O artefato do modelo em si é armazenado em um serviço de Object Storage (compatível com S3), seguindo uma nomenclatura clara de versionamento (ex: s3://Reevo-models/agro_score_model_v1.pkl).
 
 **D. Implantação (Serving) do Modelo:**
 

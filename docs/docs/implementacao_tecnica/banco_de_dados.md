@@ -5,7 +5,7 @@ title: Arquitetura de Dados
 
 ## Camada de Armazenamento
 
-&emsp; A arquitetura de dados do Peerseed foi projetada sob o princípio de Persistência Poliglota, utilizando a tecnologia mais adequada para cada tipo de dado. A arquitetura garante a integridade transacional para operações financeiras, alta performance para consultas frequentes e observabilidade completa do sistema. A estrutura suporta o ciclo de vida completo do crédito P2P, desde o cadastro do usuário até a liquidação dos investimentos.
+&emsp; A arquitetura de dados do Reevo foi projetada sob o princípio de Persistência Poliglota, utilizando a tecnologia mais adequada para cada tipo de dado. A arquitetura garante a integridade transacional para operações financeiras, alta performance para consultas frequentes e observabilidade completa do sistema. A estrutura suporta o ciclo de vida completo do crédito P2P, desde o cadastro do usuário até a liquidação dos investimentos.
 
 ## Banco de Dados Relacional (PostgreSQL)
 
@@ -196,7 +196,7 @@ Para garantir a consistência dos dados, duas estratégias serão usadas:
 **Alta Disponibilidade:** Em produção, o Redis não será uma instância única. Será configurado em modo de alta disponibilidade usando Redis Sentinel ou um serviço gerenciado de nuvem (como AWS ElastiCache ou Google Memorystore) com replicação e failover automático, em conformidade com o RNF de disponibilidade **(RNF-CF-01)**.
 
 ## Logs Estruturados e Observabilidade
-A estratégia de observabilidade da Peerseed se baseia na emissão de logs estruturados em formato JSON para a saída padrão (stdout) de cada microsserviço. Esta abordagem desacopla os serviços da infraestrutura de logging, uma prática recomendada para garantir a manutenibilidade (RNF-M-03).
+A estratégia de observabilidade da Reevo se baseia na emissão de logs estruturados em formato JSON para a saída padrão (stdout) de cada microsserviço. Esta abordagem desacopla os serviços da infraestrutura de logging, uma prática recomendada para garantir a manutenibilidade (RNF-M-03).
 
 ### Padrão de Estrutura do Log (Schema JSON)
 Para garantir que os logs sejam facilmente pesquisáveis e analisáveis, todo log gerado pela aplicação deve aderir a um schema comum:

@@ -5,7 +5,7 @@ title: Planejamento Infraestrutura
 
 ## Introdução
 
-&emsp; A infraestrutura do Peerseed é projetada para ser a fundação sólida que sustenta a ponte entre agricultores e investidores. As decisões arquiteturais são guiadas por quatro princípios essenciais, sempre focados em gerar valor e confiança para nosso público-alvo e pautados nos nossos Requisitos Funcionais e Não funcionais:
+&emsp; A infraestrutura do Reevo é projetada para ser a fundação sólida que sustenta a ponte entre agricultores e investidores. As decisões arquiteturais são guiadas por quatro princípios essenciais, sempre focados em gerar valor e confiança para nosso público-alvo e pautados nos nossos Requisitos Funcionais e Não funcionais:
 
  - **Alta Disponibilidade e Resiliência:** A plataforma precisa estar sempre acessível. Para o agricultor João, o acesso ao crédito é sensível ao tempo e alinhado à janela da safra. Para a investidora Marina, a indisponibilidade do sistema significa perda de confiança e de oportunidades. Nossa meta é uma disponibilidade de 99.9% `(RNF-CF-01)`.
 
@@ -32,7 +32,7 @@ Importância e Impacto:
 
 #### Opções de Mercado
 
-| Opção de Implementação                  | Descrição                                                                                   | Vantagens para o Peerseed                                                                                                          | Desvantagens                                                                                     |
+| Opção de Implementação                  | Descrição                                                                                   | Vantagens para o Reevo                                                                                                          | Desvantagens                                                                                     |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | **Managed Kubernetes (EKS, GKE, AKS)**  | O provedor de nuvem gerencia o *control plane* (o "cérebro" do K8s). Nós gerenciamos apenas os nós de trabalho e nossas aplicações. | **Foco no Produto**: Reduz a carga operacional, liberando a equipe para desenvolver funcionalidades para João e Marina. **Confiabilidade**: Alta disponibilidade garantida pelo provedor. | - Curva de aprendizado inicial da ferramenta.                                                    |
 | **Serverless Containers (AWS Fargate, Cloud Run)** | Abstrai completamente a noção de servidores: apenas enviamos o contêiner e ele roda.          | **Simplicidade Máxima**: Ideal para equipes pequenas- **Custo Otimizado**: Pagamento apenas pelo tempo real de computação, ótimo para um MVP com tráfego variável. | - Menor flexibilidade em redes complexas.- Possível dependência do provedor.                 |

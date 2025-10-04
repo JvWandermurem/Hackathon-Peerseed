@@ -5,7 +5,7 @@ title: Proposta de Valor
 
 ## Entrega de valor
 
-&emsp;A proposta de valor do PeerSeed é entregue através de um conjunto integrado de produtos e serviços que utilizam tecnologia de ponta para desburocratizar o crédito rural e garantir transparência ao capital. As funcionalidades listadas abaixo são o cerne da solução, demonstrando como a plataforma resolve as principais dores do Agricultor e do Investidor ao longo de suas jornadas.
+&emsp;A proposta de valor do Reevo é entregue através de um conjunto integrado de produtos e serviços que utilizam tecnologia de ponta para desburocratizar o crédito rural e garantir transparência ao capital. As funcionalidades listadas abaixo são o cerne da solução, demonstrando como a plataforma resolve as principais dores do Agricultor e do Investidor ao longo de suas jornadas.
 
 ### Produtos & Serviços  
 

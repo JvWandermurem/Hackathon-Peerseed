@@ -33,7 +33,7 @@ sidebar_position: 7
 | :--- | :--- | :--- |
 | **Diversificação de Produtos** | Desenvolvimento do módulo de **Renda Variável/Parceria de Safra** (risco compartilhado) e criação de novos tipos de Tokens de Ativo (ex: Token de Armazenagem). | **Expansão de Receita:** A receita de Serviços B2B e Taxa de Performance se tornam majoritárias. |
 | **Governança Total** | Descentralização progressiva das decisões de Taxa/Parâmetros para os detentores do **Token SEED**. | **Maturação da Governança:** Plataforma operando como uma DAO (Organização Autônoma Descentralizada). |
-| **Expansão Regional** | Implantação de infraestrutura (VPC e K8s) em novas regiões/países, com adaptações regulatórias. | **Liderança de Mercado:** Consolidação do PeerSeed como a principal via de crédito digital no setor PME. |
+| **Expansão Regional** | Implantação de infraestrutura (VPC e K8s) em novas regiões/países, com adaptações regulatórias. | **Liderança de Mercado:** Consolidação do Reevo como a principal via de crédito digital no setor PME. |
 
 
 ---

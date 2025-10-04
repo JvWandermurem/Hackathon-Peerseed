@@ -5,7 +5,7 @@ title: Arquitetura da Solução
 
 ## Introdução
 
-&emsp; Para documentar e comunicar a arquitetura do Peerseed de forma eficaz, adotamos o Modelo C4. Este modelo não é uma nova forma de projetar software, mas sim uma maneira de visualizar e descrever uma arquitetura existente ou proposta em diferentes níveis de abstração.
+&emsp; Para documentar e comunicar a arquitetura do Reevo de forma eficaz, adotamos o Modelo C4. Este modelo não é uma nova forma de projetar software, mas sim uma maneira de visualizar e descrever uma arquitetura existente ou proposta em diferentes níveis de abstração.
 
 &emsp; A principal vantagem do C4 é que ele oferece a "quantidade certa de detalhes para a audiência certa". Podemos pensar nele como o Google Maps para a nossa arquitetura:
 
@@ -17,12 +17,12 @@ title: Arquitetura da Solução
 
 **Nível 4 (Código): A visão de uma casa específica (geralmente coberto por diagramas de classe UML ou o próprio código).**
 
-Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma compreensão completa da estrutura e do funcionamento do Peerseed.
+Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma compreensão completa da estrutura e do funcionamento do Reevo.
 
 
 
 ## Nível 1: Contexto do Sistema (A Visão do Helicóptero)
-&emsp; O primeiro diagrama estabelece o cenário geral, mostrando como o nosso sistema se encaixa no mundo. Ele responde à pergunta: "O que é o sistema Peerseed, quem o utiliza e com quais outros sistemas ele interage?".
+&emsp; O primeiro diagrama estabelece o cenário geral, mostrando como o nosso sistema se encaixa no mundo. Ele responde à pergunta: "O que é o sistema Reevo, quem o utiliza e com quais outros sistemas ele interage?".
 
 <p style={{textAlign: 'center'}}> Arquitetura Nível C1</p>
 <div style={{margin: 15}}>
@@ -44,10 +44,10 @@ Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma co
     - Admin: O operador da plataforma, responsável pela gestão, suporte e validação manual de processos.
 
 
-**O Sistema PeerSeeD:** No coração do diagrama está o Sistema Central, nossa plataforma de crédito P2P para o agronegócio.
+**O Sistema Reevo:** No coração do diagrama está o Sistema Central, nossa plataforma de crédito P2P para o agronegócio.
 
 
-**Os Sistemas Externos:** O Peerseed não opera isoladamente. Ele depende de integrações críticas com sistemas externos para funcionar, incluindo:
+**Os Sistemas Externos:** O Reevo não opera isoladamente. Ele depende de integrações críticas com sistemas externos para funcionar, incluindo:
 
  - Autoridade Certificadora (ICP-Brasil): Para a assinatura digital e validação jurídica da Cédula de Produtor Rural (CPR).
 
@@ -61,7 +61,7 @@ Este diagrama é fundamental para que qualquer pessoa, técnica ou não, entenda
 
 ## Nível 2: Contêineres (A Estrutura da Solução)
 
-&emsp; Dando um zoom no "Sistema Peerseed", o diagrama de contêineres expõe a arquitetura de alto nível da aplicação. Ele responde à pergunta: "Quais são os principais blocos de construção do sistema e como eles se comunicam?".
+&emsp; Dando um zoom no "Sistema Reevo", o diagrama de contêineres expõe a arquitetura de alto nível da aplicação. Ele responde à pergunta: "Quais são os principais blocos de construção do sistema e como eles se comunicam?".
 
 >Para Melhor visualização [clique aqui](https://www.canva.com/design/DAG0SgLAcT8/hKnnOkM1vyxHNdrywB5QxA/edit?utm_content=DAG0SgLAcT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
@@ -76,7 +76,7 @@ Este diagrama é fundamental para que qualquer pessoa, técnica ou não, entenda
 
 > Nota: "Contêiner" aqui é um termo do C4 para um bloco de construção executável ou um armazenamento de dados, não necessariamente um contêiner Docker.
 
-A arquitetura do Peerseed é dividida em quatro camadas principais:
+A arquitetura do Reevo é dividida em quatro camadas principais:
 
 **Aplicação Web (Frontend):** A porta de entrada para nossos usuários. É uma série de páginas web/mobile que proporciona uma experiência de usuário fluida e responsiva para Agricultores e Investidores.
 
@@ -198,7 +198,7 @@ Para operações com criptomoedas, ele conta com um `Monitor de Blockchain` para
 
 ### Serviço Marketplace
 
-&emsp; Atuando como a vitrine e o ambiente de negociação do Peerseed, este serviço gerencia o ciclo de vida completo das oportunidades de investimento. É composto por:
+&emsp; Atuando como a vitrine e o ambiente de negociação do Reevo, este serviço gerencia o ciclo de vida completo das oportunidades de investimento. É composto por:
 
 `API Controller` para a interação com o frontend e por dois componentes lógicos principais
   - `Gerenciador de Ofertas Primárias`: que cuida da listagem e captação das novas CPRs.

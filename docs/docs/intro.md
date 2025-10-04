@@ -6,14 +6,14 @@ slug: /intro
 
 import Admonition from '@theme/Admonition';
 
-## Introdução ao Projeto Peerseed
+## Introdução ao Projeto Reevo
 &emsp;O agronegócio é a força motriz da economia brasileira, um setor de superlativos que alimenta o país e o mundo. No entanto, por trás dessa pujança, existe um desafio silencioso que limita seu potencial: **o abismo entre o capital e a terra**.
 
 &emsp;De um lado, pequenos e médios produtores rurais, responsáveis por uma parcela vital da produção nacional, enfrentam um ciclo de dependência de crédito caro, lento e burocrático.
 
 &emsp;Do outro, milhões de investidores pessoa física buscam oportunidades para diversificar seus portfólios com retornos atrativos e, cada vez mais, com um propósito claro de impacto social e ambiental (ESG), mas encontram um potencial de investimento no campo praticamente inexplorado e inacessível.
 
-&emsp;É para romper este ciclo que nasce o Peerseed. Somos uma **plataforma fintech de crédito P2P (peer-to-peer)** que se propõe a ser a ponte digital, transparente e eficiente entre esses dois mundos. Conectamos diretamente produtores rurais que precisam de financiamento para crescer a uma comunidade de investidores que desejam participar ativamente do sucesso do agronegócio brasileiro.
+&emsp;É para romper este ciclo que nasce o Reevo. Somos uma **plataforma fintech de crédito P2P (peer-to-peer)** que se propõe a ser a ponte digital, transparente e eficiente entre esses dois mundos. Conectamos diretamente produtores rurais que precisam de financiamento para crescer a uma comunidade de investidores que desejam participar ativamente do sucesso do agronegócio brasileiro.
 
 ---
 ## Três pilares de inovação
@@ -39,4 +39,4 @@ import Admonition from '@theme/Admonition';
 ---
 ## Conclusão
 
-&emsp;O Peerseed é mais do que uma plataforma de crédito. É um movimento para democratizar o financiamento do agronegócio, empoderando agricultores com os recursos necessários para inovar e prosperar, ao mesmo tempo em que oferece aos investidores a oportunidade de participar diretamente do crescimento da economia real. Nosso objetivo é construir um futuro onde o crédito é mais justo, o investimento tem propósito e o campo brasileiro pode florescer em seu máximo potencial.
+&emsp;O Reevo é mais do que uma plataforma de crédito. É um movimento para democratizar o financiamento do agronegócio, empoderando agricultores com os recursos necessários para inovar e prosperar, ao mesmo tempo em que oferece aos investidores a oportunidade de participar diretamente do crescimento da economia real. Nosso objetivo é construir um futuro onde o crédito é mais justo, o investimento tem propósito e o campo brasileiro pode florescer em seu máximo potencial.

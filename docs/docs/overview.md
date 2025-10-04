@@ -4,11 +4,11 @@ slug: /
 sidebar_position: 0
 ---
 
-# Visão Geral do Projeto Peerseed
+# Visão Geral do Projeto Reevo
 
 ## Introdução
 
-&emsp;O **Peerseed** é uma plataforma digital de crédito peer-to-peer (P2P) que conecta agricultores pequenos e médios a investidores pessoas físicas interessados em diversificação de portfólio e impacto socioambiental positivo.  
+&emsp;O **Reevo** é uma plataforma digital de crédito peer-to-peer (P2P) que conecta agricultores pequenos e médios a investidores pessoas físicas interessados em diversificação de portfólio e impacto socioambiental positivo.  
 O projeto nasce da necessidade de oferecer crédito mais ágil, justo e transparente para o setor agrícola, reduzindo a dependência dos bancos tradicionais e valorizando práticas sustentáveis.
 
 ---
@@ -27,7 +27,7 @@ Ao mesmo tempo, pequenos e médios investidores buscam alternativas para além d
 - 🔒 **Para Ambos**: segurança antifraude, contratos digitais garantidos por CPR e acompanhamento em tempo real.  
 
 :::info
-O Peerseed atua como um ecossistema colaborativo, aproximando o capital urbano da produção rural.
+O Reevo atua como um ecossistema colaborativo, aproximando o capital urbano da produção rural.
 :::
 
 ---
@@ -58,7 +58,7 @@ O Peerseed atua como um ecossistema colaborativo, aproximando o capital urbano d
 
 ## Conclusão
 
-&emsp;O **Peerseed** representa a convergência entre finanças digitais e agronegócio sustentável, criando um modelo inovador que beneficia tanto quem produz quanto quem investe.  
+&emsp;O **Reevo** representa a convergência entre finanças digitais e agronegócio sustentável, criando um modelo inovador que beneficia tanto quem produz quanto quem investe.  
 Ao unir tecnologia, inclusão financeira e impacto socioambiental, a plataforma busca potencializar a vida de agricultores e oferecer novas oportunidades a investidores conscientes.
 
 ---

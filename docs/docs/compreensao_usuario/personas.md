@@ -64,7 +64,7 @@ Elas ajudam a equipe a entender **quem é o usuário, o que ele precisa e por qu
 &emsp;Para Marina, o maior desafio é encontrar investimentos alternativos que ofereçam **transparência real** quanto aos riscos e que demonstrem claramente o impacto socioambiental gerado. Ela percebe que muitas opções no mercado ainda carecem de métricas confiáveis de impacto ou de mecanismos claros de rastreabilidade.
 
 #### Objetivos
-&emsp;Com perfil de risco moderado, Marina busca diversificar sua carteira além da renda fixa tradicional. O cenário ideal para ela é aquele que combina **rentabilidade atrativa** com **impacto positivo e mensurável**. Valoriza segurança, transparência proporcionada por tecnologias como blockchain e a possibilidade de **escolher e acompanhar os projetos** em que investe, enxergando no Peerseed uma solução inovadora.
+&emsp;Com perfil de risco moderado, Marina busca diversificar sua carteira além da renda fixa tradicional. O cenário ideal para ela é aquele que combina **rentabilidade atrativa** com **impacto positivo e mensurável**. Valoriza segurança, transparência proporcionada por tecnologias como blockchain e a possibilidade de **escolher e acompanhar os projetos** em que investe, enxergando no Reevo uma solução inovadora.
 
 :::info
 De acordo com a **B3 (2024)**, o número de CPFs ativos em renda variável já ultrapassa **6 milhões no Brasil**, evidenciando o interesse crescente por alternativas de investimento além da poupança e da renda fixa tradicional.
@@ -90,4 +90,4 @@ De acordo com a **B3 (2024)**, o número de CPFs ativos em renda variável já u
 
 ### Síntese
 
-&emsp;Juntos, João e Marina representam os dois polos centrais do Peerseed: o tomador de crédito que precisa de soluções acessíveis e justas e a investidora que busca diversificação com impacto positivo. A plataforma conecta esses perfis de maneira transparente, utilizando tecnologia para gerar confiança mútua e benefícios concretos para ambos.
+&emsp;Juntos, João e Marina representam os dois polos centrais do Reevo: o tomador de crédito que precisa de soluções acessíveis e justas e a investidora que busca diversificação com impacto positivo. A plataforma conecta esses perfis de maneira transparente, utilizando tecnologia para gerar confiança mútua e benefícios concretos para ambos.

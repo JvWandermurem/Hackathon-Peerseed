@@ -5,7 +5,7 @@ title: Análise Financeira
 
 ## Contextualização
 
-&emsp;Esta seção consolida a análise de viabilidade do PeerSeed, traduzindo os resultados financeiros, arquitetônicos e de risco em um Plano de Ação Estratégico.
+&emsp;Esta seção consolida a análise de viabilidade do Reevo, traduzindo os resultados financeiros, arquitetônicos e de risco em um Plano de Ação Estratégico.
 
 ## Descrição do Projeto & Produto
 
@@ -33,7 +33,7 @@ title: Análise Financeira
 
 ## TAM (Tamanho de Mercado)
 
-O PeerSeed mira no **SAM (Serviceable Addressable Market)** de **R$ 50 bilhões** anuais, que representa o volume de crédito não atendido para PMEs e Agricultura Familiar.
+O Reevo mira no **SAM (Serviceable Addressable Market)** de **R$ 50 bilhões** anuais, que representa o volume de crédito não atendido para PMEs e Agricultura Familiar.
 
 * **SOM (Serviceable Obtainable Market):** A meta de adoção é atingir **R$ 50 milhões** em GMV no Ano 3 ≈ 0.1% do SAM.
 * **Tração:** A taxa de crescimento projetada de GMV é de 150% (Ano 2) e 100% (Ano 3), impulsionada pela oferta de liquidez aos investidores e pela confiança das parcerias e modelos de distribuição para investidor e agricultor.
@@ -120,7 +120,7 @@ Impacto de variações de 20% nas variáveis críticas (Ano 3).
 
 ## Break-even e Payback
 
-* **Ponto de Equilíbrio (Break-even):** O PeerSeed atinge o **Break-Even Operacional** (>= 0) no **Ano 4** do cenário base.
+* **Ponto de Equilíbrio (Break-even):** O Reevo atinge o **Break-Even Operacional** (>= 0) no **Ano 4** do cenário base.
 * **Tempo de Payback do Investimento (FCF cumulativo):** O capital inicial será recuperado (FCF acumulado >= 0$) em aproximadamente **4.5 anos**.
 
 ---

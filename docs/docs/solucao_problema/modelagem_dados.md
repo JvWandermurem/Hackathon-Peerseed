@@ -5,11 +5,11 @@ title: Modelagem de dados
 
 ## Introdução
 
-&emsp; A base de dados é o pilar de qualquer aplicação robusta, especialmente em um projeto como a Peerseed, onde a integridade, segurança e consistência dos dados são primordiais. Para o núcleo transacional do nosso sistema, optamos por um banco de dados relacional.
+&emsp; A base de dados é o pilar de qualquer aplicação robusta, especialmente em um projeto como a Reevo, onde a integridade, segurança e consistência dos dados são primordiais. Para o núcleo transacional do nosso sistema, optamos por um banco de dados relacional.
 
 &emsp;Essa escolha se deve à sua conformidade com as propriedades **ACID (Atomicidade, Consistência, Isolamento e Durabilidade)**, que garantem que operações financeiras complexas (como um investimento ou a distribuição de um pagamento) sejam concluídas com sucesso por inteiro ou revertidas, nunca deixando os dados em um estado inconsistente.
 
-O diagrama abaixo ilustra as principais entidades do nosso sistema e como elas se interligam para modelar o negócio do Peerseed.
+O diagrama abaixo ilustra as principais entidades do nosso sistema e como elas se interligam para modelar o negócio do Reevo.
 
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>

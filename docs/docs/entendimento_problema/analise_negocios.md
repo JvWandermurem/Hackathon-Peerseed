@@ -4,7 +4,7 @@ title: Análise de Negócio
 ---
 
 ## Resumo Executivo
-&emsp;O **PeerSeed** é uma **plataforma de crédito agrícola digital**, que atua no **modelo Peer-to-Peer (P2P) tokenizado**. Ele se destina primariamente a **Pequenos e Médios Produtores Rurais(PMEs)** - um público majoritariamente excluído do crédito formal - em busca de financiamento ágil e justo, e a **Investidores Pessoas Físicas** que buscam diversificação de seu portfólio de investimento. A plataforma busca promover a **democratização do acesso ao crédito**, eliminando a burocracia bancária através da análise automatizada e da formalização digital da Cédula de Produto Rural (CPR), enquanto oferece liquidez e transparência ao capital investido. 
+&emsp;O **Reevo** é uma **plataforma de crédito agrícola digital**, que atua no **modelo Peer-to-Peer (P2P) tokenizado**. Ele se destina primariamente a **Pequenos e Médios Produtores Rurais(PMEs)** - um público majoritariamente excluído do crédito formal - em busca de financiamento ágil e justo, e a **Investidores Pessoas Físicas** que buscam diversificação de seu portfólio de investimento. A plataforma busca promover a **democratização do acesso ao crédito**, eliminando a burocracia bancária através da análise automatizada e da formalização digital da Cédula de Produto Rural (CPR), enquanto oferece liquidez e transparência ao capital investido. 
 
 ---
 
@@ -21,7 +21,7 @@ title: Análise de Negócio
 ## Análise de Stakeholders
 ### Mapeamento, Expectativas e Resistências
 
-&emsp;A tabela abaixo detalha os principais grupos de interesse e como o PeerSeed deve gerenciar suas interações.
+&emsp;A tabela abaixo detalha os principais grupos de interesse e como o Reevo deve gerenciar suas interações.
 
 | Stakeholder | Expectativas em Relação à Solução | Possíveis Resistências / Preocupações |
 | :--- | :--- | :--- |
@@ -45,9 +45,9 @@ title: Análise de Negócio
 ---
 
 ## Riscos e Mitigações
-### Riscos e Mitigações do Projeto PeerSeed
+### Riscos e Mitigações do Projeto Reevo
 
-&emsp;O PeerSeed, por ser uma plataforma inovadora de crédito P2P e tokenização no agronegócio, está sujeito a riscos financeiros, tecnológicos, de mercado e regulatórios. A tabela abaixo detalha os principais riscos e as estratégias de mitigação integradas aos Requisitos Funcionais (RFs) do projeto.
+&emsp;O Reevo, por ser uma plataforma inovadora de crédito P2P e tokenização no agronegócio, está sujeito a riscos financeiros, tecnológicos, de mercado e regulatórios. A tabela abaixo detalha os principais riscos e as estratégias de mitigação integradas aos Requisitos Funcionais (RFs) do projeto.
 
 ---
 

@@ -5,7 +5,7 @@ title: Plano de Monetização
 
 ## Contextualização
 
-&emsp;O plano de monetização do PeerSeed é um modelo **híbrido *fee-based***, projetado para gerar receita de ambos os lados do ecossistema (Agricultor e Investidor), garantindo a sustentabilidade e o alinhamento com o sucesso das operações de crédito.
+&emsp;O plano de monetização do Reevo é um modelo **híbrido *fee-based***, projetado para gerar receita de ambos os lados do ecossistema (Agricultor e Investidor), garantindo a sustentabilidade e o alinhamento com o sucesso das operações de crédito.
 
 
 ## Fontes de Receita
@@ -30,7 +30,7 @@ title: Plano de Monetização
 | **Performance** | **15% a 20%** sobre os juros brutos recebidos pelo Investidor. | Garante uma alta margem para a plataforma e mantém o **Retorno Líquido** do Investidor atraente comparado à renda fixa. |
 | **Transação Marketplace** | **1% a 1.5%** do valor da transação no Mercado Secundário. | Taxa baixa o suficiente para estimular a liquidez sem onerar o Investidor. |
 
-&emsp;O modelo de receita do PeerSeed mistura **taxas transacionais e assinaturas**, otimizando a adesão tanto B2C (Agricultor/Investidor PF) quanto B2B (Cooperativas), e está alinhado às margens e *benchmarks* de plataformas P2P e *fintechs* de crédito.
+&emsp;O modelo de receita do Reevo mistura **taxas transacionais e assinaturas**, otimizando a adesão tanto B2C (Agricultor/Investidor PF) quanto B2B (Cooperativas), e está alinhado às margens e *benchmarks* de plataformas P2P e *fintechs* de crédito.
 
 ---
 
@@ -47,7 +47,7 @@ title: Plano de Monetização
 ---
 
 ## 4. Riscos e Mitigações Financeiras
-&emsp;A sustentabilidade do PeerSeed depende da gestão eficaz dos riscos inerentes ao crédito P2P e à operação fintech. A seguir é detalhado os principais riscos que podem impactar o fluxo de caixa e a rentabilidade do projeto, bem como as estratégias de mitigação integradas à plataforma para garantir sua estabilidade e crescimento.
+&emsp;A sustentabilidade do Reevo depende da gestão eficaz dos riscos inerentes ao crédito P2P e à operação fintech. A seguir é detalhado os principais riscos que podem impactar o fluxo de caixa e a rentabilidade do projeto, bem como as estratégias de mitigação integradas à plataforma para garantir sua estabilidade e crescimento.
 
 | Risco Financeiro | Estratégia de Mitigação 
 | :--- | :--- | 

@@ -5,7 +5,7 @@ title: Métricas de avaliação
 
 ## Contextualização
 
-&emsp;Para medir o sucesso do PeerSeed, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (João e Marina).
+&emsp;Para medir o sucesso do Reevo, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (João e Marina).
 
 ## Indicadores Quantitativos (Desempenho e Financeiro)
 &emsp;Estes indicadores comprovam a viabilidade econômica e a escala da plataforma no mercado.
@@ -27,7 +27,7 @@ title: Métricas de avaliação
 
 | Indicador | Como será medido | Meta/Parâmetro de Sucesso |
 | :--- | :--- | :--- |
-| **Net Promoter Score (NPS)** | Pesquisa rápida de 0 a 10 perguntando aos usuários a probabilidade de recomendarem o PeerSeed a um amigo/colega. | **NPS** acima de **50**, indicando alta fidelização e satisfação (principalmente após a primeira captação/investimento). |
+| **Net Promoter Score (NPS)** | Pesquisa rápida de 0 a 10 perguntando aos usuários a probabilidade de recomendarem o Reevo a um amigo/colega. | **NPS** acima de **50**, indicando alta fidelização e satisfação (principalmente após a primeira captação/investimento). |
 | **Taxa de Conclusão da Jornada** | Percentual de usuários que iniciam o cadastro (RF-CAD-001) e o concluem, ou que iniciam a solicitação de crédito e a finalizam (RF-AGR-001). | Taxa de conclusão de **cadastro (Onboarding)** superior a **80%**, refletindo a usabilidade da plataforma. |
 | **Feedback de Conformidade Legal** | Coleta de *feedback* dos Cartórios de Registro sobre a aceitação e o processo de registro da **CPR Digital (ICP-Brasil)**. | **Zero rejeições** da CPR digital por não conformidade, comprovando a robustez jurídica da solução (RF-AGR-003). |
 | **Engajamento com Relatórios de Impacto** | Número de Investidores que acessam ou fazem download dos **Relatórios de Impacto (RF-INV-007)** mensalmente. | Mais de **50%** dos Investidores ativos acessam os relatórios, validando o valor do diferencial ESG. |

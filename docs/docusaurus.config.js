@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Peerseed',
-  tagline: 'Peerseed are cool',
+  title: 'Reevo',
+  tagline: 'Reevo are cool',
   favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -23,12 +23,12 @@ const config = {
   url: 'https://JvWandermurem.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Hackathon-Peerseed',
+  baseUrl: '/Hackathon-Reevo',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'JvWandermurem', // Usually your GitHub org/user name.
-  projectName: 'Hackathon-Peerseed', // Usually your repo name.
+  projectName: 'Hackathon-Reevo', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -87,7 +87,7 @@ const config = {
       navbar: {
         title: 'Documentação',
         logo: {
-          alt: 'Peerseed Logo',
+          alt: 'Reevo Logo',
           src: 'img/logo.svg'
               },
         items: [

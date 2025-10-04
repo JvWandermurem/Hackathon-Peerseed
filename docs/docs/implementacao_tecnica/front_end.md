@@ -5,11 +5,11 @@ sidebar_position: 2
 
 # Frontend
 
-## Interfaces da Plataforma Peerseed
+## Interfaces da Plataforma Reevo
 
-&emsp;Esta seção apresenta as principais telas da aplicação **Peerseed**, contemplando tanto o perfil **Agricultor** quanto o **Investidor**. Cada tela é acompanhada de sua justificativa, descrição de elementos e espaço para inserção da imagem correspondente.
+&emsp;Esta seção apresenta as principais telas da aplicação **Reevo**, contemplando tanto o perfil **Agricultor** quanto o **Investidor**. Cada tela é acompanhada de sua justificativa, descrição de elementos e espaço para inserção da imagem correspondente.
 
-&emsp;É possível visualizar a aplicação do front-end através desse link: [Peerseed](https://peerseed-agro-hub.lovable.app/)
+&emsp;É possível visualizar a aplicação do front-end através desse link: [Reevo](https://Reevo-agro-hub.lovable.app/)
 
 ---
 
@@ -154,7 +154,7 @@ sidebar_position: 2
 
 ## Conclusão
 
-&emsp;As telas apresentadas correspondem às **interfaces já desenvolvidas da plataforma Peerseed**, cobrindo de forma completa as jornadas dos dois perfis principais: **Agricultor** e **Investidor**. Cada tela foi implementada com base nos requisitos funcionais, garantindo usabilidade, clareza nas informações e aderência à identidade visual definida.  
+&emsp;As telas apresentadas correspondem às **interfaces já desenvolvidas da plataforma Reevo**, cobrindo de forma completa as jornadas dos dois perfis principais: **Agricultor** e **Investidor**. Cada tela foi implementada com base nos requisitos funcionais, garantindo usabilidade, clareza nas informações e aderência à identidade visual definida.  
 
 &emsp;A organização contempla desde o acesso inicial até a gestão de contratos, pagamentos, marketplace e relatórios, estruturando uma experiência que une **tecnologia, segurança e impacto socioambiental**.  
 

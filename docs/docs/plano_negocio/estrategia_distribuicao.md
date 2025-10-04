@@ -5,7 +5,7 @@ title: Estratégia de Distribuição
 
 ## Contextualização
 
-&emsp;O PeerSeed exige uma estratégia de distribuição **híbrida**, que combine a escala do digital  com a capilaridade e a confiança do relacionamento no campo. A distribuição será segmentada para atender aos dois públicos distintos de clientes da plataforma - o agricultor e o investidor - ,        focando em onde cada um busca informação e confiança.O posicionamento do PeerSeed no mercado deve ser consistente, comunicando **segurança tecnológica, agilidade no crédito** e **retorno com impacto**
+&emsp;O Reevo exige uma estratégia de distribuição **híbrida**, que combine a escala do digital  com a capilaridade e a confiança do relacionamento no campo. A distribuição será segmentada para atender aos dois públicos distintos de clientes da plataforma - o agricultor e o investidor - ,        focando em onde cada um busca informação e confiança.O posicionamento do Reevo no mercado deve ser consistente, comunicando **segurança tecnológica, agilidade no crédito** e **retorno com impacto**
 
 :::info
 Os 4 Ps do marketing são um modelo de estratégia de marketing que inclui os elementos Produto, Preço, Praça (ou distribuição) e Promoção. Esses conceitos formam a base para um planejamento de marketing eficaz, ajudando as empresas a alcançar o público-alvo certo, maximizar os lucros e criar uma vantagem competitiva 
@@ -22,7 +22,7 @@ Os 4 Ps do marketing são um modelo de estratégia de marketing que inclui os el
 
 ### Preço 
 
-&emsp;O modelo é de **monetização por taxas (fee-based)**, garantindo que o PeerSeed ganhe sobre o sucesso e o volume das transações.
+&emsp;O modelo é de **monetização por taxas (fee-based)**, garantindo que o Reevo ganhe sobre o sucesso e o volume das transações.
 
 * **Taxa de Originação (RF-TAX-001):** Percentual cobrado do **Agricultor** sobre o valor total do empréstimo, cobrindo os custos de validação e tecnologia.
 * **Taxa de Performance (RF-TAX-001):** Percentual cobrado dos **Investidores** sobre o rendimento (juros) gerado pelo ativo, alinhando o sucesso da plataforma ao sucesso do investimento.
