@@ -1,0 +1,14 @@
+# Framework web e servidor ASGI
+fastapi
+uvicorn[standard]
+
+# ORM e Migrações de Banco de Dados
+sqlalchemy[asyncio]
+alembic
+asyncpg # Driver assíncrono para PostgreSQL
+
+# Validação de dados
+pydantic
+
+# Dependência do Bot (conforme sua escolha)
+Telethon

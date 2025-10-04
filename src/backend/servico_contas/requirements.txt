@@ -1,0 +1,15 @@
+# Framework web e servidor ASGI
+fastapi
+uvicorn[standard]
+
+# ORM e Migrações de Banco de Dados
+sqlalchemy[asyncio]
+alembic
+asyncpg
+
+# Validação de dados
+pydantic
+
+# Dependências de Segurança
+passlib[bcrypt] # Para hashing de senhas
+python-jose[cryptography] # Para manipulação de JWT

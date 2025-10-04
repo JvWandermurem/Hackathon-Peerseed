@@ -1,0 +1,120 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: db_peerseed
+    environment:
+      - POSTGRES_USER=peerseed_user
+      - POSTGRES_PASSWORD=strong_password
+      - POSTGRES_DB=peerseed_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - peerseed_network
+
+  servico_contas:
+    build: ./src/backend/servico_contas
+    container_name: servico_contas
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_contas:/app
+    ports:
+      - "8001:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_analise_credito:
+    build: ./src/backend/servico_analise_credito
+    container_name: servico_analise_credito
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_analise_credito:/app
+    ports:
+      - "8002:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_contratos:
+    build: ./src/backend/servico_contratos
+    container_name: servico_contratos
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_contratos:/app
+    ports:
+      - "8003:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_marketplace:
+    build: ./src/backend/servico_marketplace
+    container_name: servico_marketplace
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_marketplace:/app
+    ports:
+      - "8004:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_carteira_digital:
+    build: ./src/backend/servico_carteira_digital
+    container_name: servico_carteira_digital
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_carteira_digital:/app
+    ports:
+      - "8005:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_telegram:
+    build: ./src/backend/servico_telegram
+    container_name: servico_telegram
+    # CORREÇÃO APLICADA AQUI
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend/servico_telegram:/app
+    ports:
+      - "8006:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  peerseed_network:
+    driver: bridge
