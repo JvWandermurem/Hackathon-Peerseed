@@ -27,10 +27,11 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'JvWandermurem', // Usually your GitHub org/user name.
-  projectName: 'Hackathon-Peerseed', // Usually your repo name.
+  organizationName: 'JvWandermurem',
+  projectName: 'Hackathon-Peerseed',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
+  githubHost: 'github.com', 
 
 
   onBrokenLinks: 'throw',
