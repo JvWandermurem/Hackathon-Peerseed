@@ -8,8 +8,14 @@ alembic
 asyncpg
 
 # Validação de dados
+pydantic[email]
 pydantic
+python-multipart
+
 
 # Dependências de Segurança
-passlib[bcrypt] # Para hashing de senhas
-python-jose[cryptography] # Para manipulação de JWT
+passlib[bcrypt]
+python-jose[cryptography]
+
+# Adicione esta linha para fixar a versão do bcrypt
+bcrypt==3.2.0
