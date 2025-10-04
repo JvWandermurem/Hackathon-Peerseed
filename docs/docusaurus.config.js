@@ -23,12 +23,15 @@ const config = {
   url: 'https://JvWandermurem.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Hackathon-Peerseed',
+  baseUrl: '/Hackathon-Peerseed/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'JvWandermurem', // Usually your GitHub org/user name.
   projectName: 'Hackathon-Peerseed', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
+
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
