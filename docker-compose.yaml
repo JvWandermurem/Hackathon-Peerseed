@@ -1,0 +1,142 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: db_peerseed
+    environment:
+      - POSTGRES_USER=peerseed_user
+      - POSTGRES_PASSWORD=strong_password
+      - POSTGRES_DB=peerseed_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    networks:
+      - peerseed_network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peerseed_user -d peerseed_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  servico_contas:
+    build:
+      context: ./src/backend/servico_contas
+    container_name: servico_contas
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app/servico_contas
+    ports:
+      - "8001:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_analise_credito:
+    build:
+      context: ./src/backend/servico_analise_credito
+    container_name: servico_analise_credito
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app/servico_analise_credito
+    ports:
+      - "8002:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_contratos:
+    build:
+      context: ./src/backend/servico_contratos
+    container_name: servico_contratos
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app/servico_contratos
+    ports:
+      - "8003:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_marketplace:
+    build:
+      context: ./src/backend/servico_marketplace
+    container_name: servico_marketplace
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app/servico_marketplace
+    ports:
+      - "8004:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_carteira_digital:
+    build:
+      context: ./src/backend/servico_carteira_digital
+    container_name: servico_carteira_digital
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src/backend:/app
+    working_dir: /app/servico_carteira_digital
+    ports:
+      - "8005:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+
+  servico_telegram:
+    build:
+      context: ./src/backend/servico_telegram
+    container_name: servico_telegram
+    command: python /app/servico_telegram/app/main.py
+    volumes:
+      - ./src/backend:/app
+      - ./src/backend/servico_telegram/session_data:/session
+    working_dir: /app/servico_telegram
+    # ATENÇÃO: Adicione 'tty: true' para manter o terminal interativo para o login
+    tty: true
+    ports:
+      - "8006:8000"
+    networks:
+      - peerseed_network
+    depends_on:
+      - db
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql+asyncpg://peerseed_user:strong_password@db:5432/peerseed_db
+      - TELEGRAM_API_ID=${TELEGRAM_API_ID}
+      - TELEGRAM_API_HASH=${TELEGRAM_API_HASH}
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  peerseed_network:
+    driver: bridge
