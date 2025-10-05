@@ -1,3 +1,4 @@
+// src/pages/Signup.tsx
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -10,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Sprout } from "lucide-react";
+import authService from "@/services/authService";
 
 const signupSchema = z.object({
   nome_completo: z.string().min(3, "Nome completo deve ter pelo menos 3 caracteres"),
@@ -17,10 +19,9 @@ const signupSchema = z.object({
   senha: z.string().min(6, "Senha deve ter pelo menos 6 caracteres"),
   cpf: z.string().regex(/^\d{11}$/, "CPF deve ter 11 dígitos"),
   celular: z.string().regex(/^\d{10,11}$/, "Celular deve ter 10 ou 11 dígitos"),
-  perfil_prioritario: z.enum(["AGRICULTOR", "INVESTIDOR"], {
+  perfil: z.enum(["AGRICULTOR", "INVESTIDOR"], {
     required_error: "Selecione um perfil",
   }),
-  data_nascimento: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Use o formato DD/MM/AAAA"),
 });
 
 type SignupForm = z.infer<typeof signupSchema>;
@@ -42,23 +43,28 @@ const Signup = () => {
   const onSubmit = async (data: SignupForm) => {
     setIsLoading(true);
     
-    // Simulação - aqui será a integração com backend
-    console.log("Dados do cadastro:", data);
-    
-    setTimeout(() => {
-      toast({
-        title: "Cadastro realizado!",
-        description: "Bem-vindo ao Reevo.",
-      });
-      setIsLoading(false);
+    try {
+      // Chama o serviço de autenticação para registrar o usuário
+      await authService.signup(data);
       
-      // Redireciona baseado no perfil
-      if (data.perfil_prioritario === "AGRICULTOR") {
-        navigate("/agricultor");
-      } else {
-        navigate("/investidor");
-      }
-    }, 1000);
+      toast({
+        title: "Cadastro realizado com sucesso!",
+        description: "Faça login para acessar sua conta.",
+      });
+      
+      // Redireciona para a página de login
+      navigate("/login");
+    } catch (error: any) {
+      console.error("Erro no cadastro:", error);
+      
+      toast({
+        variant: "destructive",
+        title: "Erro no cadastro",
+        description: error.message || "Não foi possível criar sua conta. Tente novamente.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -81,6 +87,7 @@ const Signup = () => {
                 <Input
                   id="nome_completo"
                   placeholder="João da Silva"
+                  disabled={isLoading}
                   {...register("nome_completo")}
                 />
                 {errors.nome_completo && (
@@ -94,6 +101,7 @@ const Signup = () => {
                   id="email"
                   type="email"
                   placeholder="joao.silva@email.com"
+                  disabled={isLoading}
                   {...register("email")}
                 />
                 {errors.email && (
@@ -107,6 +115,7 @@ const Signup = () => {
                   id="senha"
                   type="password"
                   placeholder="••••••••"
+                  disabled={isLoading}
                   {...register("senha")}
                 />
                 {errors.senha && (
@@ -120,6 +129,7 @@ const Signup = () => {
                   id="cpf"
                   placeholder="12345678900"
                   maxLength={11}
+                  disabled={isLoading}
                   {...register("cpf")}
                 />
                 {errors.cpf && (
@@ -133,6 +143,7 @@ const Signup = () => {
                   id="celular"
                   placeholder="11987654321"
                   maxLength={11}
+                  disabled={isLoading}
                   {...register("celular")}
                 />
                 {errors.celular && (
@@ -141,32 +152,23 @@ const Signup = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="data_nascimento">Data de Nascimento</Label>
-                <Input
-                  id="data_nascimento"
-                  placeholder="16/09/1970"
-                  {...register("data_nascimento")}
-                />
-                {errors.data_nascimento && (
-                  <p className="text-sm text-destructive">{errors.data_nascimento.message}</p>
+                <Label htmlFor="perfil">Perfil</Label>
+                <Select 
+                  onValueChange={(value) => setValue("perfil", value as "AGRICULTOR" | "INVESTIDOR")}
+                  disabled={isLoading}
+                >
+                  <SelectTrigger id="perfil">
+                    <SelectValue placeholder="Selecione seu perfil" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="AGRICULTOR">Agricultor</SelectItem>
+                    <SelectItem value="INVESTIDOR">Investidor</SelectItem>
+                  </SelectContent>
+                </Select>
+                {errors.perfil && (
+                  <p className="text-sm text-destructive">{errors.perfil.message}</p>
                 )}
               </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="perfil_prioritario">Perfil Prioritário</Label>
-              <Select onValueChange={(value) => setValue("perfil_prioritario", value as "AGRICULTOR" | "INVESTIDOR")}>
-                <SelectTrigger id="perfil_prioritario">
-                  <SelectValue placeholder="Selecione seu perfil" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="AGRICULTOR">Agricultor</SelectItem>
-                  <SelectItem value="INVESTIDOR">Investidor</SelectItem>
-                </SelectContent>
-              </Select>
-              {errors.perfil_prioritario && (
-                <p className="text-sm text-destructive">{errors.perfil_prioritario.message}</p>
-              )}
             </div>
 
             <Button type="submit" className="w-full" disabled={isLoading}>

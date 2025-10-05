@@ -11,6 +11,7 @@ from .scoring import predict_simulado, traduzir_probabilidade_para_negocio
 from sqlalchemy.exc import OperationalError
 import asyncio
 from shared.database.database import get_db, engine
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
@@ -19,6 +20,20 @@ app = FastAPI(
     description="Responsável por receber solicitações de crédito, gerar o AgroScore e registrar a CPR.",
     version="1.0.0"
 )
+
+origins = [
+    "http://localhost:8080",   # se você roda frontend em localhost
+    "http://192.168.17.140:8080"  # seu IP local
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # --- Endpoints da API ---
 
@@ -56,7 +71,11 @@ async def criar_analise(
     Recebe uma solicitação de crédito, executa o simulador de score
     e cria uma nova CPR no banco de dados.
     """
-    if current_user.perfil != "AGRICULTOR":
+    # ------------------------------------------------------------------
+    # CORREÇÃO CRÍTICA PARA O ERRO 403: Verificar se o perfil é AGRICULTOR
+    # Usamos .upper() para garantir que aceita "AGRICULTOR" ou "agricultor"
+    # ------------------------------------------------------------------
+    if current_user.perfil.upper() != "AGRICULTOR":
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Apenas usuários com perfil de AGRICULTOR podem solicitar crédito."

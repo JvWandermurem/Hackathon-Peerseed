@@ -1,10 +1,62 @@
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
+import { AnaliseResponse } from "@/models/Analise";
+import analiseService from "@/services/analiseService";
 
 export const CreditScoreCard = () => {
-  const score = 774;
+  const [analise, setAnalise] = useState<AnaliseResponse | null>(null);
+
+  useEffect(() => {
+    const fetchAnalise = async () => {
+      try {
+        const data = await analiseService.getMeuScore();
+        setAnalise(data);
+      } catch (err: any) {
+        if (err.response?.status === 404) {
+          console.warn("Nenhuma análise de crédito encontrada.");
+          setAnalise({
+            status: "NENHUMA_SOLICITACAO",
+            prazo_meses: 0,
+            score_risco: null,
+            taxa_juros_anual: 0,
+            valor_solicitado: 0,
+            cultura: "",
+            pontos_positivos: [],
+            sugestoes_melhora: [],
+          });
+        } else {
+          console.error("Erro ao buscar análise:", err);
+        }
+      }
+    };
+    fetchAnalise();
+  }, []);
+
+  if (!analise) return <p>Carregando...</p>; // ou skeleton
+
+  const score = analise.score_risco
+    ? scoreEnumToNumber(analise.score_risco)
+    : 0;
   const maxScore = 1000;
   const percentage = (score / maxScore) * 100;
+
+  function scoreEnumToNumber(risco: string) {
+    switch (risco) {
+      case "A":
+        return 900;
+      case "B":
+        return 800;
+      case "C":
+        return 650;
+      case "D":
+        return 550;
+      case "E":
+        return 400;
+      default:
+        return 0;
+    }
+  }
 
   const getScoreLabel = (score: number) => {
     if (score < 500) return "RUIM";

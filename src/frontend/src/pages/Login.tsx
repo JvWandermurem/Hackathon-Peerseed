@@ -1,3 +1,4 @@
+// src/pages/Login.tsx
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -9,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Sprout } from "lucide-react";
+import authService from "@/services/authService";
 
 const loginSchema = z.object({
   email: z.string().email("Email inválido"),
@@ -33,19 +35,38 @@ const Login = () => {
   const onSubmit = async (data: LoginForm) => {
     setIsLoading(true);
     
-    // Simulação - aqui será a integração com backend
-    console.log("Dados do login:", data);
-    
-    setTimeout(() => {
-      toast({
-        title: "Login realizado!",
-        description: "Bem-vindo de volta.",
-      });
-      setIsLoading(false);
+    try {
+      // Faz login e recebe o token JWT
+      await authService.login(data.email, data.senha);
       
-      // Por padrão, redireciona para agricultor
-      navigate("/agricultor");
-    }, 1000);
+      // Pega o usuário do localStorage (foi salvo pelo authService)
+      const user = authService.getCurrentUser();
+      
+      toast({
+        title: "Login realizado com sucesso!",
+        description: `Bem-vindo de volta, ${user?.sub || 'usuário'}!`,
+      });
+      
+      // Redireciona baseado no perfil
+      if (user?.perfil === "AGRICULTOR") {
+        navigate("/agricultor");
+      } else if (user?.perfil === "INVESTIDOR") {
+        navigate("/investidor");
+      } else {
+        // Fallback caso o perfil não seja reconhecido
+        navigate("/");
+      }
+    } catch (error: any) {
+      console.error("Erro no login:", error);
+      
+      toast({
+        variant: "destructive",
+        title: "Erro no login",
+        description: error.message || "Email ou senha incorretos.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -68,6 +89,7 @@ const Login = () => {
                 id="email"
                 type="email"
                 placeholder="joao.silva@email.com"
+                disabled={isLoading}
                 {...register("email")}
               />
               {errors.email && (
@@ -81,6 +103,7 @@ const Login = () => {
                 id="senha"
                 type="password"
                 placeholder="••••••••"
+                disabled={isLoading}
                 {...register("senha")}
               />
               {errors.senha && (

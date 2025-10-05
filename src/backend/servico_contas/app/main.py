@@ -3,13 +3,13 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import OperationalError
 import asyncio
-
-# --- ATENÇÃO: Importações corrigidas ---
 from . import crud
-# Agora importamos de 'shared', que é visível por causa do PYTHONPATH
 from shared.database import schemas
 from shared.database import models
 from shared.database.database import get_db, engine
+from .middlewares import setup_cors
+from app.security import get_current_user
+
 # ------------------------------------
 
 app = FastAPI(
@@ -17,6 +17,8 @@ app = FastAPI(
     description="Microsserviço responsável pelo cadastro, autenticação e gestão do schema do DB.",
     version="1.0.0"
 )
+setup_cors(app)
+
 
 # --- LÓGICA DE STARTUP ---
 @app.on_event("startup")
@@ -73,6 +75,11 @@ async def login_for_access_token(
     }
     access_token = crud.create_access_token(data=access_token_data)
     return {"access_token": access_token, "token_type": "bearer"}
+
+
+@app.get("/me", response_model=schemas.UserResponse, tags=["Autenticação"])
+async def read_current_user(current_user: models.Usuario = Depends(get_current_user)):
+    return current_user
 
 @app.get("/health", tags=["Monitoring"])
 def health_check():

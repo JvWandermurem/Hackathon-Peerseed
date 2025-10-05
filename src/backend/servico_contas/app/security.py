@@ -4,8 +4,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from jose import JWTError, jwt
 
 from . import crud
-from ...shared.database import get_db, schemas
-
+from shared.database.database import get_db
+from shared.database import schemas
 # Esta linha cria um "esquema" que diz ao FastAPI:
 # "Para se proteger, procure por um token no cabeçalho 'Authorization: Bearer <token>'"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")

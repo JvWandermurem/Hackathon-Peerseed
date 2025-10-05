@@ -56,6 +56,7 @@ class StatusCprEnum(str, enum.Enum):
     EM_PAGAMENTO = "EM_PAGAMENTO"
     QUITADO = "QUITADO"
     INADIMPLENTE = "INADIMPLENTE"
+    NENHUMA = "NENHUMA"
 
 class RiscoEnum(str, enum.Enum):
     A = "A"
