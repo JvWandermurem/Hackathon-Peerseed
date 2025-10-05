@@ -30,7 +30,7 @@ title: Planejamento Backend
 ### Interação com Banco de Dados: SQLAlchemy
 &emsp; A comunicação com o banco de dados `PostgreSQL` é abstraída pelo `SQLAlchemy`, o ORM padrão da comunidade Python. Utilizamos exclusivamente seu motor assíncrono (create_async_engine), que se integra ao FastAPI. As tabelas do banco de dados são mapeadas para classes Python (models), o que aumenta a produtividade e a segurança do código.
 
-### alidação de Dados: Pydantic
+### Validação de Dados: Pydantic
 &emsp; O Pydantic é utilizado para definir schemas de dados claros para todas as operações de API. Adotamos o padrão de ter schemas específicos para entrada (Request Models) e saída (Response Models), o que nos proporciona:
 
 **Validação Automática:** Requisições com dados inválidos ou faltando são rejeitadas automaticamente pelo framework.
