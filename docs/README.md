@@ -43,7 +43,7 @@
 
 A documentação completa do projeto, incluindo arquitetura, fluxos e modelo de dados, pode ser encontrada em nosso site do Docusaurus.
 
-**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Reevo/)**
+**[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
 
 ### Problema Resolvido
 
@@ -99,7 +99,7 @@ Reevo/
 
 ### Documentação
 
-A documentação completa do Reevo pode ser acessada através do link: **[Documentação Reevo](https://jvwandermurem.github.io/Hackathon-Reevo/)**
+A documentação completa do Reevo pode ser acessada através do link: **[Documentação Reevo](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
 
 Para executar a documentação localmente (requer Node.js e npm):
 ```bash
