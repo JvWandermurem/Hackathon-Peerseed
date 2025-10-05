@@ -19,7 +19,7 @@ title: Fluxo de Dados
 <p style={{textAlign: 'center'}}> Fluxo de Solicitação e Aprovação de Crédito</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_solicitacao_credito_Reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_solicitacao_credito_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -87,7 +87,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Realização de Investimento</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_realizacao_investimento_Reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_realizacao_investimento_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -154,7 +154,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Pagamento de Parcela e Distribuição</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_recebimento_investimento_Reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_recebimento_investimento_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>

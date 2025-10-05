@@ -6,6 +6,10 @@ sidebar_position: 0
 
 # Visão Geral do Projeto Reevo
 
+<div align="center">
+  <img src="../docs/static/img/reevo.gif" alt="Banner Reevo - Agricultura e Tecnologia" width="800"/>
+</div>
+
 ## Introdução
 
 &emsp;O **Reevo** é uma plataforma digital de crédito peer-to-peer (P2P) que conecta agricultores pequenos e médios a investidores pessoas físicas interessados em diversificação de portfólio e impacto socioambiental positivo.  
