@@ -152,6 +152,6 @@ Esta sessão garante aos *Auditors* e Investidores que a lógica financeira e de
 
   
 
-| Nome do Contrato | Rede | Chain ID | Endereço (Exemplo para Documentação) |
+| Nome do Contrato | Rede | Chain ID | Endereço |
 | :--- | :--- | :--- | :--- |
 | **PeerSeedCPR.sol** | **Polygon Amoy (Teste)** | `80002` | **[0x5bd4e0a1774385c0f2d679471f30c0e898f6d77dc5fcde831257534d8679ce78]** |
