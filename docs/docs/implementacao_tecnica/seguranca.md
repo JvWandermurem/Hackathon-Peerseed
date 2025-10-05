@@ -17,7 +17,7 @@ import Admonition from '@theme/Admonition';
 
 - Garantir que os dados sejam acessíveis apenas por pessoas autorizadas.
 
-- A proteção dos dados pessoais e financeiros de João e Marina é nossa maior prioridade.
+- A proteção dos dados pessoais e financeiros de Sérgio e Marina é nossa maior prioridade.
 
 Controles Implementados:
 
@@ -113,7 +113,7 @@ Nossa arquitetura e processos de desenvolvimento são projetados para mitigar pr
 <Admonition type="info" title="Exemplos">
 Exemplo 1: Autenticação de Dois Fatores (2FA): O requisito RF-CAD-003 (2FA obrigatório ou fortemente incentivado) adiciona um passo ao processo de login. Para a investidora Marina, que gerencia seu capital na plataforma, essa pequena fricção é um preço baixo a se pagar pela garantia de que sua conta está protegida contra acessos não autorizados.
 
-Exemplo 2: Verificação de Identidade (KYC): O processo de onboarding, que exige o envio de documentos e selfie (RF-CAD-001), é o maior ponto de atrito na jornada inicial do usuário. Poderíamos ter um cadastro mais simples, mas isso abriria a plataforma para fraudes e impediria a conformidade regulatória. Escolhemos conscientemente essa barreira inicial para garantir um ecossistema seguro e legal para todos os participantes, protegendo os investimentos de Marina e a legitimidade dos empréstimos de João.
+Exemplo 2: Verificação de Identidade (KYC): O processo de onboarding, que exige o envio de documentos e selfie (RF-CAD-001), é o maior ponto de atrito na jornada inicial do usuário. Poderíamos ter um cadastro mais simples, mas isso abriria a plataforma para fraudes e impediria a conformidade regulatória. Escolhemos conscientemente essa barreira inicial para garantir um ecossistema seguro e legal para todos os participantes, protegendo os investimentos de Marina e a legitimidade dos empréstimos de Sérgio.
 </Admonition>
 
 ### Consistência Forte vs. Performance/Disponibilidade

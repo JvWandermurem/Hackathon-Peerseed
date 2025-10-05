@@ -6,7 +6,7 @@ import Admonition from '@theme/Admonition';
 
 ## Introdução
 
-&emsp; DevOps no Reevo é a ponte que conecta o desenvolvimento de software às operações de infraestrutura. Nosso objetivo é criar processos automatizados e integrados que nos permitam entregar valor aos nossos usuários, **João e Mariana**  de forma rápida, frequente e confiável.
+&emsp; DevOps no Reevo é a ponte que conecta o desenvolvimento de software às operações de infraestrutura. Nosso objetivo é criar processos automatizados e integrados que nos permitam entregar valor aos nossos usuários, **Sérgio e Marina**  de forma rápida, frequente e confiável.
 
 Nossos principais objetivos são:
 

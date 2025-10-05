@@ -24,7 +24,7 @@ sidebar_position: 6
 <p style={{textAlign: 'center'}}>Paleta de cores</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/paleta_cores.png").default} style={{width: 800}} alt="Paleta de cores" />
+        <img src={require("../../static/img/paleta_cores.png").default} style={{width: 1024}} alt="Paleta de cores" />
         <br/>
     </div>
 </div>
@@ -47,7 +47,7 @@ Essa paleta garante acessibilidade ao oferecer contraste adequado entre texto e 
 <p style={{textAlign: 'center'}}>Tipografia</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tipografia.png").default} style={{width: 800}} alt="Paleta de cores" />
+        <img src={require("../../static/img/tipografia.png").default} style={{width: 1024}} alt="Paleta de cores" />
         <br/>
     </div>
 </div>
@@ -67,7 +67,7 @@ Essa paleta garante acessibilidade ao oferecer contraste adequado entre texto e 
 <p style={{textAlign: 'center'}}>Logotipo</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/logo.png").default} style={{width: 800}} alt="Logotipo" />
+        <img src={require("../../static/img/logo.png").default} style={{width: 1024}} alt="Logotipo" />
         <br/>
     </div>
 </div>

@@ -7,19 +7,19 @@ title: Fluxo de Dados
 
 &emsp;O fluxo de dados descreve como as informações e valores circulam entre os diferentes atores (agricultores, investidores e administradores), os serviços internos da plataforma e os sistemas externos integrados (ex.: gateways de pagamento, registradoras de CPR, bureaus de crédito).
 
-&emsp;Esses fluxos desenvolvidos pensados personas **João(Agricultor)** e **Mariana(Investidora)** para garantir que o sistema opere de forma consistente, segura e transparente, evitando falhas de comunicação e assegurando a rastreabilidade de cada operação.
+&emsp;Esses fluxos desenvolvidos pensados personas **Sérgio(Agricultor)** e **Marina(Investidora)** para garantir que o sistema opere de forma consistente, segura e transparente, evitando falhas de comunicação e assegurando a rastreabilidade de cada operação.
 
 &emsp;Para representar essas interações, foram elaborados seis fluxos principais: Solicitação e Aprovação de Crédito, Realização de Investimento, Pagamento de Parcela e Distribuição (Assíncrono), Venda no Mercado Secundário, Saque de Fundos (Off-Ramp) e Gestão de Inadimplência, cada um detalhando as etapas críticas de dados e integrações que sustentam a operação da plataforma.
 
 ## Fluxo de Solicitação e Aprovação de Crédito
 
-&emsp;Este fluxo descreve a jornada do agricultor João desde o cadastro até ter sua proposta listada no marketplace. Ele demonstra a interação entre o usuário, o sistema automatizado e o "humano no loop" (Analista de Crédito).
+&emsp;Este fluxo descreve a jornada do agricultor Sérgio desde o cadastro até ter sua proposta listada no marketplace. Ele demonstra a interação entre o usuário, o sistema automatizado e o "humano no loop" (Analista de Crédito).
 
 
 <p style={{textAlign: 'center'}}> Fluxo de Solicitação e Aprovação de Crédito</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_solicitacao_credito_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_solicitacao_credito_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -34,7 +34,7 @@ title: Fluxo de Dados
 
 ```murmaid
 sequenceDiagram
-    participant João as Agricultor (Browser)
+    participant Sérgio as Agricultor (Browser)
     participant FE as Frontend
     participant GW as API Gateway
     participant Contas as Serviço de Contas
@@ -42,7 +42,7 @@ sequenceDiagram
     participant Backoffice as Interface do Analista
     participant Analista as Analista de Crédito
 
-    João->>FE: 1. Preenche cadastro e solicitação
+    Sérgio->>FE: 1. Preenche cadastro e solicitação
     FE->>GW: 2. Envia dados e documentos
     GW->>Contas: 3. Cria/Autentica usuário
     GW->>Analise: 4. Inicia análise de crédito
@@ -50,7 +50,7 @@ sequenceDiagram
     activate Analise
     Analise-->>GW: 5. Responde que a análise foi iniciada
     GW-->>FE: 6. Exibe "Análise em andamento"
-    FE-->>João: Exibe "Análise em andamento"
+    FE-->>Sérgio: Exibe "Análise em andamento"
     
     Analise->>Bureaus Externos: 7. Consulta score de mercado (API)
     Bureaus Externos-->>Analise: 8. Retorna score
@@ -70,9 +70,9 @@ sequenceDiagram
     Analise->>Contas: 16. Envia notificação de "Crédito Aprovado" para o usuário
     deactivate Analise
     
-    Note over João, FE: -- Assinatura e Lançamento --
-    FE->>João: 17. Exibe proposta e solicita assinatura da CPR
-    João->>FE: 18. Assina a CPR com e-CPF
+    Note over Sérgio, FE: -- Assinatura e Lançamento --
+    FE->>Sérgio: 17. Exibe proposta e solicita assinatura da CPR
+    Sérgio->>FE: 18. Assina a CPR com e-CPF
     FE->>GW: 19. Envia CPR assinada
     GW->>Serviço de Contratos: 20. Valida e envia para registradora (API)
     Serviço de Contratos-->>GW: 21. Confirma registro
@@ -87,7 +87,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Realização de Investimento</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_realizacao_investimento_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_realizacao_investimento_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -154,7 +154,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Pagamento de Parcela e Distribuição</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_recebimento_investimento_reevo.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_recebimento_investimento_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -169,7 +169,7 @@ sequenceDiagram
 
   ```murmaid
   sequenceDiagram
-    participant João as Agricultor (Browser)
+    participant Sérgio as Agricultor (Browser)
     participant FE as Frontend
     participant GW as API Gateway
     participant Pagamentos as Gateway de Pagamento
@@ -177,13 +177,13 @@ sequenceDiagram
     participant Distribuidor as Serviço de Distribuição
     participant Carteira as Serviço de Carteira Digital
 
-    João->>FE: 1. Acessa painel e clica em "Pagar Parcela"
+    Sérgio->>FE: 1. Acessa painel e clica em "Pagar Parcela"
     FE->>GW: 2. Solicita dados de pagamento
     GW->>Serviço de Contratos: 3. Gera cobrança (Pix/Boleto)
     Serviço de Contratos-->>GW: 4. Retorna dados
     GW-->>FE: 5. Exibe QR Code / Linha digitável
     
-    Note right of João: João efetua o pagamento no seu banco...
+    Note right of Sérgio: Sérgio efetua o pagamento no seu banco...
     
     Pagamentos-->>GW: 6. Webhook: Pagamento Confirmado!
     
@@ -219,7 +219,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Venda no Mercado Secundário</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_venda_token_mercado_secundario.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_venda_token_mercado_secundario.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -288,7 +288,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Saque de Fundos</p>
   <div style={{margin: 15}}>
     <div style={{textAlign: 'center'}}>
-          <img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+          <img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
           <br/>
       </div>
   </div>
@@ -363,7 +363,7 @@ sequenceDiagram
 <p style={{textAlign: 'center'}}> Fluxo de Gestão de Inadimplência</p>
   <div style={{margin: 15}}>
     <div style={{textAlign: 'center'}}>
-          <img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+          <img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
           <br/>
       </div>
   </div>

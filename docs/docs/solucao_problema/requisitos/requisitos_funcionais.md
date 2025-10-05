@@ -35,10 +35,10 @@ O usuário logado deve poder ativar ou desativar a autenticação de dois fatore
 
 ---
 
-## Módulo 2: Tomador de Crédito (Fluxo do João) (RF-AGR)
+## Módulo 2: Tomador de Crédito (Fluxo do Sérgio) (RF-AGR)
 
 ### RF-AGR-001: Solicitação de Crédito Guiada
-O agricultor (João) deve poder preencher um formulário e enviar documentos para solicitar uma nova análise de crédito, considerando que:
+O agricultor (Sérgio) deve poder preencher um formulário e enviar documentos para solicitar uma nova análise de crédito, considerando que:
 - Os documentos obrigatórios são: Documento de Identidade (CNH/RG), Comprovante de Residência, CAR (Cadastro Ambiental Rural) e Notas Fiscais de Vendas do último ciclo(opcional, mas impactam no score).
 - O upload de arquivos deve suportar os formatos PDF, JPG, PNG, com tamanho máximo de 10MB por arquivo.
 
@@ -54,13 +54,13 @@ O sistema deve poder processar os dados do agricultor para gerar um Score de Cr�
 - O Score será atualizado automaticamente sempre que um novo documento relevante for anexado ou atualizado pelo agricultor.
 
 ### RF-AGR-003: Geração e Assinatura da CPR
-O agricultor (João) deve poder gerar e assinar a Cédula de Produtor Rural (CPR) digitalmente para formalizar a garantia do empréstimo, considerando que:
-- O sistema deve preencher automaticamente a CPR com os dados da operação enviados pelo joão.
+O agricultor (Sérgio) deve poder gerar e assinar a Cédula de Produtor Rural (CPR) digitalmente para formalizar a garantia do empréstimo, considerando que:
+- O sistema deve preencher automaticamente a CPR com os dados da operação enviados pelo Sérgio.
 - A assinatura será realizada por meio de um serviço integrado que suporte Assinatura Digital qualificada (padrão ICP-Brasil) e validação biométrica (facial).
 - A CPR só será enviada para registro após a assinatura.
 
 ### RF-AGR-004: Acompanhamento e Gestão da Captação
-O agricultor (João) deve poder acompanhar o status de sua captação e tomar decisões para gerenciar sua solicitação, considerando que:
+O agricultor (Sérgio) deve poder acompanhar o status de sua captação e tomar decisões para gerenciar sua solicitação, considerando que:
 - O painel deve mostrar o percentual financiado, atualizado em tempo real (via websocket ou polling a cada 30 segundos).
 - Caso o prazo de captação termine sem atingir 100%, o agricultor terá as opções de: 
   - receber o valor parcial; 
@@ -83,29 +83,29 @@ O sistema deve poder gerenciar automaticamente situações de atraso de pagament
 
 ---
 
-## Módulo 3: Investidor (Fluxo da Mariana) (RF-INV)
+## Módulo 3: Investidor (Fluxo da Marina) (RF-INV)
 
 ### RF-INV-001: On-Ramp de Capital (BRL para Stablecoin)
-A investidora (Mariana) deve poder depositar Reais (BRL) na plataforma para ter saldo para investir, considerando que:
+A investidora (Marina) deve poder depositar Reais (BRL) na plataforma para ter saldo para investir, considerando que:
 - O depósito será realizado via Pix ou wallet
 - O sistema, através de um gateway de pagamentos parceiro, converterá o valor em BRL para uma stablecoin baseada em Dólar (USDC) e creditará o saldo na carteira interna da usuária.
 - A Taxa de Originação cobrada do agricultor, definida em RF-TAX-001, contempla todos os custos operacionais da transação, incluindo a taxa de conversão BRL/USDC do on-ramp.
 - A taxa de câmbio BRL/USDC e a taxa de conversão serão exibidas de forma transparente antes da confirmação do depósito.
 
 ### RF-INV-002: Investimento em Oportunidades
-A investidora (Mariana) deve poder usar seu saldo em stablecoin (USDC) para investir em uma oportunidade para financiar um agricultor, considerando que:
+A investidora (Marina) deve poder usar seu saldo em stablecoin (USDC) para investir em uma oportunidade para financiar um agricultor, considerando que:
 - O valor mínimo de investimento por oportunidade é de R$ 100,00 (convertido para USDC no momento da transação).
 - Ao tentar alocar mais de 40% de seu portfólio total em um único ativo, o sistema deve exibir um pop-up de alerta solicitando a confirmação via digitação da frase "EU ENTENDO O RISCO".
 
 ### RF-INV-003: Mercado Secundário (Venda de Tokens)
-A investidora (Mariana) deve poder ofertar seus tokens de investimento para outros investidores para ter liquidez antes do vencimento do contrato, considerando que:
+A investidora (Marina) deve poder ofertar seus tokens de investimento para outros investidores para ter liquidez antes do vencimento do contrato, considerando que:
 - A negociação será realizada exclusivamente dentro da plataforma, trocando Tokens de Crédito por USDC.
 - A plataforma calculará e sugerirá um "preço justo" para o token, baseado no tempo restante e no risco atual do ativo, mas a investidora terá autonomia para definir seu preço de venda.
 - Caso a investidora opte por vender abaixo do valor de face, a diferença será assumida pela própria vendedora (exemplo: vende por USDC 950 um token cujo valor de face é USDC 1000). O contrato do agricultor não é alterado.
 - O comprador assume integralmente o crédito original, recebendo os pagamentos de acordo com o contrato inicial.
 
 ### RF-INV-004: Off-Ramp de Capital (Stablecoin para BRL)
-A investidora (Mariana) deve poder sacar seu saldo em stablecoin (USDC) para sua conta bancária para realizar seus lucros em Reais (BRL), considerando que:
+A investidora (Marina) deve poder sacar seu saldo em stablecoin (USDC) para sua conta bancária para realizar seus lucros em Reais (BRL), considerando que:
 - A usuária solicitará o saque em USDC.
 - O sistema, através de um gateway parceiro, converterá o saldo para BRL e realizará a transferência para a conta bancária cadastrada via Pix.
 
@@ -217,7 +217,7 @@ O usuário logado deve poder visualizar e editar seus dados cadastrais para mant
 - Campos como Endereço e Telefone de Contato poderão ser editados.
 
 ### RF-USR-003: Gestão de Contas Bancárias (Investidor)
-A investidora (Mariana) deve poder cadastrar e validar uma ou mais contas bancárias em seu nome para realizar saques (Off-Ramp), considerando que:
+A investidora (Marina) deve poder cadastrar e validar uma ou mais contas bancárias em seu nome para realizar saques (Off-Ramp), considerando que:
 - A conta deve ser da mesma titularidade (CPF) da conta da plataforma.
 - A validação da conta pode ser feita via um micro-depósito de verificação.
 

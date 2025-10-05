@@ -6,21 +6,35 @@ sidebar_position: 0
 
 # Visão Geral do Projeto Reevo
 
-<div align="center">
-  <img src="../docs/static/img/reevo.gif" alt="Banner Reevo - Agricultura e Tecnologia" width="800"/>
+<div style={{margin: 15}}>
+  <div style={{textAlign: 'center'}}>
+        <img src={require("../static/img/reevo.gif").default} style={{width: 1024}} alt="Banner Reevo - Agricultura e Tecnologia" />
+        <br/>
+    </div>
 </div>
 
 ## Introdução
 
 &emsp;O **Reevo** é uma plataforma digital de crédito peer-to-peer (P2P) que conecta agricultores pequenos e médios a investidores pessoas físicas interessados em diversificação de portfólio e impacto socioambiental positivo.  
-O projeto nasce da necessidade de oferecer crédito mais ágil, justo e transparente para o setor agrícola, reduzindo a dependência dos bancos tradicionais e valorizando práticas sustentáveis.
+
+&emsp;O projeto nasce da necessidade de oferecer crédito mais ágil, justo e transparente para o setor agrícola, reduzindo a dependência dos bancos tradicionais e valorizando práticas sustentáveis.
 
 ---
 
 ## Problema
 
 &emsp;No Brasil, agricultores familiares representam 77% dos estabelecimentos rurais (IBGE, 2017), mas acessam menos de 15% do crédito rural formal. A alta burocracia, exigência de garantias e renda variável atrelada às safras tornam o crédito bancário restrito.  
-Ao mesmo tempo, pequenos e médios investidores buscam alternativas para além da renda fixa tradicional, com retorno competitivo, liquidez flexível e impacto social direto.
+
+<p style={{textAlign: 'center'}}> Gráfico da Distribuição do Acesso a Crédito em Agricultores Familiares no Brasil</p>
+<div style={{margin: 15}}>
+  <div style={{textAlign: 'center'}}>
+        <img src={require("../static/img/pictograma_infografico.png").default} style={{width: 1024}} alt="Gráfico da distribuição de crédito em agricultores familiares no Brasil." />
+        <br/>
+    </div>
+</div>
+<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+
+&emsp;Ao mesmo tempo, pequenos e médios investidores buscam alternativas para além da renda fixa tradicional, com retorno competitivo, liquidez flexível e impacto social direto.
 
 ---
 
@@ -41,22 +55,51 @@ O Reevo atua como um ecossistema colaborativo, aproximando o capital urbano da p
 - **Agricultores pequenos e médios**: produtores familiares, jovens rurais e agroempreendedores que precisam de crédito rápido e menos burocrático.  
 - **Investidores pessoas físicas**: locais e urbanos, interessados em diversificação, impacto social e maior transparência nos investimentos.  
 
+<p style={{textAlign: 'center'}}> Público-Alvo da Solução</p>
+<div style={{margin: 15}}>
+  <div style={{textAlign: 'center'}}>
+        <img src={require("../static/img/publico_alvo.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <br/>
+    </div>
+</div>
+<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+
+
 ---
 
 ## Tecnologias
 
 - Machine Learning (ML) para análise de crédito automatizada e atribuição de score justo.  
 - Blockchain para registro de contratos e transparência em captação/investimentos.  
-- Arquitetura Web Responsiva para garantir acesso via desktop e mobile, mesmo em áreas com internet limitada.  
+- Arquitetura Web Responsiva para garantir acesso via desktop e mobile, mesmo em áreas com internet limitada. 
+- Telethon para acesso mais simplificado do agricultor às funcionalidades da aplicação.]
+
+<p style={{textAlign: 'center'}}>Funcionalidades da Aplicação</p>
+<div style={{margin: 15}}>
+  <div style={{textAlign: 'center'}}>
+        <img src={require("../static/img/tech_features.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <br/>
+    </div>
+</div>
+<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+
 
 ---
 
 ## Diferenciais
 
-1. **Score Didático**: além do número, explica os fatores que aumentaram ou reduziram a nota.  
-2. **Flexibilidade na Captação**: possibilidade de aceitar valores parciais, estender prazos ou cancelar.  
-3. **Marketplace Transparente**: vitrine digital que conecta diretamente agricultores e investidores.  
-4. **Impacto Mensurável**: relatórios sociais e ambientais, como hectares financiados, famílias apoiadas e práticas sustentáveis.  
+1. **Acessibilidade pelo Telegram**: além do número, explica os fatores que aumentaram ou reduziram a nota.  
+2. **Duplo Cadastro Agricultor e Investidor**: possibilidade de aceitar valores parciais, estender prazos ou cancelar.  
+3. **Investimentos para Além da Produção**: vitrine digital que conecta diretamente agricultores e investidores.  
+
+<p style={{textAlign: 'center'}}>Diferenciais da Aplicação</p>
+<div style={{margin: 15}}>
+  <div style={{textAlign: 'center'}}>
+        <img src={require("../static/img/diferenciais_app.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <br/>
+    </div>
+</div>
+<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
 ---
 

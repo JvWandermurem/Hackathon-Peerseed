@@ -14,7 +14,7 @@ O diagrama abaixo ilustra as principais entidades do nosso sistema e como elas s
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/diagrama_entidade_relacionamento_simples.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/diagrama_entidade_relacionamento_simples.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -27,7 +27,7 @@ O diagrama abaixo ilustra as principais entidades do nosso sistema e como elas s
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/diagrama_entidade_relacionamento.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/diagrama_entidade_relacionamento.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -40,7 +40,7 @@ Esta é a tabela central de identidade. Armazena as informações de login e per
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_user_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_user_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -59,7 +59,7 @@ Representa a carteira digital de cada usuário na plataforma, onde seus saldos e
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_carteiras_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_carteiras_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -78,7 +78,7 @@ Modela a oportunidade de investimento. Cada linha representa uma solicitação d
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_cprs_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_cprs_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -96,7 +96,7 @@ Detalha o cronograma de pagamentos de uma CPR. Ao criar uma CPR, esta tabela é 
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_parcelas_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_parcelas_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -115,7 +115,7 @@ Esta é uma tabela de ligação crucial que materializa a relação de muitos-pa
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_investimentos_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_investimentos_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -137,7 +137,7 @@ Funciona como o livro-razão (ledger) de todas as movimentações financeiras na
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_transacoes_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_transacoes_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -155,7 +155,7 @@ Modela as ofertas de venda no mercado secundário. Quando um investidor decide v
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_ofertas_secun_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_ofertas_secun_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -173,7 +173,7 @@ Armazena de forma segura os dados bancários dos usuários para a operação de 
 <p style={{textAlign: 'center'}}> Diagrama Entidade-Relacionamento (DER) Simples</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tabela_contas_banc_diagrama.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/tabela_contas_banc_diagrama.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>

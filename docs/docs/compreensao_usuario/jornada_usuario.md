@@ -11,24 +11,24 @@ sidebar_position: 3
 
 ---
 
-## João – Agricultor Familiar
+## Sérgio – Agricultor Familiar
 
-<p style={{textAlign: 'center'}}> Jornada de Usuário do João.</p>
+<p style={{textAlign: 'center'}}> Jornada de Usuário do Sérgio.</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/jornada_joao.png").default} style={{width: 800}} alt="Jornada de Usuário do João" />
+        <img src={require("../../static/img/jornada_joao.png").default} style={{width: 1024}} alt="Jornada de Usuário do Sérgio" />
         <br/>
     </div>
 </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
 ### Cenário
-João tem 41 anos e administra uma fazenda de 32 hectares no Centro-Oeste, voltada ao plantio de milho e soja. Utiliza seu smartphone diariamente, mas enfrenta dificuldades para acessar crédito bancário devido à burocracia, exigência de garantias e renda variável. Busca uma alternativa mais justa, rápida e transparente.
+Sérgio tem 41 anos e administra uma fazenda de 32 hectares no Centro-Oeste, voltada ao plantio de milho e soja. Utiliza seu smartphone diariamente, mas enfrenta dificuldades para acessar crédito bancário devido à burocracia, exigência de garantias e renda variável. Busca uma alternativa mais justa, rápida e transparente.
 
 ### Jornada em 5 Fases
 
 **1. Cadastro e Solicitação**  
-João cria sua conta rapidamente e inicia um pedido de crédito através de um processo guiado e simples.  
+Sérgio cria sua conta rapidamente e inicia um pedido de crédito através de um processo guiado e simples.  
 **Pensamento:** “Até que enfim algo sem enrolação, consigo fazer sozinho pelo celular.”
 
 **2. Análise de Crédito Didática**  
@@ -40,7 +40,7 @@ Escolhe valor, prazos de captação e carência, além da forma de pagamento. V�
 **Pensamento:** “Consigo adaptar os pagamentos ao calendário da minha safra.”
 
 **4. Captação e Recebimento**  
-O pedido é convertido em cotas no marketplace. João acompanha em tempo real a captação e decide se aceita parcial, estende prazo ou cancela. Ao fim, recebe os recursos.  
+O pedido é convertido em cotas no marketplace. Sérgio acompanha em tempo real a captação e decide se aceita parcial, estende prazo ou cancela. Ao fim, recebe os recursos.  
 **Pensamento:** “Vejo claramente quanto já foi financiado, é transparente e seguro.”
 
 **5. Pagamento e Relacionamento**  
@@ -54,7 +54,7 @@ Faz pagamentos via Pix ou boleto de forma simples. Acompanha extratos no painel 
 <p style={{textAlign: 'center'}}> Jornada de Usuário da Marina.</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/jornada_marina.png").default} style={{width: 800}} alt="Jornada de Usuário da Marina" />
+        <img src={require("../../static/img/jornada_marina.png").default} style={{width: 1024}} alt="Jornada de Usuário da Marina" />
         <br/>
     </div>
 </div>
@@ -74,7 +74,7 @@ Navega pelas oportunidades de crédito, aplicando filtros básicos (risco, taxa,
 **Pensamento:** “Consigo explorar facilmente, sem me perder em excesso de informações.”
 
 **3. Análise Detalhada da Oportunidade**  
-Seleciona a proposta do João e vê dados financeiros, histórico da fazenda, análise de risco e indicadores de impacto social.  
+Seleciona a proposta do Sérgio e vê dados financeiros, histórico da fazenda, análise de risco e indicadores de impacto social.  
 **Pensamento:** “Entendi o risco, o retorno e o impacto. Agora me sinto segura para investir.”
 
 **4. Investimento e Acompanhamento**  
@@ -89,5 +89,5 @@ Recebe o valor investido mais a rentabilidade ao final do contrato ou vende a co
 
 ## Síntese
 
-&emsp;A jornada de João e Marina demonstra a complementaridade do modelo P2P: enquanto o agricultor busca crédito acessível e justo para sua produção, a investidora deseja diversificação, impacto e transparência. O **Reevo** conecta essas necessidades em uma experiência digital fluida, criando confiança e valor para ambos.
+&emsp;A jornada de Sérgio e Marina demonstra a complementaridade do modelo P2P: enquanto o agricultor busca crédito acessível e justo para sua produção, a investidora deseja diversificação, impacto e transparência. O **Reevo** conecta essas necessidades em uma experiência digital fluida, criando confiança e valor para ambos.
 

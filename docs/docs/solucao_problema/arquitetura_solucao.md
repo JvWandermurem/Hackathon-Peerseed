@@ -27,7 +27,7 @@ Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma co
 <p style={{textAlign: 'center'}}> Arquitetura Nível C1</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/arquitetura_c1.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c1.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -68,7 +68,7 @@ Este diagrama é fundamental para que qualquer pessoa, técnica ou não, entenda
 <p style={{textAlign: 'center'}}> Arquitetura Nível C2</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/arquitetura_c2.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c2.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -128,7 +128,7 @@ A arquitetura do Reevo é dividida em quatro camadas principais:
 <p style={{textAlign: 'center'}}> Serviço Contas</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_contas.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_contas.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -152,7 +152,7 @@ A arquitetura do Reevo é dividida em quatro camadas principais:
 <p style={{textAlign: 'center'}}> Serviço Analise Credito</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_analise_credito.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_analise_credito.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -169,7 +169,7 @@ A arquitetura do Reevo é dividida em quatro camadas principais:
 <p style={{textAlign: 'center'}}> Serviço Contratos</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_contratos.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_contratos.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -190,7 +190,7 @@ Para operações com criptomoedas, ele conta com um `Monitor de Blockchain` para
 <p style={{textAlign: 'center'}}> Serviço Carteira Digital</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_carteira_digital.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_carteira_digital.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -210,7 +210,7 @@ Para operações com criptomoedas, ele conta com um `Monitor de Blockchain` para
 <p style={{textAlign: 'center'}}> Serviço Marketplace</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_marketplace.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_marketplace.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
@@ -225,7 +225,7 @@ Para operações com criptomoedas, ele conta com um `Monitor de Blockchain` para
 <p style={{textAlign: 'center'}}> Serviço Notificações</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_notificacoes.png").default} style={{width: 800}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_notificacoes.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
         <br/>
     </div>
 </div>
