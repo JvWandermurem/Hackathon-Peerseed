@@ -6,27 +6,27 @@ sidebar_position: 2
 
 ## Representações de usuários
 
-### João – Agricultor Familiar
+### Sérgio – Agricultor Familiar
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/joao_silva.png").default} style={{width: 800}} alt="João Silva" />
+        <img src={require("../../static/img/sergio_conti.png").default} style={{width: 1024}} alt="Sérgio Conti" />
         <br/>
     </div>
 </div>
 <p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
 
 #### Quem é
-&emsp;João tem 41 anos e é agricultor familiar no Centro-Oeste do Brasil. Ele administra uma fazenda de 32 hectares dedicada ao plantio de milho e soja. Vive em uma região com acesso à internet de velocidade mediana, sujeito a oscilações, mas utiliza diariamente seu smartphone para gerenciar contatos e pesquisar informações relacionadas à produção e ao mercado.
+&emsp;Sérgio tem 41 anos e é agricultor familiar no Centro-Oeste do Brasil. Ele administra uma fazenda de 32 hectares dedicada ao plantio de milho e soja. Vive em uma região com acesso à internet de velocidade mediana, sujeito a oscilações, mas utiliza diariamente seu smartphone para gerenciar contatos e pesquisar informações relacionadas à produção e ao mercado.
 
 #### Desafios
-&emsp;João encontra grande dificuldade para acessar crédito bancário. A burocracia, a exigência de garantias e o fato de possuir uma renda variável ligada ao ciclo agrícola o colocam em desvantagem frente às instituições financeiras tradicionais. Além disso, sente frustração por não ter seu trabalho sério e suas práticas sustentáveis reconhecidas.  
+&emsp;Sérgio encontra grande dificuldade para acessar crédito bancário. A burocracia, a exigência de garantias e o fato de possuir uma renda variável ligada ao ciclo agrícola o colocam em desvantagem frente às instituições financeiras tradicionais. Além disso, sente frustração por não ter seu trabalho sério e suas práticas sustentáveis reconhecidas.  
 
 
 #### Objetivos
-&emsp;Ele busca soluções mais ágeis, transparentes e digitais para financiar a compra de insumos e pequenas máquinas. Quer sentir que tem maior controle sobre seu destino financeiro, sendo recompensado pelo bom trabalho que já realiza. Para João, o crédito P2P representa uma alternativa justa, permitindo crescer com taxas adequadas e em relação direta com investidores que acreditam em seu potencial.
+&emsp;Ele busca soluções mais ágeis, transparentes e digitais para financiar a compra de insumos e pequenas máquinas. Quer sentir que tem maior controle sobre seu destino financeiro, sendo recompensado pelo bom trabalho que já realiza. Para Sérgio, o crédito P2P representa uma alternativa justa, permitindo crescer com taxas adequadas e em relação direta com investidores que acreditam em seu potencial.
 
-#### User Stories do João
+#### User Stories do Sérgio
 
 :::info
 **User Stories** são descrições curtas e simples das necessidades de um usuário, escritas do ponto de vista de quem utiliza a solução.  
@@ -51,7 +51,7 @@ Elas ajudam a equipe a entender **quem é o usuário, o que ele precisa e por qu
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/marina_priano.png").default} style={{width: 800}} alt="Marina Priano" />
+        <img src={require("../../static/img/marina_priano.png").default} style={{width: 1024}} alt="Marina Priano" />
         <br/>
     </div>
 </div>
@@ -90,4 +90,4 @@ De acordo com a **B3 (2024)**, o número de CPFs ativos em renda variável já u
 
 ### Síntese
 
-&emsp;Juntos, João e Marina representam os dois polos centrais do Reevo: o tomador de crédito que precisa de soluções acessíveis e justas e a investidora que busca diversificação com impacto positivo. A plataforma conecta esses perfis de maneira transparente, utilizando tecnologia para gerar confiança mútua e benefícios concretos para ambos.
+&emsp;Juntos, Sérgio e Marina representam os dois polos centrais do Reevo: o tomador de crédito que precisa de soluções acessíveis e justas e a investidora que busca diversificação com impacto positivo. A plataforma conecta esses perfis de maneira transparente, utilizando tecnologia para gerar confiança mútua e benefícios concretos para ambos.

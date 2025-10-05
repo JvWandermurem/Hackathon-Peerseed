@@ -6,7 +6,7 @@ title: AgroScore
 ## Visão Geral e Objetivo
 &emsp; O AgroScore é o motor de análise de crédito automatizada do Reevo e um dos nossos principais diferenciais competitivos. Seu objetivo é prover uma avaliação de risco de crédito rápida, justa e baseada em dados, atendendo diretamente ao requisito `RF-AGR-002`.
 
-&emsp; Para o agricultor João, o AgroScore significa sair da subjetividade e da lentidão dos bancos tradicionais e receber uma resposta em horas, não semanas. 
+&emsp; Para o agricultor Sérgio, o AgroScore significa sair da subjetividade e da lentidão dos bancos tradicionais e receber uma resposta em horas, não semanas. 
 
 &emsp; Para a investidora Marina, o AgroScore traduz a complexidade de um perfil agrícola em uma métrica de risco clara e padronizada (de A a E), permitindo que ela tome decisões de investimento informadas e confiantes.
 

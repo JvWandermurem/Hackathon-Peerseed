@@ -7,7 +7,7 @@ title: Planejamento Infraestrutura
 
 &emsp; A infraestrutura do Reevo é projetada para ser a fundação sólida que sustenta a ponte entre agricultores e investidores. As decisões arquiteturais são guiadas por quatro princípios essenciais, sempre focados em gerar valor e confiança para nosso público-alvo e pautados nos nossos Requisitos Funcionais e Não funcionais:
 
- - **Alta Disponibilidade e Resiliência:** A plataforma precisa estar sempre acessível. Para o agricultor João, o acesso ao crédito é sensível ao tempo e alinhado à janela da safra. Para a investidora Marina, a indisponibilidade do sistema significa perda de confiança e de oportunidades. Nossa meta é uma disponibilidade de 99.9% `(RNF-CF-01)`.
+ - **Alta Disponibilidade e Resiliência:** A plataforma precisa estar sempre acessível. Para o agricultor Sérgio, o acesso ao crédito é sensível ao tempo e alinhado à janela da safra. Para a investidora Marina, a indisponibilidade do sistema significa perda de confiança e de oportunidades. Nossa meta é uma disponibilidade de 99.9% `(RNF-CF-01)`.
 
 - **Escalabilidade Elástica:** A plataforma deve performar com excelência tanto com cem quanto com cem mil usuários. A infraestrutura deve ser capaz de escalar seus recursos automaticamente para atender a picos de demanda, como no lançamento de uma nova safra de captações, garantindo tempos de resposta rápidos `(RNF-ED-01)`.
 
@@ -19,13 +19,13 @@ title: Planejamento Infraestrutura
 ## Provedor de Nuvem
 &emsp;  Apesar de a arquitetura ser agnóstica, a implantação do MVP ocorrerá em um dos três principais provedores de nuvem globais: _Amazon Web Services (AWS), Google Cloud Platform (GCP) ou Microsoft Azure._
 
-&emsp;  A escolha de um provedor de grande porte garante uma infraestrutura de rede global e de baixa latência, o que significa que a plataforma será rápida e acessível para usuários em qualquer região do Brasil. Seja João em uma área rural com internet de menor velocidade, ou Marina em um grande centro urbano, a experiência será otimizada. Todos os provedores oferecem um free tier (camada gratuita) robusto, permitindo o desenvolvimento e lançamento do MVP com custos operacionais mínimos.
+&emsp;  A escolha de um provedor de grande porte garante uma infraestrutura de rede global e de baixa latência, o que significa que a plataforma será rápida e acessível para usuários em qualquer região do Brasil. Seja Sérgio em uma área rural com internet de menor velocidade, ou Marina em um grande centro urbano, a experiência será otimizada. Todos os provedores oferecem um free tier (camada gratuita) robusto, permitindo o desenvolvimento e lançamento do MVP com custos operacionais mínimos.
 
 ### Arquitetura de Computação
 &emsp;  O núcleo da nossa infraestrutura de computação é a orquestração de contêineres com Kubernetes (K8s). Cada microsserviço da nossa aplicação é empacotado em um **contêiner** e gerenciado pelo **Kubernetes**.
 
 Importância e Impacto:
-**Para João (Agricultor):** A principal vantagem é a confiabilidade. O Kubernetes possui mecanismos de self-healing (auto-recuperação). Se um dos nossos serviços falhar, ele é reiniciado automaticamente, garantindo que a plataforma esteja sempre no ar quando João precisar solicitar um crédito ou efetuar um pagamento. Isso é vital para cumprir o requisito de Disponibilidade `(RNF-CF-01)`.
+**Para Sérgio (Agricultor):** A principal vantagem é a confiabilidade. O Kubernetes possui mecanismos de self-healing (auto-recuperação). Se um dos nossos serviços falhar, ele é reiniciado automaticamente, garantindo que a plataforma esteja sempre no ar quando Sérgio precisar solicitar um crédito ou efetuar um pagamento. Isso é vital para cumprir o requisito de Disponibilidade `(RNF-CF-01)`.
 
 **Para Marina (Investidora):** O benefício chave é a performance. Em momentos de alta demanda (ex: abertura de uma captação muito esperada), o Kubernetes pode escalar horizontalmente, adicionando mais "réplicas" dos nossos serviços para lidar com o tráfego. Isso garante que a plataforma permaneça rápida e responsiva, cumprindo os requisitos de Capacidade (RNF-ED-03) e Tempo de Resposta `(RNF-ED-01)`.
 
@@ -34,7 +34,7 @@ Importância e Impacto:
 
 | Opção de Implementação                  | Descrição                                                                                   | Vantagens para o Reevo                                                                                                          | Desvantagens                                                                                     |
 |-----------------------------------------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **Managed Kubernetes (EKS, GKE, AKS)**  | O provedor de nuvem gerencia o *control plane* (o "cérebro" do K8s). Nós gerenciamos apenas os nós de trabalho e nossas aplicações. | **Foco no Produto**: Reduz a carga operacional, liberando a equipe para desenvolver funcionalidades para João e Marina. **Confiabilidade**: Alta disponibilidade garantida pelo provedor. | - Curva de aprendizado inicial da ferramenta.                                                    |
+| **Managed Kubernetes (EKS, GKE, AKS)**  | O provedor de nuvem gerencia o *control plane* (o "cérebro" do K8s). Nós gerenciamos apenas os nós de trabalho e nossas aplicações. | **Foco no Produto**: Reduz a carga operacional, liberando a equipe para desenvolver funcionalidades para Sérgio e Marina. **Confiabilidade**: Alta disponibilidade garantida pelo provedor. | - Curva de aprendizado inicial da ferramenta.                                                    |
 | **Serverless Containers (AWS Fargate, Cloud Run)** | Abstrai completamente a noção de servidores: apenas enviamos o contêiner e ele roda.          | **Simplicidade Máxima**: Ideal para equipes pequenas- **Custo Otimizado**: Pagamento apenas pelo tempo real de computação, ótimo para um MVP com tráfego variável. | - Menor flexibilidade em redes complexas.- Possível dependência do provedor.                 |
 
 
@@ -46,7 +46,7 @@ Importância e Impacto:
 
 **Banco de Dados PostgreSQL Gerenciado (AWS RDS, Google Cloud SQL)**
 
-&emsp; A integridade dos dados financeiros de **João e Marina** é o ativo mais precioso da plataforma. Utilizar um serviço gerenciado para o PostgreSQL nos oferece, de forma nativa:
+&emsp; A integridade dos dados financeiros de **Sérgio e Marina** é o ativo mais precioso da plataforma. Utilizar um serviço gerenciado para o PostgreSQL nos oferece, de forma nativa:
 
 - **Backups Automatizados e Recuperação Point-in-Time:** Garante que, em caso de desastre, possamos recuperar os dados com perda mínima ou zero `(RNF-CF-03 - Recuperabilidade)`.
 
@@ -66,7 +66,7 @@ Este design é fundamental para a segurança.
 
 - **Sub-redes Públicas:** Apenas os componentes que precisam falar com o mundo exterior, como Load Balancers e o API Gateway, vivem aqui.
 
-Este modelo  garante a `João e Marina` que seus dados mais sensíveis (documentos, histórico financeiro, dados pessoais) estão protegidos em uma camada profunda da nossa infraestrutura, isolados de ameaças externas. Isso é uma implementação direta do princípio de `Segurança` por Design.
+Este modelo  garante a `Sérgio e Marina` que seus dados mais sensíveis (documentos, histórico financeiro, dados pessoais) estão protegidos em uma camada profunda da nossa infraestrutura, isolados de ameaças externas. Isso é uma implementação direta do princípio de `Segurança` por Design.
 
 ### API Gateway
 

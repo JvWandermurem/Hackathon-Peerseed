@@ -5,7 +5,7 @@ title: Métricas de avaliação
 
 ## Contextualização
 
-&emsp;Para medir o sucesso do Reevo, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (João e Marina).
+&emsp;Para medir o sucesso do Reevo, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (Sérgio e Marina).
 
 ## Indicadores Quantitativos (Desempenho e Financeiro)
 &emsp;Estes indicadores comprovam a viabilidade econômica e a escala da plataforma no mercado.

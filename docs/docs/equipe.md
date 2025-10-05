@@ -12,7 +12,7 @@ sidebar_position: 8
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/davi_jesus.png").default} style={{width: 800}} alt="Davi Nascimento de Jesus" />
+        <img src={require("../static/img/davi_jesus.png").default} style={{width: 1024}} alt="Davi Nascimento de Jesus" />
         <br/>
     </div>
 </div>
@@ -39,7 +39,7 @@ sidebar_position: 8
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/lorena_garcia.png").default} style={{width: 800}} alt="Lorena Garcia" />
+        <img src={require("../static/img/lorena_garcia.png").default} style={{width: 1024}} alt="Lorena Garcia" />
         <br/>
     </div>
 </div>
@@ -65,7 +65,7 @@ sidebar_position: 8
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/joao_oliveira.png").default} style={{width: 800}} alt="João Victor Wandermurem de Oliveira" />
+        <img src={require("../static/img/joao_oliveira.png").default} style={{width: 1024}} alt="João Victor Wandermurem de Oliveira" />
         <br/>
     </div>
 </div>

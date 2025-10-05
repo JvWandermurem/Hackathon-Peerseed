@@ -13,7 +13,7 @@ title: Mapeamento do Problema
 
 &emsp;Os problemas afetam criticamente tanto quem precisa de capital (o Agricultor) quanto quem o fornece (o Investidor).
 
-### 🧑‍🌾 Dores do Agricultor PME (João)
+### 🧑‍🌾 Dores do Agricultor PME (Sérgio)
 * **Acesso Restrito e Burocrático:** Dificuldade em acessar bancos tradicionais devido à exigência excessiva de garantias e à lentidão dos processos.
 * **Crédito Desalinhado:** As linhas de crédito não se adaptam ao **ciclo de safra** (carência e pagamentos) e a análise de risco é opaca.
 * **Exclusão por Dados:** A falta de dados financeiros estruturados e a desvalorização de ativos como o **CAR (Cadastro Ambiental Rural)** na análise de crédito.

@@ -51,6 +51,8 @@ A documentação completa do projeto, incluindo arquitetura, fluxos e modelo de 
 
 **[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
 
+**[>> Acesse o Vídeo explicativo sobre as estrutura técnica da plataforma <<](https://drive.google.com/file/d/1hJQIJXGkipL9sOwm_O3_qHIpd2iZJpLP/view?usp=sharing)**
+
 ### Problema Resolvido
 
 O agronegócio brasileiro enfrenta um paradoxo: enquanto o setor é uma potência, os pequenos e médios produtores rurais sofrem com um acesso restrito e burocrático ao crédito tradicional. Do outro lado, investidores buscam alternativas de investimento com impacto e transparência. O Reevo resolve esse problema através de:
