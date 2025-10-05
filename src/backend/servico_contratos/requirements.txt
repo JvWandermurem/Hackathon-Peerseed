@@ -2,10 +2,12 @@
 fastapi
 uvicorn[standard]
 
-# ORM e Migrações de Banco de Dados
+# ORM e Driver do Banco de Dados
 sqlalchemy[asyncio]
-alembic
-asyncpg # Driver assíncrono para PostgreSQL
+asyncpg
 
-# Validação de dados (já é dependência do FastAPI, mas é bom ser explícito)
+# Validação de dados
 pydantic
+
+# Dependência de Segurança para JWT
+python-jose[cryptography]
