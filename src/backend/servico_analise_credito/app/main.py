@@ -60,6 +60,16 @@ async def criar_analise(
     return nova_cpr
 
 
+@app.get("/analises/minhas", response_model=list[schemas.AnaliseResponse], tags=["Análise de Crédito"])
+async def ler_minhas_analises(
+    db: AsyncSession = Depends(get_db),
+    current_user: security.AuthenticatedUser = Depends(security.get_current_user)
+):
+    """Retorna todas as solicitações de crédito (CPRs) do usuário logado."""
+    # Você precisará criar esta função no seu crud.py
+    cprs = await crud.get_cprs_by_agricultor_id(db, agricultor_id=current_user.id)
+    return cprs
+
 @app.get("/health", tags=["Monitoring"])
 def health_check():
     """Verifica se o serviço está operacional."""

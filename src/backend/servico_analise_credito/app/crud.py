@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-
+from sqlalchemy import select
 from . import models, schemas
 
 async def create_cpr(
@@ -29,3 +29,8 @@ async def create_cpr(
     await db.refresh(db_cpr)
     
     return db_cpr
+
+async def get_cprs_by_agricultor_id(db: AsyncSession, agricultor_id: UUID):
+    """Busca todas as CPRs de um agricultor específico."""
+    result = await db.execute(select(models.CPR).filter(models.CPR.agricultor_id == agricultor_id))
+    return result.scalars().all()

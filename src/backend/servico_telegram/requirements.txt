@@ -12,3 +12,4 @@ pydantic
 
 # Dependência do Bot (conforme sua escolha)
 Telethon
+httpx

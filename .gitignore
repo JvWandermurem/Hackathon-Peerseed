@@ -94,3 +94,6 @@ docker-compose.override.yml
 
 # macOS files
 .DS_Store
+
+#telegram
+*.session
