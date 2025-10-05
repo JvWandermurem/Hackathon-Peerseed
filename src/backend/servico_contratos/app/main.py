@@ -2,8 +2,10 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
 
-from . import crud, schemas, security
+from . import crud, security
 from shared.database.database import get_db
+from shared.database import schemas
+
 
 app = FastAPI(
     title="Serviço de Contratos",

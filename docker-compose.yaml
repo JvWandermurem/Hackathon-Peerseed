@@ -13,6 +13,12 @@ services:
       - ./postgres-init:/docker-entrypoint-initdb.d
     networks:
       - peerseed_network
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peerseed_user -d peerseed_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   servico_contas:
     build:

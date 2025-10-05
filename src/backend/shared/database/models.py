@@ -5,6 +5,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import Column, String, DateTime, Enum, Float, Integer, ForeignKey, func
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import declarative_base
+from sqlalchemy import Boolean
 
 
 # Importa a Base do nosso arquivo de database
@@ -67,18 +68,23 @@ class RiscoEnum(str, enum.Enum):
 class CPR(Base):
     __tablename__ = "cprs"
     __table_args__ = {"schema": "analise_credito"}
+
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    # No mundo real, não usaríamos FK, mas para o hackathon isso simplifica
     agricultor_id = Column(UUID(as_uuid=True), nullable=False) 
     valor_solicitado = Column(Float, nullable=False)
     prazo_meses = Column(Integer, nullable=False)
-    taxa_juros_anual = Column(Float, nullable=True) # Será definida pelo score
-    
-    # Adicionando um campo para o input do modelo
+    taxa_juros_anual = Column(Float, nullable=True)
     cultura = Column(String(100), nullable=False)
     
+    # --- COLUNAS QUE ESTAVAM FALTANDO ---
+    finalidade = Column(String(255), nullable=True)
+    hectares = Column(Integer, nullable=True)
+    possui_car = Column(Boolean, default=False)
+    possui_certificacao = Column(Boolean, default=False)
+    # ------------------------------------
+
     status = Column(Enum(StatusCprEnum), nullable=False, default=StatusCprEnum.ANALISE)
-    score_risco = Column(Enum(RiscoEnum), nullable=True) # Será preenchido pela análise
+    score_risco = Column(Enum(RiscoEnum), nullable=True)
     
     data_emissao = Column(DateTime(timezone=True))
     data_criacao = Column(DateTime(timezone=True), server_default=func.now())

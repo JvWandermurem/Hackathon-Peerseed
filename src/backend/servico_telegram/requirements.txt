@@ -9,6 +9,8 @@ asyncpg # Driver assíncrono para PostgreSQL
 
 # Validação de dados
 pydantic
+pydantic[email]
+
 
 # Dependência do Bot (conforme sua escolha)
 Telethon

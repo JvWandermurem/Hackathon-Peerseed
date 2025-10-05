@@ -1,12 +1,15 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.exc import OperationalError
+import asyncio
 
 # --- ATENÇÃO: Importações corrigidas ---
-from . import crud, schemas
+from . import crud
 # Agora importamos de 'shared', que é visível por causa do PYTHONPATH
-from shared.database.database import get_db, engine
+from shared.database import schemas
 from shared.database import models
+from shared.database.database import get_db, engine
 # ------------------------------------
 
 app = FastAPI(
@@ -18,12 +21,27 @@ app = FastAPI(
 # --- LÓGICA DE STARTUP ---
 @app.on_event("startup")
 async def on_startup():
-    """Cria todas as tabelas no banco de dados ao iniciar."""
-    async with engine.begin() as conn:
-        # A linha abaixo apaga tudo, útil para testes. Comente se não quiser zerar o DB a cada reinício.
-        # await conn.run_sync(models.Base.metadata.drop_all)
-        await conn.run_sync(models.Base.metadata.create_all)
-    print("--- Tabelas do módulo 'shared' criadas com sucesso! ---")
+    """
+    Este evento é executado quando a aplicação FastAPI inicia.
+    Ele tenta se conectar ao banco de dados com retentativas e cria as tabelas.
+    """
+    print("--- Aguardando conexão com o banco de dados... ---")
+    retries = 5
+    while retries > 0:
+        try:
+            async with engine.begin() as conn:
+                # Se a conexão for bem-sucedida, cria as tabelas
+                await conn.run_sync(models.Base.metadata.create_all)
+            print("--- Conexão bem-sucedida e tabelas criadas! ---")
+            break # Sai do loop se a conexão for um sucesso
+        except (OperationalError, ConnectionRefusedError) as e:
+            print(f"Falha na conexão com o banco de dados: {e}")
+            retries -= 1
+            print(f"Tentando novamente em 5 segundos... ({retries} tentativas restantes)")
+            await asyncio.sleep(5) # Espera 5 segundos antes de tentar de novo
+    
+    if retries == 0:
+        print("ERRO FATAL: Não foi possível conectar ao banco de dados após várias tentativas.")
 # --------------------------------
 
 @app.post("/signup", response_model=schemas.UserResponse, status_code=status.HTTP_201_CREATED, tags=["Autenticação"])

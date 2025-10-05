@@ -9,6 +9,8 @@ asyncpg
 
 # Validação de dados
 pydantic
+pydantic[email]
+
 
 # Adicione esta linha para lidar com JWT
 python-jose[cryptography]

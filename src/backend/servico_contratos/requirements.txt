@@ -8,6 +8,8 @@ asyncpg
 
 # Validação de dados
 pydantic
+pydantic[email]
+
 
 # Dependência de Segurança para JWT
 python-jose[cryptography]

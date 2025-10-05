@@ -19,5 +19,6 @@ python-jose[cryptography]
 psycopg2-binary
 
 
+
 # Adicione esta linha para fixar a versão do bcrypt
 bcrypt==3.2.0

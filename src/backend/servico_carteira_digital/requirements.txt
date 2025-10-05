@@ -8,4 +8,5 @@ alembic
 asyncpg # Driver assíncrono para PostgreSQL
 
 # Validação de dados (já é dependência do FastAPI, mas é bom ser explícito)
-pydantic    
+pydantic
+pydantic[email]

@@ -5,7 +5,7 @@ from jose import jwt
 from passlib.context import CryptContext
 
 # --- ATENÇÃO: Importações corrigidas ---
-from . import schemas
+from shared.database import schemas
 from shared.database import models
 # ------------------------------------
 
