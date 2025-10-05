@@ -50,6 +50,8 @@
 A documentação completa do projeto, incluindo arquitetura, fluxos e modelo de dados, pode ser encontrada em nosso site do Docusaurus.
 
 **[>> Acesse a Documentação Completa Aqui <<](https://jvwandermurem.github.io/Hackathon-Reevo/)**
+**[>> Acesse o Vídeo explicativo sobre as estrutura técnica da plataforma <<](https://drive.google.com/file/d/1hJQIJXGkipL9sOwm_O3_qHIpd2iZJpLP/view?usp=sharing)**
+
 
 ### Problema Resolvido
 
