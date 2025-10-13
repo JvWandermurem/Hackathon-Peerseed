@@ -1,12 +1,12 @@
 ---
-title: "Equipe"
-sidebar_label: "Equipe"
+title: "Team"
+sidebar_label: "Team"
 sidebar_position: 8
 ---
 
-# Membros da Equipe
+# Team Members
 
-&emsp; O projeto Reevo é composto por três alunos do Inteli – Instituto de Tecnologia e Liderança. A equipe combina experiência prática em tecnologia, empreendedorismo e design de produto: Abaixo, apresentamos os membros da equipe:
+&emsp;&emsp;The Reevo project is composed of three students from Inteli – Institute of Technology and Leadership. The team combines practical experience in technology, entrepreneurship, and product design. Below, we present the team members:
 
 ## Davi Nascimento de Jesus
 
@@ -16,10 +16,10 @@ sidebar_position: 8
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-- **Graduação**: Engenharia de Computação – Inteli  
-- **Cargos no Projeto**:
+- **Degree**: Computer Engineering – Inteli  
+- **Roles in the Project**:
   - UX/UI Designer
   - Frontend Engineer
 
@@ -43,10 +43,10 @@ sidebar_position: 8
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-- **Graduação**: Administração - Inteli
-- **Cargos no Projeto**:
+- **Degree**: Business Administration - Inteli
+- **Roles in the Project**:
   - Business Analyst
   - Blockchain Dev
 
@@ -69,10 +69,10 @@ sidebar_position: 8
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-- **Graduação**: Engenharia da Computação - Inteli
-- **Cargos no Projeto**:
+- **Degree**: Computer Engineering - Inteli
+- **Roles in the Project**:
   - Backend Engineer
   - AI Engineer
 
@@ -85,4 +85,3 @@ sidebar_position: 8
     <img src="https://img.shields.io/badge/GitHub-JvWandermurem-black?style=for-the-badge&logo=github" />
   </a>
 </div>
-

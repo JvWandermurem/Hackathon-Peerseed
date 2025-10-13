@@ -1,57 +1,56 @@
 ---
 sidebar_position: 3
-title: Plano de Monetização
+title: Monetization Plan
 ---
 
-## Contextualização
+## Contextualization
 
-&emsp;O plano de monetização do Reevo é um modelo **híbrido *fee-based***, projetado para gerar receita de ambos os lados do ecossistema (Agricultor e Investidor), garantindo a sustentabilidade e o alinhamento com o sucesso das operações de crédito.
+&emsp;The Reevo monetization plan is a **hybrid fee-based model**, designed to generate revenue from both sides of the ecosystem (Farmer and Investor), ensuring sustainability and alignment with the success of credit operations.
 
+## Revenue Streams
 
-## Fontes de Receita
+&emsp;Revenue streams are derived from the Gross Merchandise Volume (GMV), as defined in the Functional Requirements (RF-TAX-001), and the offering of value-added services.
 
-&emsp;As fontes de receita são derivadas do volume transacionado (GMV), conforme definido nos Requisitos Funcionais (RF-TAX-001), e da oferta de serviços de valor agregado.
-
-| Fonte | Descrição | Justificativa Estratégica |
+| Source | Description | Strategic Justification |
 | :--- | :--- | :--- |
-| **Taxa de Originação (RF-TAX-001)** | Cobrança sobre o valor de cada operação de crédito originada. | Garante receita em cada concessão, cobrindo o CAC e os custos de *onboarding* e **AgroScore**. |
-| **Taxa de Performance (RF-TAX-001)** | Percentual sobre juros recebidos pelos investidores em cada parcela quitada. | Relaciona receita à rentabilidade e à recorrência das operações
-| **Taxa de Marketplace (RF-INV-003)** | Comissão fixa por operação de venda/compra de cotas de crédito no **Mercado Secundário**. | Potencializa receita conforme cresce a **liquidez** da plataforma, um serviço de valor agregado ao Investidor (Marina). |
+| **Origination Fee (RF-TAX-001)** | Charge on the value of each credit operation originated. | Ensures revenue with each concession, covering CAC and the costs of *onboarding* and **AgroScore**. |
+| **Performance Fee (RF-TAX-001)** | Percentage on interest received by investors for each installment paid. | Links revenue to the profitability and recurrence of operations. |
+| **Marketplace Fee (RF-INV-003)** | Fixed commission per operation for selling/buying credit shares in the **Secondary Market**. | Boosts revenue as platform **liquidity** grows, a value-added service for the Investor (Marina). |
 
 ---
 
-## 2. Modelo de Precificação
+## 2. Pricing Model
 
-&emsp;O modelo de precificação é baseado em comissionamento percentual, ajustado ao risco e ao mercado.
+&emsp;The pricing model is based on percentage commission, adjusted to risk and market conditions.
 
-| Produto/Serviço | Precificação | Racionalidade e Competitividade |
+| Product/Service | Pricing | Rationale and Competitiveness |
 | :--- | :--- | :--- |
-| **Originação de Crédito** | **2% a 4%** do valor concedido (variável pelo risco **AgroScore**). | Permite competitividade frente a bancos e *fintechs*, enquanto a variação por risco incentiva o produtor a melhorar seu score. |
-| **Performance** | **15% a 20%** sobre os juros brutos recebidos pelo Investidor. | Garante uma alta margem para a plataforma e mantém o **Retorno Líquido** do Investidor atraente comparado à renda fixa. |
-| **Transação Marketplace** | **1% a 1.5%** do valor da transação no Mercado Secundário. | Taxa baixa o suficiente para estimular a liquidez sem onerar o Investidor. |
+| **Credit Origination** | **2% to 4%** of the granted value (variable based on **AgroScore** risk). | Allows competitiveness against banks and *fintechs*, while risk variation encourages the producer to improve their score. |
+| **Performance** | **15% to 20%** on gross interest received by the Investor. | Ensures a high margin for the platform and keeps the Investor's **Net Return** attractive compared to fixed income. |
+| **Marketplace Transaction** | **1% to 1.5%** of the transaction value in the Secondary Market. | Low enough fee to stimulate liquidity without burdening the Investor. |
 
-&emsp;O modelo de receita do Reevo mistura **taxas transacionais e assinaturas**, otimizando a adesão tanto B2C (Agricultor/Investidor PF) quanto B2B (Cooperativas), e está alinhado às margens e *benchmarks* de plataformas P2P e *fintechs* de crédito.
+&emsp;The Reevo revenue model mixes **transactional fees and subscriptions**, optimizing adoption for both B2C (Farmer/Individual Investor) and B2B (Cooperatives), and is aligned with the margins and *benchmarks* of P2P platforms and credit *fintechs*.
 
 ---
 
-## 3. Projeção de Crescimento da Receita
+## 3. Revenue Growth Projection
 
-&emsp;O crescimento da receita está diretamente atrelado ao aumento do volume de crédito originado (GMV) e à estabilização do *default rate* (taxa de inadimplência).
+&emsp;Revenue growth is directly tied to the increase in Gross Merchandise Volume (GMV) and the stabilization of the *default rate* (inadimplência).
 
-| Horizonte | Foco Estratégico | Marco Chave |
+| Horizon | Strategic Focus | Key Milestone |
 | :--- | :--- | :--- |
-| **Curto Prazo (Ano 1)** | Foco na validação da plataforma e na estabilização do **AgroScore**. Receita dominada pela **Taxa de Originação**. | **Ponto de Equilíbrio (Break-Even):** Atingido entre **8 e 12 meses** de operação, comprovando a sustentabilidade do modelo de indicações com volume inicial. |
-| **Médio Prazo (Ano 2-3)** | **Escala do GMV** (crescimento >100%), Aumento da receita da **Taxa de Performance**. | **Lucratividade Consistente e Escalabilidade:** Comprovar a capacidade de escalar sem aumentar o *default rate*, gerando **ROI positivo** e atração de investimento *Series A*. |
-| **Longo Prazo (Ano 5+)** | Diversificação para novos produtos financeiros indexados a dados de impacto ESG e *analytics* avançado. | **Liderança de Mercado:** Posicionamento como o principal *player* de crédito digital P2P para PMEs rurais, com alta margem de contribuição. |
+| **Short Term (Year 1)** | Focus on platform validation and **AgroScore** stabilization. Revenue dominated by the **Origination Fee**. | **Break-Even Point:** Reached between **8 and 12 months** of operation, proving the sustainability of the model with initial volume. |
+| **Medium Term (Year 2-3)** | **GMV Scaling** (growth >100%), Increase in **Performance Fee** revenue. | **Consistent Profitability and Scalability:** Proving the ability to scale without increasing the *default rate*, generating **positive ROI** and attracting Series A investment. |
+| **Long Term (Year 5+)** | Diversification into new financial products indexed to ESG impact data and advanced *analytics*. | **Market Leadership:** Positioning as the main P2P digital credit *player* for rural SMEs, with high contribution margin. |
 
 ---
 
-## 4. Riscos e Mitigações Financeiras
-&emsp;A sustentabilidade do Reevo depende da gestão eficaz dos riscos inerentes ao crédito P2P e à operação fintech. A seguir é detalhado os principais riscos que podem impactar o fluxo de caixa e a rentabilidade do projeto, bem como as estratégias de mitigação integradas à plataforma para garantir sua estabilidade e crescimento.
+## 4. Financial Risks and Mitigations
+&emsp;The sustainability of Reevo depends on the effective management of risks inherent to P2P credit and fintech operations. The main risks that can impact the cash flow and profitability of the project are detailed below, along with mitigation strategies integrated into the platform to ensure its stability and growth.
 
-| Risco Financeiro | Estratégia de Mitigação 
-| :--- | :--- | 
-| **Adoção abaixo do esperado (GMV baixo)** | **Parcerias Estratégicas:** Usar Cooperativas e Revendas de Insumos para acesso ao produtor e canais ESG para Investidores. |
-| **Redução de margens por concorrência** | **Inovação Contínua:** Manter a diferenciação tecnológica (**AgroScore** e **Mercado Secundário**) e o alto valor agregado da **conformidade fiscal integrada**. |
-| **Risco de Inadimplência Reduz a Receita de Performance** | **Governança de Risco:** Refinamento contínuo do **AgroScore** com base em dados reais e gestão de cobrança automatizada. |
-| **Risco Operacional/Regulatório** | **Compliance Proativo:** Auditoria externa dos Contratos Inteligentes e reporte fiscal transparente (RF-TAX-002) para evitar multas e interrupções. |
+| Financial Risk | Mitigation Strategy |
+| :--- | :--- |
+| **Lower than expected adoption (low GMV)** | **Strategic Partnerships:** Use Cooperatives and Input Resellers for farmer access and ESG channels for Investors. |
+| **Margin reduction due to competition** | **Continuous Innovation:** Maintain technological differentiation (**AgroScore** and **Secondary Market**) and the high value added by **integrated tax compliance**. |
+| **Default Risk Reduces Performance Revenue** | **Risk Governance:** Continuous refinement of the **AgroScore** based on real data and automated collection management. |
+| **Operational/Regulatory Risk** | **Proactive Compliance:** External audit of Smart Contracts and transparent tax reporting (RF-TAX-002) to avoid fines and interruptions. |

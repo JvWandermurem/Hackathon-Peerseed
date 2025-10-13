@@ -3,80 +3,74 @@ sidebar_position: 6
 title: AgroScore
 ---
 
-## Visão Geral e Objetivo
-&emsp; O AgroScore é o motor de análise de crédito automatizada do Reevo e um dos nossos principais diferenciais competitivos. Seu objetivo é prover uma avaliação de risco de crédito rápida, justa e baseada em dados, atendendo diretamente ao requisito `RF-AGR-002`.
+## Overview and Objective
 
-&emsp; Para o agricultor Sérgio, o AgroScore significa sair da subjetividade e da lentidão dos bancos tradicionais e receber uma resposta em horas, não semanas. 
+The **AgroScore** is Reevo's engine for **automated credit analysis** and a core competitive differentiator. Its objective is to provide a **fast, fair, and data-driven credit risk assessment**, directly addressing requirement **RF-AGR-002**.
 
-&emsp; Para a investidora Marina, o AgroScore traduz a complexidade de um perfil agrícola em uma métrica de risco clara e padronizada (de A a E), permitindo que ela tome decisões de investimento informadas e confiantes.
-
----
-## Foco em Interpretabilidade e Performance
-&emsp; A escolha do tipo de modelo para o MVP é guiada por dois fatores críticos em sistemas de crédito, a **capacidade de explicar uma decisão** e a **velocidade da predição.**
-
-**Tipos de Modelos de Machine Learning**
-
-| Tipo de Modelo                               | Vantagens para o Reevo                                                                                                                                     | Desvantagens                                                                                                                 |
-|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| **Modelos Clássicos** (Regressão Logística, Gradient Boosting) | - **Alta Interpretabilidade**: Permitem analisar a importância de cada variável (ex: "o histórico de crédito foi o fator mais importante"). Essencial para conformidade e feedback ao usuário.- **Alta Performance**: Rápidos para treinar e fazer predições, ideal para APIs (**RNF-ED-01**). | Podem não capturar relações não-lineares extremamente complexas nos dados.                                                   |
-| **Deep Learning** (Redes Neurais)            | - **Capacidade**: Aprende padrões muito complexos e não-lineares.                                                                                             | - **Baixa Interpretabilidade** ("Caixa-Preta"), dificultando explicação de decisões (risco regulatório e de negócio). **Mais Lento**: Exige mais dados e poder computacional para treinar e predizer. |
-
+For the farmer Sérgio, AgroScore means moving away from the subjectivity and slowness of traditional banks and receiving a response in **hours, not weeks**. For the investor Marina, AgroScore translates the complexity of an agricultural profile into a clear and standardized risk metric (**A to E**), allowing her to make informed and confident investment decisions.
 
 ---
-## Fontes de Dados (Features)
-O AgroScore é alimentado por um conjunto diversificado de dados para criar um perfil de risco 360º do agricultor.
 
-**Categorias de Features e Fontes de Dados**
+## Focus on Interpretability and Performance
 
-| Categoria da Feature                  | Exemplos de Dados                                                      | Fonte                                                      |
-|---------------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------|
-| **Dados Cadastrais**                  | Idade, região, estado civil.                                           | Tabela `usuarios` (PostgreSQL).                            |
-| **Dados da Propriedade**              | Hectares, cultura principal, posse da terra (própria/arrendada).       | Formulário de Solicitação (**RF-AGR-001**).                |
-| **Dados Históricos de Produção**      | Faturamento do último ciclo (baseado em Notas Fiscais).                | Upload de Documentos (**RF-AGR-001**).                     |
-| **Dados de Crédito Externo**          | Score de crédito (Serasa/SPC), histórico de dívidas.                   | APIs de Bureaus de Crédito (**RNF-C-01**).                 |
-| **Dados de Comportamento na Plataforma** | Histórico de pagamento de empréstimos anteriores no Reevo.          | Tabelas `cprs` e `parcelas` (PostgreSQL).                  |
+The choice of model type for the MVP is guided by two critical factors in credit systems: **interpretability** (to justify the decision) and **speed**.
 
-## Ciclo de Vida do Modelo (MLOps) no MVP
+| Model Type | Advantages for Reevo | Disadvantages |
+| :--- | :--- | :--- |
+| **Classical Models (Logistic Regression, Gradient Boosting)** | - **High Interpretability:** Allow analysis of the importance of each variable. Essential for **compliance and user feedback**. - **High Performance:** Fast to train and make predictions, ideal for APIs (**RNF-ED-01**). | May not capture extremely complex non-linear relationships in the data. |
+| **Deep Learning (Neural Networks)** | - **Capacity:** Learns very complex and non-linear patterns. | - **Low Interpretability ("Black Box")**, making decision explanation difficult (**regulatory and business risk**). Slower: Requires more data and computational power to train and predict. |
 
-Para o MVP, adotaremos um ciclo de vida semi-manual, focado na simplicidade e na validação rápida, com um caminho claro para automação futura.
+---
 
-**A. Coleta e Preparação de Dados**
+## Data Sources (Features)
 
-Os dados das fontes acima são coletados em um processo em lote (batch). Um script extrai os dados do PostgreSQL e os combina com os dados de bureaus, gerando um dataset de treinamento consolidado.
+AgroScore is powered by a diverse set of data to create a **360º risk profile** of the farmer.
 
+| Feature Category | Data Examples | Source |
+| :--- | :--- | :--- |
+| **Registration Data** | Age, region, marital status. | `usuarios` table (PostgreSQL). |
+| **Property Data** | Hectares, main crop, land tenure (owned/leased). | Application Form (**RF-AGR-001**). |
+| **Historical Production Data** | Revenue from the last cycle (based on Invoices/NFs). | Document Upload (**RF-AGR-001**). |
+| **External Credit Data** | Credit score (Serasa/SPC), debt history. | Credit Bureau APIs (**RNF-C-01**). |
+| **Platform Behavior Data** | Payment history of previous loans on Reevo. | `cprs` and `parcelas` tables (PostgreSQL). |
 
-**B. Treinamento e Avaliação do Modelo**
+---
 
-O treinamento é realizado em um ambiente de desenvolvimento, tipicamente um arquivo Python
+## Model Lifecycle (MLOps) in the MVP
 
-Um dos devs do time de dados executa o arquivo python que realiza a limpeza dos dados, engenharia de features, treinamento do modelo de ML e sua avaliação rigorosa com métricas estatísticas (ex: AUC, Precisão, Recall). O resultado deste processo é um único arquivo de modelo treinado (ex: agro_score_model_v1.pkl).
+For the MVP, we will adopt a **semi-manual lifecycle**, focused on simplicity and quick validation, with a clear path to future automation.
 
-**C. Versionamento e Armazenamento do Artefato**
+**A. Data Collection and Preparation**
 
-- O arquivo do modelo (.pkl) e o arquivo python que o gerou são versionados com Git. O artefato do modelo em si é armazenado em um serviço de Object Storage (compatível com S3), seguindo uma nomenclatura clara de versionamento (ex: s3://Reevo-models/agro_score_model_v1.pkl).
+Data from the sources above is collected in a batch process. A script extracts data from PostgreSQL and combines it with bureau data, generating a consolidated training dataset.
 
-**D. Implantação (Serving) do Modelo:**
+**B. Model Training and Evaluation**
 
-- O microsserviço Serviço de Análise de Crédito é configurado (via variável de ambiente) com o caminho para o arquivo do modelo ativo no Object Storage.
+Training is performed in a development environment, typically a Python file. A developer executes the Python file that performs data cleaning, feature engineering, ML model training, and rigorous evaluation with statistical metrics (e.g., AUC, Precision, Recall). The result is a single trained model file (e.g., `agro_score_model_v1.pkl`).
 
-- Ao iniciar, o serviço FastAPI faz o download do arquivo do modelo e o carrega em memória.
+**C. Artifact Versioning and Storage**
 
-- Quando uma requisição de análise de crédito chega à API, o serviço simplesmente chama a função model.predict() com os dados da requisição.
+The model file (`.pkl`) and the Python file that generated it are versioned with **Git**. The model artifact itself is stored in an **Object Storage service (S3 compatible)**, following a clear versioning nomenclature (e.g., `s3://Reevo-models/agro_score_model_v1.pkl`).
 
-> Justificativa: Este é o padrão de implantação de menor latência e menor complexidade para o MVP, garantindo que as análises de crédito sejam processadas em segundos, conforme o RF-AGR-002.
+**D. Model Deployment (Serving):**
 
-## Monitoramento e Retreinamento
-Um modelo de ML pode se degradar com o tempo (model drift). Nossa estratégia de monitoramento no MVP será periódica e semi-manual.
+The **Credit Analysis Microservice** is configured (via environment variable) with the path to the active model file in Object Storage. Upon startup, the **FastAPI service downloads the model file and loads it into memory**. When a credit analysis request arrives at the API, the service simply calls the `model.predict()` function with the request data.
 
-**Monitoramento de Performance:** A cada ciclo (ex: trimestralmente), analisaremos a performance real dos empréstimos concedidos. Compararemos a taxa de inadimplência prevista pelo modelo com a taxa real. Se a acurácia do modelo cair abaixo de um limiar pré-definido, o processo de retreinamento é acionado.
+**Rationale:** This is the deployment pattern with the **lowest latency** and least complexity for the MVP, ensuring that credit analyses are processed in seconds, as per **RF-AGR-002**.
 
-**Retreinamento:** O processo de retreinamento segue o mesmo ciclo descrito no passo 4, utilizando um dataset atualizado com os dados mais recentes de performance dos empréstimos. Um novo artefato de modelo (agro_score_model_v2.pkl) é gerado e, após validação, a configuração do serviço em produção é atualizada para usar a nova versão.
+---
 
-## Evolução Futura (Pós-MVP)
-Com a validação do negócio, o ciclo de MLOps evoluirá para uma pipeline mais automatizada:
+## Monitoring and Retraining
 
-**Feature Store:** Centralização dos dados de features para garantir consistência entre treinamento и predição.
+An ML model can degrade over time (**model drift**). Our monitoring strategy in the MVP will be periodic and semi-manual.
 
-**Pipeline de Treinamento Automatizado:** Uso de ferramentas como MLflow ou Kubeflow para automatizar o treinamento, o versionamento e o registro de performance dos modelos.
+* **Performance Monitoring:** Every cycle (e.g., quarterly), we will analyze the real performance of the loans granted. We will compare the **default rate predicted by the model with the actual rate**. If the model's accuracy drops below a predefined threshold, the retraining process is triggered.
+* **Retraining:** The retraining process follows the same cycle, using an updated dataset with the most recent loan performance data. A new model artifact (`agro_score_model_v2.pkl`) is generated and, after validation, the production service configuration is updated to use the new version.
 
-**Deploy Canário / Testes A/B:** Implantação de novas versões do modelo para uma pequena porcentagem do tráfego, comparando sua performance com a versão antiga antes de liberá-la para todos os usuários.
+## Future Evolution (Post-MVP)
+
+With business validation, the **MLOps cycle** will evolve into a more automated pipeline:
+
+* **Feature Store:** Centralization of feature data to ensure consistency between training and prediction.
+* **Automated Training Pipeline:** Use of tools like **MLflow or Kubeflow** to automate training, versioning, and performance logging of the models.
+* **Canary Deploy / A/B Testing:** Deployment of new model versions to a small percentage of traffic, comparing their performance with the old version before releasing it to all users.

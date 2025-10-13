@@ -1,155 +1,133 @@
 ---
 sidebar_position: 2
-title: Análise Financeira
+title: Financing Analysis
 ---
 
-## Contextualização
+## Contextualization
 
-&emsp;Esta seção consolida a análise de viabilidade do Reevo, traduzindo os resultados financeiros, arquitetônicos e de risco em um Plano de Ação Estratégico.
+&emsp; This section consolidates the viability analysis of Reevo, translating the financial, architectural, and risk results into a Strategic Action Plan.
 
-## Descrição do Projeto & Produto
+## Project & Product Description
 
-* **Produto / Serviço:** Plataforma **P2P Híbrida** para originar crédito agrícola (CPR tokenizada) de PMEs rurais, com análise de risco via **AgroScore** (IA) e garantia de liquidez via **Mercado Secundário**.
-* **Proposta de valor:** Democratização do crédito ao Agricultor PME, com análise mais rápida do que de modelos de crédito tradicionais e oferta de um ativo com **liquidez** e **conformidade ESG** ao Investidor.
-* **Clientes-alvo:** **Agricultores PME** e **Investidores Pessoas Físicas/Fundos de Impacto**.
-* **Stage:** **Seed** (Lançamento e Validação de Mercado).
+* **Product / Service:** Hybrid **P2P Platform** to originate agricultural credit (tokenized CPR) for rural SMEs, with risk analysis via **AgroScore** (AI) and liquidity guarantee via the **Secondary Market**.
+* **Value Proposition:** Democratization of credit to the SME Farmer, with faster analysis than traditional credit models and the offer of an asset with **liquidity** and **ESG compliance** to the Investor.
+* **Target Clients:** **SME Farmers** and **Individual/Impact Investors**.
+* **Stage:** **Seed** (Launch and Market Validation).
 
 ---
 
-## Premissas Principais
+## Key Assumptions
 
-| Premissa | Valor          | Fonte / Justificativa |
+| Assumption | Value | Source / Justification |
 | :--- | ---: | :--- |
-| Ticket Médio (TM) por Operação | **R$ 40.000**  | Benchmark de crédito para PMEs na Agricultura Familiar. |
-| Taxa Média de Originação | **3,0%** | Média competitiva no mercado de *AgriFintech*. |
-| Taxa Média de Performance | **18%** | Alta margem, alinhada à média de risco P2P (RF-TAX). |
-| Taxa de Inadimplência (Ano 1) | **8,0%** | Risco inicial de *startup*, caindo para **4,5%** no Ano 3 devido à eficácia do AgroScore. |
-| Clientes Ativos (Agric.) / Mês (Ano 1) | **35** | Meta de *ramp-up* via parcerias (420 operações/ano). |
-| CAC (Custo de Aquisição) Médio | **R$ 2.000** | Custo elevado devido ao *onboarding* assistido e parcerias com Cooperativas. |
-| Churn Mensal (Investidor) | **1,5%** | Baixo, justificado pela liquidez do **Mercado Secundário** e **Staking (Token SEED)**. |
-| Taxa de Desconto (DCF) | **12%** | Padrão alto risco de *startup* em setor regulado. |
+| Average Ticket (TM) per Operation | **R$ 40,000** | Benchmark for credit to SMEs/Family Farming. |
+| Average Origination Fee | **3.0%** | Competitive average in the *AgriTech* market. |
+| Average Performance Fee | **18%** | High margin, aligned with P2P risk average (RF-TAX). |
+| Default Rate (Year 1) | **8.0%** | Initial startup risk, dropping to **4.5%** in Year 3 due to AgroScore effectiveness. |
+| Active Clients (Farmers) / Month (Year 1) | **35** | Ramp-up target via partnerships (420 operations/year). |
+| Average CAC (Customer Acquisition Cost) | **R$ 2,000** | High cost due to assisted onboarding and Cooperatives partnerships. |
+| Monthly Investor Churn | **1.5%** | Low, justified by **Secondary Market** liquidity and **Staking (Token SEED)**. |
+| Discount Rate (DCF) | **12%** | High-risk startup standard in a regulated sector. |
 
 ---
 
-## TAM (Tamanho de Mercado)
+## TAM (Total Addressable Market)
 
-O Reevo mira no **SAM (Serviceable Addressable Market)** de **R$ 50 bilhões** anuais, que representa o volume de crédito não atendido para PMEs e Agricultura Familiar.
+Reevo targets the **SAM (Serviceable Addressable Market)** of **R\$ 50 billion** annually, which represents the unmet credit volume for SMEs and Family Farming.
 
-* **SOM (Serviceable Obtainable Market):** A meta de adoção é atingir **R$ 50 milhões** em GMV no Ano 3 ≈ 0.1% do SAM.
-* **Tração:** A taxa de crescimento projetada de GMV é de 150% (Ano 2) e 100% (Ano 3), impulsionada pela oferta de liquidez aos investidores e pela confiança das parcerias e modelos de distribuição para investidor e agricultor.
+* **SOM (Serviceable Obtainable Market):** The adoption target is to reach **R\$ 50 million** in GMV in Year 3 $\approx$ 0.1% of SAM.
+* **Traction:** The projected GMV growth rate is 150% (Year 2) and 100% (Year 3), driven by offering liquidity to investors and the trust from partnerships and distribution models for investors and farmers.
 
 ---
 
-## Modelo de Receita
+## Revenue Model
 
-O modelo é ***fee-based***, com o risco de *default* afetando diretamente a **Receita de Performance**.
+The model is ***fee-based***, with the risk of *default* directly impacting the **Performance Revenue**.
 
 ### Unit Economics
 
-Calculado com TM de R$ 40.000 e Retorno sobre Juros de 20%.
+Calculated with TM of R\$ 40,000 and Interest Return of 20%.
 
-| Métrica | Cálculo / Valor | Significado |
+| Metric | Calculation / Value | Meaning |
 | :--- | :--- | :--- |
-| **LTV (Lifetime Value) por Cliente (3 anos)** | R$ $40.000 x 3% + (R$40.000 x 20% x 18\% x 3) ⟹ **R$ 5.520** | (Valor presente total que o cliente gera). |
-| **LTV / CAC** | R$ 5.520 / R$ 2.000 ⟹ **2.76x** | Deve ser otimizado para superar $3.0x$ (meta de escalabilidade). |
-| **Payback do CAC** | CAC / (Receita Média Mensal) ≈ 9 meses | Tempo de recuperação do investimento de aquisição. |
+| **LTV (Lifetime Value) per Client (3 years)** | R$40,000X3%+(R$ 40,000×20%×18%×3)⟹R$5,520| (Total present value generated by the client). |
+| **LTV / CAC** | R$ 5,520 / R$ 2,000 => **2.76x** | Must be optimized to exceed 3.0x (scalability goal). |
+| **CAC Payback** | CAC / (Average Monthly Revenue) $≈$ **9 months** | Time to recover the acquisition investment. |
 
 ---
 
-## Estrutura de Custos
+## Cost Structure
 
-Os custos são dominados pela **Tecnologia (TechOps)** e **Conformidade (Jurídico/Segurança)**, não pelo *funding*.
+Costs are dominated by **Technology (TechOps)** and **Compliance (Legal/Security)**, not by *funding*.
 
-| Categoria | Tipo | Projeção Anual (Ano 1) | Detalhamento Chave |
+| Category | Type | Annual Projection (Year 1) | Key Detail |
 | :--- | :--- | :--- | :--- |
-| **Salários Core (Tech/Ops)** | OPEX Fixo | R\$ 500.000 | Dev/Blockchain Sênior e Analista de Backoffice/Suporte. |
-| **Infraestrutura & Conformidade** | OPEX Fixo | R\$ 270.000 | Hosting, ICP-Brasil, HSM e Auditoria dos Smart Contracts. |
-| **Marketing & Vendas (CAC)** | OPEX Variável | R\$ 840.000 | Custo para adquirir 420 Agricultores $\times$ R\$ 2.000 (CAC). |
-| **CAPEX (Investimento Inicial)** | CAPEX | R\$ 500.000 | Desenvolvimento do **Motor de Score (ML)** e *Smart Contracts*. |
+| **Core Salaries (Tech/Ops)** | OPEX Fixed | R$ 500,000 | Dev/Blockchain Senior and Backoffice/Support Analyst. |
+| **Infrastructure & Compliance** | OPEX Fixed | R$ 270,000 | Hosting, ICP-Brasil, HSM, and Smart Contracts Audit. |
+| **Marketing & Sales (CAC)** | OPEX Variable | R$ 840,000 | Cost to acquire 420 Farmers $\times$ R\$ 2,000 (CAC). |
+| **CAPEX (Initial Investment)** | CAPEX | R\$ 500,000 | Development of the **Score Engine (ML)** and *Smart Contracts*. |
 
 ---
 
-## Projeção Financeira (Ano 1–5)
+## Financial Projection (Year 1–5)
 
-| Métrica | Ano 1 (R$) | Ano 2 (R$) | Ano 3 (R$) | Ano 4 (R$) | Ano 5 (R$) |
+| Metric | Year 1 (R\$k) | Year 2 (R\$k) | Year 3 (R\$k) | Year 4 (R\$k) | Year 5 (R\$k) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Receita** | 800 | 2.400 | 5.000 | 8.500 | 13.000 |
-| **COGS (Provisão Inadimp.)** | 800 | 1.500 | 2.250 | 3.400 | 5.200 |
-| **Margem Bruta** | 0 | 900 | 2.750 | 5.100 | 7.800 |
-| **G&A, Tech, Salários** | 950 | 1.200 | 1.800 | 2.200 | 2.800 |
-| **Marketing & Vendas** | 840 | 1.200 | 1.800 | 2.500 | 3.500 |
-| **EBITDA** | **(1.790)** | **(1.500)** | **(850)** | **400** | **1.500** |
+| **Revenue** | 800 | 2,400 | 5,000 | 8,500 | 13,000 |
+| **COGS (Default Provision)** | 800 | 1,500 | 2,250 | 3,400 | 5,200 |
+| **Gross Margin** | 0 | 900 | 2,750 | 5,100 | 7,800 |
+| **G&A, Tech, Salaries** | 950 | 1,200 | 1,800 | 2,200 | 2,800 |
+| **Marketing & Sales** | 840 | 1,200 | 1,800 | 2,500 | 3,500 |
+| **EBITDA** | **(1,790)** | **(1,500)** | **(850)** | **400** | **1,500** |
 
 ---
 
-## Fluxo de Caixa Projetado (Ano 1–5)
+## Projected Cash Flow (Year 1–5)
 
-O FCF (Fluxo de Caixa Livre) negativo demonstra a necessidade de capital inicial.
+The FCF (Free Cash Flow) negative shows the need for initial capital.
 
-| Métrica | Ano 1 (R$) | Ano 2 (R$) | Ano 3 (R$) | Ano 4 (R$) | Ano 5 (R$) |
+| Metric | Year 1 (R\$k) | Year 2 (R\$k) | Year 3 (R\$k) | Year 4 (R\$k) | Year 5 (R\$k) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **EBITDA** | (1.790) | (1.500) | (850) | 400 | 1.500 |
+| **EBITDA** | (1,790) | (1,500) | (850) | 400 | 1,500 |
 | **CapEx** | (500) | (300) | (400) | (400) | (500) |
-| **Fluxo de Caixa Livre (FCF)** | **(2.240)** | **(1.800)** | **(1.250)** | **(0)** | **800** |
+| **Free Cash Flow (FCF)** | **(2,240)** | **(1,800)** | **(1,250)** | **(0)** | **800** |
 
 ---
 
-## Cenários
+## Scenarios
 
-Simulação com a variação do principal fator de risco: a **Taxa de Inadimplência**.
+Simulation with the variation of the main risk factor: the **Default Rate**.
 
-| Cenário | Taxa de Inadimplência (Ano 3) | EBITDA (Ano 3) | Fluxo de Caixa (Ano 3) |
+| Scenario | Default Rate (Year 3) | EBITDA (Year 3) | Cash Flow (Year 3) |
 | :--- | :--- | :--- | :--- |
-| **Base** | **4,5%** | **(R\$ 850)** | **(R\$ 1.250)** |
-| **Pessimista** | **6,5%** (AgroScore Falha) | (R\$ 1.850) | (R\$ 2.250) |
-| **Otimista** | **3,0%** (AgroScore Excelente) | R\$ 550 | R\$ 150 |
+| **Base** | **4.5%** | **(R\$ 850)** | **(R\$ 1,250)** |
+| **Pessimistic** | **6.5%** (AgroScore Failure) | (R\$ 1,850) | (R\$ 2,250) |
+| **Optimistic** | **3.0%** (AgroScore Excellent) | R\$ 550 | R\$ 150 |
 
 ---
 
-## Análise de Sensibilidade
+## Sensitivity Analysis
 
-Impacto de variações de 20% nas variáveis críticas (Ano 3).
+Impact of 20% variations in critical variables (Year 3).
 
-| Variação | Variável | Impacto no NPV 12% (Ano 5) |
+| Variation | Variable | Impact on NPV @12% (Year 5) |
 | :--- | :--- | :--- |
-| **+20%** | Taxa de Originação | **+R$ 1.5M** |
-| **-20%** | Taxa de Inadimplência | **+R$ 1.2M** |
-| **-20%** | CAC | **+R$ 1.0M** |
+| **+20%** | Origination Fee | **+R\$ 1.5M** |
+| **-20%** | Default Rate | **+R\$ 1.2M** |
+| **-20%** | CAC | **+R\$ 1.0M** |
 
 ---
 
-## Break-even e Payback
+## Break-even and Payback
 
-* **Ponto de Equilíbrio (Break-even):** O Reevo atinge o **Break-Even Operacional** (>= 0) no **Ano 4** do cenário base.
-* **Tempo de Payback do Investimento (FCF cumulativo):** O capital inicial será recuperado (FCF acumulado >= 0$) em aproximadamente **4.5 anos**.
+* **Break-Even Point:** Reevo reaches **Operational Break-Even** ($>= 0$) in **Year 4** of the base scenario.
+* **Payback Period (Cumulative FCF):** The initial capital will be recovered (Cumulative FCF $>= 0$) in approximately **4.5 years**.
 
 ---
 
-## Indicadores e KPIs
+## Indicators and KPIs
 
-| Indicador | Ano 1 | Ano 3 | Meta Estratégica |
+| Indicator | Year 1 | Year 3 | Strategic Goal |
 | :--- | :--- | :--- | :--- |
-| **CAC** | R$ 2.000 | R$ 2.000 | Ser reduzido via parcerias B2B. |
-| **LTV / CAC** | **2.76x** | **2.76x** | Otimizar para **3x** (garantia de escalabilidade). |
-| **Margem EBITDA** | -223% | -17% | Positivo no Ano 4. |
-| **Runway (Duração do Capital)** | 12 meses | N/A | Garantir 18 meses com a rodada Seed. |
-
----
-
-## Necessidade de Capital & Uso dos Recursos
-
-* **Necessidade de Capital Total (18 meses):** R$ 4.5 milhões (Inclui *runway* e reserva para CapEx e *Smart Contracts*).
-
-| Uso dos Recursos | Percentual | Justificativa de Alto Risco (Seed) |
-| :--- | :--- | :--- |
-| **Tech/Desenvolvimento (AgroScore/DeFi)** | **40%** | Investimento crucial em ML e *Smart Contracts* (mitigação do risco de *default* e liquidez). |
-| **Marketing/Vendas** | **30%** | Financiamento do alto CAC inicial e parcerias com Cooperativas. |
-| **Operacional/Legal** | **20%** | Custo de Conformidade (ICP-Brasil, HSM) e Salários. |
-
----
-
-## Valuation (Sumário)
-
-* **Valuation Estimado (Base):** Utilizando múltiplos EV/Receita no Ano 3 (R$5.0M) e um multiplicador conservador de 4.0x, a **Valuation é de R$ 20 Milhões**.
-
+| **CAC** | R\$
 

@@ -1,404 +1,400 @@
 ---
 sidebar_position: 4
-title: Fluxo de Dados
+title: Data Flow
 ---
 
-## Introdução
+## Introduction
 
-&emsp;O fluxo de dados descreve como as informações e valores circulam entre os diferentes atores (agricultores, investidores e administradores), os serviços internos da plataforma e os sistemas externos integrados (ex.: gateways de pagamento, registradoras de CPR, bureaus de crédito).
+&emsp;The data flow describes how information and values circulate among the different actors (farmers, investors, and administrators), the platform's internal services, and integrated external systems (e.g., payment gateways, CPR registrars, credit bureaus).
 
-&emsp;Esses fluxos desenvolvidos pensados personas **Sérgio(Agricultor)** e **Marina(Investidora)** para garantir que o sistema opere de forma consistente, segura e transparente, evitando falhas de comunicação e assegurando a rastreabilidade de cada operação.
+&emsp;These flows were designed considering the personas **Sérgio (Farmer)** and **Marina (Investor)** to ensure the system operates consistently, securely, and transparently, avoiding communication failures and ensuring the traceability of each operation.
 
-&emsp;Para representar essas interações, foram elaborados seis fluxos principais: Solicitação e Aprovação de Crédito, Realização de Investimento, Pagamento de Parcela e Distribuição (Assíncrono), Venda no Mercado Secundário, Saque de Fundos (Off-Ramp) e Gestão de Inadimplência, cada um detalhando as etapas críticas de dados e integrações que sustentam a operação da plataforma.
+&emsp;To represent these interactions, six main flows were elaborated: Credit Request and Approval, Investment Execution, Installment Payment and Distribution (Asynchronous), Secondary Market Sale, Fund Withdrawal (Off-Ramp), and Default Management, each detailing the critical data and integration steps that support the platform's operation.
 
-## Fluxo de Solicitação e Aprovação de Crédito
+## Credit Request and Approval Flow
 
-&emsp;Este fluxo descreve a jornada do agricultor Sérgio desde o cadastro até ter sua proposta listada no marketplace. Ele demonstra a interação entre o usuário, o sistema automatizado e o "humano no loop" (Analista de Crédito).
+&emsp;This flow describes the journey of the farmer Sérgio from registration until his proposal is listed on the marketplace. It demonstrates the interaction between the user, the automated system, and the "human in the loop" (Credit Analyst).
 
 
-<p style={{textAlign: 'center'}}> Fluxo de Solicitação e Aprovação de Crédito</p>
+<p style={{textAlign: 'center'}}> Credit Request and Approval Flow</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_solicitacao_credito_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/fluxo_solicitacao_credito_reevo.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-> Nota: Para melhor visualização:
+> Note: For better visualization:
 
 > https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
 
 <details>
-  <summary>Fluxo de Solicitação e Aprovação de Crédito</summary>
+  <summary>Credit Request and Approval Flow</summary>
 
 ```murmaid
 sequenceDiagram
-    participant Sérgio as Agricultor (Browser)
+    participant Sérgio as Farmer (Browser)
     participant FE as Frontend
     participant GW as API Gateway
-    participant Contas as Serviço de Contas
-    participant Analise as Serviço de Análise de Crédito
-    participant Backoffice as Interface do Analista
-    participant Analista as Analista de Crédito
+    participant Contas as Accounts Service
+    participant Analise as Credit Analysis Service
+    participant Backoffice as Analyst Interface
+    participant Analista as Credit Analyst
 
-    Sérgio->>FE: 1. Preenche cadastro e solicitação
-    FE->>GW: 2. Envia dados e documentos
-    GW->>Contas: 3. Cria/Autentica usuário
-    GW->>Analise: 4. Inicia análise de crédito
+    Sérgio->>FE: 1. Fills out registration and application
+    FE->>GW: 2. Sends data and documents
+    GW->>Contas: 3. Creates/Authenticates user
+    GW->>Analise: 4. Starts credit analysis
     
     activate Analise
-    Analise-->>GW: 5. Responde que a análise foi iniciada
-    GW-->>FE: 6. Exibe "Análise em andamento"
-    FE-->>Sérgio: Exibe "Análise em andamento"
+    Analise-->>GW: 5. Responds that analysis has started
+    GW-->>FE: 6. Displays "Analysis in progress"
+    FE-->>Sérgio: Displays "Analysis in progress"
     
-    Analise->>Bureaus Externos: 7. Consulta score de mercado (API)
-    Bureaus Externos-->>Analise: 8. Retorna score
-    Analise->>Analise: 9. Combina dados e gera Score Reevo (ML)
-    Analise->>Backoffice: 10. Cria tarefa de validação para o Analista
+    Analise->>Bureaus Externos: 7. Consults market score (API)
+    Bureaus Externos-->>Analise: 8. Returns score
+    Analise->>Analise: 9. Combines data and generates Reevo Score (ML)
+    Analise->>Backoffice: 10. Creates validation task for Analyst
     deactivate Analise
 
-    Note right of Analista: -- Processo Manual Paralelo (horas) --
-    Analista->>Backoffice: 11. Acessa fila de tarefas
-    Analista->>Backoffice: 12. Valida documentos e dados
-    Analista->>Backoffice: 13. Clica em "Aprovar Crédito"
+    Note right of Analista: -- Manual Parallel Process (hours) --
+    Analista->>Backoffice: 11. Accesses task queue
+    Analista->>Backoffice: 12. Validates documents and data
+    Analista->>Backoffice: 13. Clicks "Approve Credit"
 
-    Backoffice->>GW: 14. Notifica sistema sobre a aprovação
-    GW->>Analise: 15. Finaliza o status da análise
+    Backoffice->>GW: 14. Notifies system about approval
+    GW->>Analise: 15. Finalizes analysis status
     
     activate Analise
-    Analise->>Contas: 16. Envia notificação de "Crédito Aprovado" para o usuário
+    Analise->>Contas: 16. Sends "Credit Approved" notification to user
     deactivate Analise
     
-    Note over Sérgio, FE: -- Assinatura e Lançamento --
-    FE->>Sérgio: 17. Exibe proposta e solicita assinatura da CPR
-    Sérgio->>FE: 18. Assina a CPR com e-CPF
-    FE->>GW: 19. Envia CPR assinada
-    GW->>Serviço de Contratos: 20. Valida e envia para registradora (API)
-    Serviço de Contratos-->>GW: 21. Confirma registro
-    GW->>Serviço de Marketplace: 22. Lista a oportunidade de investimento
+    Note over Sérgio, FE: -- Signature and Listing --
+    FE->>Sérgio: 17. Displays proposal and requests CPR signature
+    Sérgio->>FE: 18. Signs CPR with e-CPF
+    FE->>GW: 19. Sends signed CPR
+    GW->>Serviço de Contratos: 20. Validates and sends to registrar (API)
+    Serviço de Contratos-->>GW: 21. Confirms registration
+    GW->>Serviço de Marketplace: 22. Lists the investment opportunity
 ```
 </details>
 
-## Fluxo de Realização de Investimento
+Investment Execution Flow
 
-&emsp;Este fluxo mostra a jornada da investidora Marina, desde o depósito de fundos (via Pix) até a alocação em uma oportunidade de crédito.
+ This flow shows the journey of the investor Marina, from fund deposit (via Pix) to allocation in a credit opportunity.
 
-<p style={{textAlign: 'center'}}> Fluxo de Realização de Investimento</p>
+<p style={{textAlign: 'center'}}> Investment Execution Flow</p>
 <div style={{margin: 15}}>
-  <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_realizacao_investimento_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-        <br/>
-    </div>
+<div style={{textAlign: 'center'}}>
+<img src={require("../../static/img/fluxo_realizacao_investimento_reevo.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
+
+
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
-
-> Nota: Para melhor visualização:
-
-> https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
-
-<Details>
-  <summary>Murmaid Fluxo de Realização de Investimento</summary>
-
-```murmaid
-sequenceDiagram
-    participant Marina as Investidora (Browser)
-    participant FE as Frontend
-    participant GW as API Gateway
-    participant Marketplace as Serviço de Marketplace
-    participant Carteira as Serviço de Carteira Digital
-    participant Pagamentos as Gateway de Pagamento
-
-    Marina->>FE: 1. Acessa marketplace e escolhe oportunidade
-    FE->>GW: 2. Solicita detalhes da oportunidade
-    GW->>Marketplace: 3. Busca dados
-    Marketplace-->>GW: 4. Retorna dados
-    GW-->>FE: 5. Exibe detalhes para Marina
-
-    Marina->>FE: 6. Clica em "Investir" e define valor
-    FE->>GW: 7. Tenta alocar investimento
-    GW->>Carteira: 8. Verifica saldo de USDC
-    
-    alt Saldo Insuficiente
-        Carteira-->>GW: 9a. Saldo insuficiente
-        GW-->>FE: 10a. Informa saldo insuficiente
-        FE->>Marina: 11a. Sugere depósito
-        
-        Marina->>FE: 12a. Solicita depósito via Pix
-        FE->>GW: 13a. Gera cobrança Pix
-        GW->>Pagamentos: 14a. Cria QR Code Pix
-        Pagamentos-->>GW: 15a. Retorna QR Code
-        GW-->>FE: 16a. Exibe QR Code
-        FE->>Marina: 17a. Marina paga o Pix
-        
-        Pagamentos-->>GW: 18a. Webhook: Pagamento Confirmado!
-        GW->>Carteira: 19a. Credita USDC na carteira da Marina
-    end
-
-    Note over Marina, FE: Marina agora tenta investir novamente com saldo
-    FE->>GW: 9b. Tenta alocar investimento
-    GW->>Carteira: 10b. Verifica saldo (agora suficiente)
-    Carteira-->>GW: 11b. Saldo OK. Bloqueia valor.
-    GW->>Marketplace: 12b. Confirma investimento na oportunidade
-    Marketplace-->>GW: 13b. Investimento registrado
-    GW-->>FE: 14b. Sucesso!
-    FE-->>Marina: 15b. Exibe confirmação do investimento
-```
-
-</Details>
-
-## Fluxo de Pagamento de Parcela e Distribuição (Assíncrono)
-
-&emsp;Este é o fluxo mais crítico do ponto de vista financeiro. Ele mostra como o pagamento de uma parcela pelo agricultor dispara um processo assíncrono para calcular taxas/impostos e distribuir o valor líquido para os investidores de forma segura e escalável.
-
-<p style={{textAlign: 'center'}}> Fluxo de Pagamento de Parcela e Distribuição</p>
-<div style={{margin: 15}}>
-  <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_recebimento_investimento_reevo.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-        <br/>
-    </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-> Nota: Para melhor visualização:
+    Note: For better visualization:
 
-> https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
+    https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30
 
-<Details>
-  <summary>Murmaid Fluxo de Pagamento de Parcela e Distribuição (Assíncrono)</summary>
-
-  ```murmaid
-  sequenceDiagram
-    participant Sérgio as Agricultor (Browser)
-    participant FE as Frontend
-    participant GW as API Gateway
-    participant Pagamentos as Gateway de Pagamento
-    participant Broker as Message Broker (Fila)
-    participant Distribuidor as Serviço de Distribuição
-    participant Carteira as Serviço de Carteira Digital
-
-    Sérgio->>FE: 1. Acessa painel e clica em "Pagar Parcela"
-    FE->>GW: 2. Solicita dados de pagamento
-    GW->>Serviço de Contratos: 3. Gera cobrança (Pix/Boleto)
-    Serviço de Contratos-->>GW: 4. Retorna dados
-    GW-->>FE: 5. Exibe QR Code / Linha digitável
-    
-    Note right of Sérgio: Sérgio efetua o pagamento no seu banco...
-    
-    Pagamentos-->>GW: 6. Webhook: Pagamento Confirmado!
-    
-    activate GW
-    GW->>Broker: 7. Publica evento "PagamentoRealizado" com os dados da transação
-    GW-->>Pagamentos: 8. Confirma recebimento do webhook (HTTP 200 OK)
-    deactivate GW
-    
-    Note over Broker, Distribuidor: -- Processamento em Background --
-    
-    Broker-->>Distribuidor: 9. Entrega o evento "PagamentoRealizado"
-    
-    activate Distribuidor
-    Distribuidor->>Serviço de Contratos: 10. Busca detalhes do contrato e investidores
-    Serviço de Contratos-->>Distribuidor: 11. Retorna lista de investidores e % de participação
-    
-    Distribuidor->>Distribuidor: 12. Calcula taxas da plataforma e impostos (IR)
-    
-    loop Para cada Investidor
-        Distribuidor->>Distribuidor: 13. Calcula valor líquido a ser creditado
-        Distribuidor->>Carteira: 14. Credita USDC na carteira do Investidor
-    end
-    
-    Distribuidor->>Servipço de Notificações: 15. Envia notificações para os investidores
-    deactivate Distribuidor
-  ```
-</Details>
-
-## Fluxo de Venda no Mercado Secundário
-
-&emsp;Este fluxo detalha como uma investidora (Marina, a vendedora) pode vender sua cota de investimento (Token de Crédito) para outro investidor (Carlos, o comprador) antes do vencimento do contrato. É um processo de troca dentro da plataforma que garante a transferência segura e atômica tanto da cota quanto do valor em USDC.
-
-<p style={{textAlign: 'center'}}> Fluxo de Venda no Mercado Secundário</p>
-<div style={{margin: 15}}>
-  <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/fluxo_venda_token_mercado_secundario.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-        <br/>
-    </div>
-</div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
-
-> Nota: Para melhor visualização:
-
-> https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
-
-<Details>
-  <summary>Murmaid Fluxo de Venda no Mercado Secundário</summary>
-
-  ```murmaid
-  sequenceDiagram
-    participant Marina as Vendedora (Browser)
-    participant Carlos as Comprador (Browser)
-    participant FE as Frontend
-    participant GW as API Gateway
-    participant Marketplace as Serviço de Marketplace
-    participant Carteira as Serviço de Carteira Digital
-
-    Note over Marina, FE: -- Etapa de Venda --
-    Marina->>FE: 1. Acessa portfólio e seleciona token para vender
-    FE->>GW: 2. Solicita sugestão de preço justo
-    GW->>Marketplace: 3. Calcula preço justo (baseado no risco/tempo)
-    Marketplace-->>GW: 4. Retorna sugestão
-    GW-->>FE: 5. Exibe sugestão para Marina
-
-    Marina->>FE: 6. Define o preço de venda e clica em "Ofertar"
-    FE->>GW: 7. Envia ordem de venda
-    GW->>Marketplace: 8. Lista o token no mercado secundário
-    GW->>Carteira: 9. Marca o token de Marina como "Ofertado" (bloqueado para outras ações)
-
-    Note over Carlos, FE: -- Etapa de Compra --
-    Carlos->>FE: 10. Navega no mercado secundário e vê a oferta de Marina
-    Carlos->>FE: 11. Clica em "Comprar"
-    FE->>GW: 12. Envia ordem de compra
-
-    GW->>Carteira: 13. Verifica se Carlos tem saldo em USDC suficiente
-    alt Saldo Suficiente
-        Carteira-->>GW: 14. Saldo OK. Inicia transação atômica.
-        
-        activate Carteira
-        Carteira->>Carteira: 15. Debita USDC da carteira de Carlos
-        Carteira->>Carteira: 16. Credita USDC na carteira de Marina
-        Carteira->>Carteira: 17. Transfere propriedade do Token de Crédito de Marina para Carlos
-        deactivate Carteira
-
-        Carteira-->>GW: 18. Confirma que a troca foi concluída
-        GW->>Marketplace: 19. Remove a oferta do mercado
-        GW-->>FE: 20. Confirma a compra para Carlos
-        FE-->>Carlos: 21. Exibe "Compra realizada com sucesso!"
-        
-        Note right of GW: Notificações são enviadas para Marina e Carlos em background
-    else Saldo Insuficiente
-        Carteira-->>GW: 14b. Saldo insuficiente
-        GW-->>FE: 15b. Informa erro
-        FE-->>Carlos: 16b. Exibe "Saldo insuficiente para realizar a compra."
-    end
-
-  ```
-</Details>
-
-## Fluxo de Saque de Fundos (Off-Ramp)
-
-<p style={{textAlign: 'center'}}> Fluxo de Saque de Fundos</p>
-  <div style={{margin: 15}}>
-    <div style={{textAlign: 'center'}}>
-          <img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-          <br/>
-      </div>
-  </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
-
-&emsp;Este fluxo mostra os dois caminhos que um investidor pode seguir para retirar seu saldo em USDC da plataforma: convertendo para Reais (BRL) e recebendo via Pix, ou transferindo diretamente para uma carteira de criptomoedas externa.
-
-> Nota: Para melhor visualização:
-
-> https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
-
-<Details>
-  <summary>Murmaid Fluxo de Venda no Mercado Secundário</summary>
-
-  ```murmaid
-  sequenceDiagram
-    participant Investidor as Investidor(a) (Browser)
-    participant FE as Frontend
-    participant GW as API Gateway
-    participant Contas as Serviço de Contas
-    participant Carteira as Serviço de Carteira Digital
-    participant Pagamentos as Gateway de Pagamento
-
-    Investidor->>FE: 1. Solicita saque e escolhe o método
-
-    alt Método: Saque para Conta Bancária (Pix)
-        Investidor->>FE: 2a. Informa valor do saque em USDC
-        FE->>GW: 3a. Inicia saque para BRL
-        
-        GW->>Contas: 4a. Busca dados da conta bancária (mesma titularidade)
-        Contas-->>GW: 5a. Retorna dados bancários
-        
-        GW->>Carteira: 6a. Solicita bloqueio do saldo em USDC
-        Carteira-->>GW: 7a. Saldo verificado e bloqueado
-        
-        GW->>Pagamentos: 8a. Requisita conversão USDC -> BRL e envio de Pix
-        Pagamentos-->>GW: 9a. Confirma recebimento da ordem de saque
-        
-        Note right of Pagamentos: Processo de conversão e PIX leva alguns minutos...
-        
-        Pagamentos-->>GW: 10a. Webhook: Transferência Pix concluída!
-        GW->>Carteira: 11a. Debita o saldo em USDC que estava bloqueado
-        GW->>Serviço de Notificações: 12a. Envia notificação de sucesso
-    end
-
-    alt Método: Saque para Carteira Cripto
-        Investidor->>FE: 2b. Informa valor do saque e endereço da carteira externa
-        FE->>GW: 3b. Inicia saque de cripto
-        
-        GW->>Carteira: 4b. Solicita transação de saque para endereço externo
-        
-        activate Carteira
-        Carteira->>Carteira: 5b. Verifica saldo e bloqueia valor
-        Carteira->>Carteira: 6b. Constrói e assina a transação (com chaves seguras)
-        Carteira->>Blockchain: 7b. Transmite a transação para a rede (ex: Polygon)
-        deactivate Carteira
-        
-        Note right of Blockchain: Transação sendo confirmada na rede...
-        
-        Blockchain-->>Carteira: 8b. Evento: Transação confirmada!
-        Carteira->>Carteira: 9b. Debita o saldo que estava bloqueado
-        Carteira->>Serviço de Notificações: 10b. Envia notificação de sucesso
-    end
-
-  ```
-</Details>
-
-## Fluxo de Gestão de Inadimplência
-
-&emsp;Este é um fluxo de sistema, que não é iniciado diretamente por um usuário. Ele descreve o processo automático que a plataforma executa diariamente para identificar parcelas em atraso, aplicar as devidas penalidades e notificar todas as partes envolvidas, garantindo a gestão de risco do portfólio.
-
-<p style={{textAlign: 'center'}}> Fluxo de Gestão de Inadimplência</p>
-  <div style={{margin: 15}}>
-    <div style={{textAlign: 'center'}}>
-          <img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
-          <br/>
-      </div>
-  </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
-
-> Nota: Para melhor visualização:
-
-> https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30 
-
-<Details>
-  <summary>Murmaid Fluxo de Gestão de Inadimplência</summary>
-
-  ```murmaid
+<details>
+<summary>Murmaid Investment Execution Flow</summary>
 
 sequenceDiagram
-    participant Scheduler as Agendador (Cron Job)
-    participant Contratos as Serviço de Contratos
-    participant Notificacoes as Serviço de Notificações
-    participant Backoffice as Interface do Admin
+    participant Marina as Investor (Browser)
+    participant FE as Frontend
+    participant GW as API Gateway
+    participant Marketplace as Marketplace Service
+    participant Carteira as Digital Wallet Service
+    participant Pagamentos as Payment Gateway
 
-    Scheduler->>Contratos: 1. Gatilho diário: "Verificar parcelas vencidas"
+    Marina->>FE: 1. Accesses marketplace and chooses opportunity
+    FE->>GW: 2. Requests opportunity details
+    GW->>Marketplace: 3. Searches data
+    Marketplace-->>GW: 4. Returns data
+    GW-->>FE: 5. Displays details for Marina
+
+    Marina->>FE: 6. Clicks "Invest" and defines value
+    FE->>GW: 7. Attempts to allocate investment
+    GW->>Carteira: 8. Checks USDC balance
     
-    activate Contratos
-    Contratos->>Contratos: 2. Busca no DB por parcelas com data_vencimento < hoje E status != "Paga"
-    
-    loop Para cada Parcela em Atraso encontrada
-        Contratos->>Contratos: 3. Atualiza status da parcela para "Em Atraso"
-        Contratos->>Contratos: 4. Calcula multa (2%) e juros de mora (1%/mês)
-        Contratos->>Contratos: 5. Salva o novo valor atualizado da parcela
+    alt Insufficient Balance
+        Carteira-->>GW: 9a. Insufficient balance
+        GW-->>FE: 10a. Informs insufficient balance
+        FE->>Marina: 11a. Suggests deposit
         
-        Contratos->>Notificacoes: 6. Envia notificação de atraso para o Agricultor
-        Contratos->>Notificacoes: 7. Envia notificação de inadimplência para os Investidores daquela CPR
+        Marina->>FE: 12a. Requests deposit via Pix
+        FE->>GW: 13a. Generates Pix charge
+        GW->>Pagamentos: 14a. Creates Pix QR Code
+        Pagamentos-->>GW: 15a. Returns QR Code
+        GW-->>FE: 16a. Displays QR Code
+        FE->>Marina: 17a. Marina pays the Pix
         
-        Contratos->>Backoffice: 8. Cria um alerta no painel de risco do administrador
+        Pagamentos-->>GW: 18a. Webhook: Payment Confirmed!
+        GW->>Carteira: 19a. Credits USDC to Marina's wallet
     end
-    deactivate Contratos
-  ```
-</Details>
+
+    Note over Marina, FE: Marina now tries to invest again with balance
+    FE->>GW: 9b. Attempts to allocate investment
+    GW->>Carteira: 10b. Checks balance (now sufficient)
+    Carteira-->>GW: 11b. Balance OK. Blocks value.
+    GW->>Marketplace: 12b. Confirms investment in opportunity
+    Marketplace-->>GW: 13b. Investment registered
+    GW-->>FE: 14b. Success!
+    FE-->>Marina: 15b. Displays investment confirmation
+
+</details>
+Installment Payment and Distribution Flow (Asynchronous)
+
+ This is the most critical flow from a financial perspective. It shows how the payment of an installment by the farmer triggers an asynchronous process to calculate fees/taxes and distribute the net value to investors securely and scalably.
+
+<p style={{textAlign: 'center'}}> Installment Payment and Distribution Flow</p>
+<div style={{margin: 15}}>
+<div style={{textAlign: 'center'}}>
+<img src={require("../../static/img/fluxo_recebimento_investimento_reevo.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
+
+
+</div>
+</div>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
+
+    Note: For better visualization:
+
+    https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30
+
+<details>
+<summary>Murmaid Installment Payment and Distribution Flow (Asynchronous)</summary>
+
+sequenceDiagram
+  participant Sérgio as Farmer (Browser)
+  participant FE as Frontend
+  participant GW as API Gateway
+  participant Pagamentos as Payment Gateway
+  participant Broker as Message Broker (Queue)
+  participant Distribuidor as Distribution Service
+  participant Carteira as Digital Wallet Service
+
+  Sérgio->>FE: 1. Accesses panel and clicks "Pay Installment"
+  FE->>GW: 2. Requests payment data
+  GW->>Serviço de Contratos: 3. Generates charge (Pix/Boleto)
+  Serviço de Contratos-->>GW: 4. Returns data
+  GW-->>FE: 5. Displays QR Code / Typeable line
+  
+  Note right of Sérgio: Sérgio makes the payment at his bank...
+  
+  Pagamentos-->>GW: 6. Webhook: Payment Confirmed!
+  
+  activate GW
+  GW->>Broker: 7. Publishes event "PaymentMade" with transaction data
+  GW-->>Pagamentos: 8. Confirms webhook receipt (HTTP 200 OK)
+  deactivate GW
+  
+  Note over Broker, Distribuidor: -- Background Processing --
+  
+  Broker-->>Distribuidor: 9. Delivers event "PaymentMade"
+  
+  activate Distribuidor
+  Distribuidor->>Serviço de Contratos: 10. Fetches contract and investor details
+  Serviço de Contratos-->>Distribuidor: 11. Returns list of investors and % participation
+  
+  Distribuidor->>Distribuidor: 12. Calculates platform fees and taxes (IR)
+  
+  loop For each Investor
+      Distribuidor->>Distribuidor: 13. Calculates net amount to be credited
+      Distribuidor->>Carteira: 14. Credits USDC to Investor's wallet
+  end
+  
+  Distribuidor->>Serviço de Notificações: 15. Sends notifications to investors
+  deactivate Distribuidor
+
+  </details>
+
+  Secondary Market Sale Flow
+
+ This flow details how an investor (Marina, the seller) can sell her investment share (Credit Token) to another investor (Carlos, the buyer) before the contract maturity. It is an exchange process within the platform that ensures the secure and atomic transfer of both the share and the USDC value.
+
+<p style={{textAlign: 'center'}}> Secondary Market Sale Flow</p>
+<div style={{margin: 15}}>
+<div style={{textAlign: 'center'}}>
+<img src={require("../../static/img/fluxo_venda_token_mercado_secundario.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
+
+
+</div>
+</div>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
+
+    Note: For better visualization:
+
+    https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30
+
+<details>
+<summary>Murmaid Secondary Market Sale Flow</summary>
+
+sequenceDiagram
+  participant Marina as Seller (Browser)
+  participant Carlos as Buyer (Browser)
+  participant FE as Frontend
+  participant GW as API Gateway
+  participant Marketplace as Marketplace Service
+  participant Carteira as Digital Wallet Service
+
+  Note over Marina, FE: -- Sale Stage --
+  Marina->>FE: 1. Accesses portfolio and selects token to sell
+  FE->>GW: 2. Requests suggestion for fair price
+  GW->>Marketplace: 3. Calculates fair price (based on risk/time)
+  Marketplace-->>GW: 4. Returns suggestion
+  GW-->>FE: 5. Displays suggestion for Marina
+
+  Marina->>FE: 6. Defines sale price and clicks "Offer"
+  FE->>GW: 7. Sends sale order
+  GW->>Marketplace: 8. Lists the token on the secondary market
+  GW->>Carteira: 9. Flags Marina's token as "Offered" (blocked for other actions)
+
+  Note over Carlos, FE: -- Purchase Stage --
+  Carlos->>FE: 10. Browses secondary market and sees Marina's offer
+  Carlos->>FE: 11. Clicks "Buy"
+  FE->>GW: 12. Sends purchase order
+
+  GW->>Carteira: 13. Checks if Carlos has sufficient USDC balance
+  alt Sufficient Balance
+      Carteira-->>GW: 14. Balance OK. Initiates atomic transaction.
+      
+      activate Carteira
+      Carteira->>Carteira: 15. Debits USDC from Carlos's wallet
+      Carteira->>Carteira: 16. Credits USDC to Marina's wallet
+      Carteira->>Carteira: 17. Transfers Credit Token ownership from Marina to Carlos
+      deactivate Carteira
+
+      Carteira-->>GW: 18. Confirms that the exchange was completed
+      GW->>Marketplace: 19. Removes the offer from the market
+      GW-->>FE: 20. Confirms purchase to Carlos
+      FE-->>Carlos: 21. Displays "Purchase successful!"
+      
+      Note right of GW: Notifications are sent to Marina and Carlos in background
+  else Insufficient Balance
+      Carteira-->>GW: 14b. Insufficient balance
+      GW-->>FE: 15b. Informs error
+      FE-->>Carlos: 16b. Displays "Insufficient balance to complete purchase."
+  end
+
+  </details>
+
+Fund Withdrawal Flow (Off-Ramp)
+
+<p style={{textAlign: 'center'}}> Fund Withdrawal Flow</p>
+<div style={{margin: 15}}>
+<div style={{textAlign: 'center'}}>
+<img src={require("../../static/img/fluxo_saque_fundos.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
+
+
+</div>
+</div>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
+
+ This flow shows the two paths an investor can take to withdraw their USDC balance from the platform: converting to Brazilian Reais (BRL) and receiving via Pix, or transferring directly to an external cryptocurrency wallet.
+
+    Note: For better visualization:
+
+    https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30
+
+<details>
+<summary>Murmaid Secondary Market Sale Flow</summary>
+sequenceDiagram
+  participant Investidor as Investor (Browser)
+  participant FE as Frontend
+  participant GW as API Gateway
+  participant Contas as Accounts Service
+  participant Carteira as Digital Wallet Service
+  participant Pagamentos as Payment Gateway
+
+  Investidor->>FE: 1. Requests withdrawal and chooses method
+
+  alt Method: Withdrawal to Bank Account (Pix)
+      Investidor->>FE: 2a. Informs withdrawal amount in USDC
+      FE->>GW: 3a. Initiates withdrawal for BRL
+      
+      GW->>Contas: 4a. Searches for bank account details (same ownership)
+      Contas-->>GW: 5a. Returns bank details
+      
+      GW->>Carteira: 6a. Requests locking of USDC balance
+      Carteira-->>GW: 7a. Balance verified and locked
+      
+      GW->>Pagamentos: 8a. Requests USDC -> BRL conversion and Pix dispatch
+      Pagamentos-->>GW: 9a. Confirms receipt of withdrawal order
+      
+      Note right of Pagamentos: Conversion and Pix process takes a few minutes...
+      
+      Pagamentos-->>GW: 10a. Webhook: Pix Transfer Complete!
+      GW->>Carteira: 11a. Debits the locked USDC balance
+      GW->>Serviço de Notificações: 12a. Sends success notification
+  end
+
+  alt Method: Withdrawal to Crypto Wallet
+      Investidor->>FE: 2b. Informs withdrawal amount and external wallet address
+      FE->>GW: 3b. Initiates crypto withdrawal
+      
+      GW->>Carteira: 4b. Requests crypto withdrawal transaction to external address
+      
+      activate Carteira
+      Carteira->>Carteira: 5b. Checks balance and locks value
+      Carteira->>Carteira: 6b. Constructs and signs transaction (with secure keys)
+      Carteira->>Blockchain: 7b. Transmits transaction to the network (e.g., Polygon)
+      deactivate Carteira
+      
+      Note right of Blockchain: Transaction being confirmed on the network...
+      
+      Blockchain-->>Carteira: 8b. Event: Transaction confirmed!
+      Carteira->>Carteira: 9b. Debits the locked balance
+      Carteira->>Serviço de Notificações: 10b. Sends success notification
+  end
+
+  </details>
+
+Default Management Flow
+
+ This is a system flow, not initiated directly by a user. It describes the automated process the platform executes daily to identify overdue installments, apply the due penalties, and notify all involved parties, ensuring portfolio risk management.
+
+<p style={{textAlign: 'center'}}> Default Management Flow</p>
+<div style={{margin: 15}}>
+<div style={{textAlign: 'center'}}>
+<img src={require("../../static/img/fluxo_inadimplencia.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
+
+
+</div>
+</div>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
+
+    Note: For better visualization:
+
+    https://www.canva.com/design/DAG0UzRCy5Q/w-yq85d-KYoxx_jXFQzDFA/edit?ui=e30
+
+<details>
+<summary>Murmaid Default Management Flow</summary>
+Snippet de código
+
+
+sequenceDiagram
+  participant Scheduler as Scheduler (Cron Job)
+  participant Contratos as Contracts Service
+  participant Notificacoes as Notifications Service
+  participant Backoffice as Admin Interface
+
+  Scheduler->>Contratos: 1. Daily Trigger: "Check overdue installments"
+  
+  activate Contratos
+  Contratos->>Contratos: 2. Searches DB for installments with date_due < today AND status != "Paid"
+  
+  loop For each Overdue Installment found
+      Contratos->>Contratos: 3. Updates installment status to "Overdue"
+      Contratos->>Contratos: 4. Calculates fine (2%) and late interest (1%/month)
+      Contratos->>Contratos: 5. Saves the new updated installment value
+      
+      Contratos->>Notificacoes: 6. Sends overdue notification to the Farmer
+      Contratos->>Notificacoes: 7. Sends default notification to the Investors of that CPR
+      
+      Contratos->>Backoffice: 8. Creates a risk alert on the administrator's dashboard
+  end
+  deactivate Contratos
+
+</details>

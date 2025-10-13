@@ -1,42 +1,42 @@
 ---
 sidebar_position: 1
-title: Introdução
+title: Introduction
 slug: /intro
 ---
 
 import Admonition from '@theme/Admonition';
 
-## Introdução ao Projeto Reevo
-&emsp;O agronegócio é a força motriz da economia brasileira, um setor de superlativos que alimenta o país e o mundo. No entanto, por trás dessa pujança, existe um desafio silencioso que limita seu potencial: **o abismo entre o capital e a terra**.
+## Introduction to the Reevo Project
+&emsp; Agribusiness is the driving force of the Brazilian economy, a sector of superlatives that feeds the country and the world. However, behind this strength, there is a silent challenge that limits its potential: **the abyss between capital and the land**.
 
-&emsp;De um lado, pequenos e médios produtores rurais, responsáveis por uma parcela vital da produção nacional, enfrentam um ciclo de dependência de crédito caro, lento e burocrático.
+&emsp; On one side, small and medium-sized rural producers, responsible for a vital portion of the national production, face a cycle of dependence on expensive, slow, and bureaucratic credit.
 
-&emsp;Do outro, milhões de investidores pessoa física buscam oportunidades para diversificar seus portfólios com retornos atrativos e, cada vez mais, com um propósito claro de impacto social e ambiental (ESG), mas encontram um potencial de investimento no campo praticamente inexplorado e inacessível.
+&emsp; On the other, millions of individual investors seek opportunities to diversify their portfolios with attractive returns and, increasingly, with a clear purpose of social and environmental impact (ESG), but they find a potential for investment in the field that is practically unexplored and inaccessible.
 
-&emsp;É para romper este ciclo que nasce o Reevo. Somos uma **plataforma fintech de crédito P2P (peer-to-peer)** que se propõe a ser a ponte digital, transparente e eficiente entre esses dois mundos. Conectamos diretamente produtores rurais que precisam de financiamento para crescer a uma comunidade de investidores que desejam participar ativamente do sucesso do agronegócio brasileiro.
-
----
-## Três pilares de inovação
-
-**Inteligência de Crédito (AgroScore)**
-
-&emsp;No coração da plataforma está o AgroScore, nosso motor de análise de crédito baseado em Inteligência Artificial.
-
-&emsp;Ele processa uma combinação de dados do produtor, da propriedade e de mercado para gerar uma avaliação de risco rápida, justa e data-driven, democratizando o acesso ao crédito e oferecendo taxas mais adequadas ao perfil de cada agricultor.
-
-**Acessibilidade e Liquidez no Investimento**
-
-&emsp; Para os investidores, desmistificamos o investimento no campo. As Cédulas de Produtor Rural (CPRs) são digitalizadas, validadas e fracionadas em cotas de investimento acessíveis, listadas em um marketplace transparente.
-
-&emsp;Além disso, entendemos que a liquidez é crucial; por isso, criamos um mercado secundário integrado, que permite aos investidores negociarem suas cotas com outros usuários a qualquer momento, trazendo uma flexibilidade inédita para o setor.
-
-**Transparência e Segurança Tecnológica**
-
-&emsp;A confiança é a base do nosso negócio. Construída sobre uma arquitetura de microsserviços moderna e segura, a plataforma garante a integridade de cada operação.
-
-&emsp;Todas as transações são registradas em um ledger com rastreabilidade criptográfica, e o uso de stablecoins (USDC) como meio de troca interno oferece uma camada adicional de eficiência e transparência.
+&emsp; It is to break this cycle that Reevo is born. We are a **P2P (peer-to-peer) fintech credit platform** that proposes to be the digital, transparent, and efficient bridge between these two worlds. We directly connect rural producers who need financing to grow with a community of investors who want to actively participate in the success of Brazilian agribusiness.
 
 ---
-## Conclusão
+## Three Pillars of Innovation
 
-&emsp;O Reevo é mais do que uma plataforma de crédito. É um movimento para democratizar o financiamento do agronegócio, empoderando agricultores com os recursos necessários para inovar e prosperar, ao mesmo tempo em que oferece aos investidores a oportunidade de participar diretamente do crescimento da economia real. Nosso objetivo é construir um futuro onde o crédito é mais justo, o investimento tem propósito e o campo brasileiro pode florescer em seu máximo potencial.
+**Credit Intelligence (AgroScore)**
+
+&emsp; At the heart of the platform is the **AgroScore**, our Artificial Intelligence-based credit analysis engine.
+
+&emsp; It processes a combination of producer, property, and market data to generate a **fast, fair, and data-driven risk assessment**, democratizing access to credit and offering rates better suited to each farmer's profile.
+
+**Accessibility and Liquidity in Investment**
+
+&emsp; For investors, we demystify investment in the field. The Rural Product Bills (CPRs) are **digitized, validated, and fractionated** into accessible investment quotas, listed on a transparent marketplace.
+
+&emsp; Furthermore, we understand that **liquidity is crucial**; for this reason, we created an integrated secondary market that allows investors to negotiate their quotas with other users at any time, bringing unprecedented flexibility to the sector.
+
+**Transparency and Technological Security**
+
+&emsp; Trust is the foundation of our business. Built on a modern and secure **microservices architecture**, the platform ensures the integrity of every operation.
+
+&emsp; All transactions are recorded in a ledger with cryptographic traceability, and the use of **stablecoins (USDC)** as an internal medium of exchange offers an additional layer of efficiency and transparency.
+
+---
+## Conclusion
+
+&emsp; Reevo is more than a credit platform. It is a movement to **democratize agribusiness financing**, empowering farmers with the necessary resources to innovate and prosper, while offering investors the opportunity to participate directly in the growth of the real Brazilian economy. Our goal is to build a future where credit is fairer, investment has purpose, and the Brazilian countryside can flourish to its maximum potential.

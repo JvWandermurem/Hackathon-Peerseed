@@ -1,90 +1,77 @@
----
-sidebar_position: 1
-title: Planejamento Backend
----
-
 ## Introdução
-&emsp; A arquitetura de backend do Reevo é baseada em um conjunto de microsserviços independentes, escritos em Python. A escolha por esta abordagem visa garantir alta escalabilidade, resiliência e manutenibilidade, permitindo que equipes possam desenvolver, implantar e escalar cada domínio de negócio de forma autônoma.
 
-&emsp; Este documento estabelece a stack tecnológica padrão, a estrutura de diretórios e os padrões de comunicação que devem ser seguidos por todos os serviços de backend, a fim de manter a coesão e a qualidade técnica em todo o ecossistema.
+&emsp; The Reevo backend architecture is based on a set of independent microservices, written in **Python**. The choice of this approach aims to ensure **high scalability, resilience, and maintainability**, allowing teams to develop, deploy, and scale each business domain autonomously.
 
-## Stack Tecnológica Principal
+&emsp; This document establishes the standard technology stack, directory structure, and communication patterns that must be followed by all backend services to maintain technical cohesion and quality across the entire ecosystem.
 
-&emsp;Para garantir consistência e produtividade, todos os serviços de backend do Reevo devem ser construídos utilizando a seguinte stack de tecnologias:
+### Core Technology Stack
 
-| Componente              | Tecnologia/Padrão Recomendado | Principal Vantagem |
-|--------------------------|-------------------------------|--------------------|
-| Framework API            | [FastAPI](https://fastapi.tiangolo.com/pt/)                       | Performance, async nativo, docs e validação automáticas |
-| ORM (DB)                 | [SQLAlchemy 2.0+](https://www.sqlalchemy.org/)               | Padrão de mercado, produtivo e com suporte async |
-| Migrações de Schema      | [Alembic](https://alembic.sqlalchemy.org/en/latest/)                       | Versionamento seguro do banco de dados |
-| Validação/Serialização   | [Pydantic](https://docs.pydantic.dev/latest/)                      | Integrado ao FastAPI, garante a integridade dos dados |
-| Autenticação             | JWT com OAuth2                | Padrão stateless e seguro para microsserviços |
-| Dependências             | [Poetry](https://python-poetry.org/docs/)                        | Gerenciamento moderno e builds repetíveis |
-| Testes                   | [Pytest](https://docs.pytest.org/en/stable/)                        | Padrão da comunidade Python, flexível e poderoso |
+&emsp; To ensure consistency and productivity, all Reevo backend services must be built using the following technology stack:
 
-## Detalhamento dos Componentes da Stack
+| Component | Recommended Technology/Standard | Primary Advantage |
+| :--- | :--- | :--- |
+| **API Framework** | **FastAPI** | Performance, native async, automatic docs and validation |
+| **ORM (DB)** | **SQLAlchemy 2.0+** | Industry standard, productive, and with async support |
+| **Schema Migrations** | **Alembic** | Secure database versioning |
+| **Validation/Serialization** | **Pydantic** | Integrated with FastAPI, ensures data integrity |
+| **Authentication** | **JWT with OAuth2** | Stateless and secure standard for microservices |
+| **Dependencies** | **Poetry** | Modern management and repeatable builds |
+| **Testing** | **Pytest** | Python community standard, flexible and powerful |
 
-### Framework de API: FastAPI
-&emsp; O FastAPI é a fundação de todos os nossos serviços. Sua alta performance e suporte nativo a operações assíncronas (async/await) são essenciais para construir uma plataforma responsiva e escalável, capaz de lidar com um grande volume de operações de I/O (consultas a banco de dados, chamadas a APIs externas), em conformidade com nossos requisitos de performance `(RNF-ED-01)`.
+### Component Stack Detail
 
-### Interação com Banco de Dados: SQLAlchemy
-&emsp; A comunicação com o banco de dados `PostgreSQL` é abstraída pelo `SQLAlchemy`, o ORM padrão da comunidade Python. Utilizamos exclusivamente seu motor assíncrono (create_async_engine), que se integra ao FastAPI. As tabelas do banco de dados são mapeadas para classes Python (models), o que aumenta a produtividade e a segurança do código.
+**API Framework: FastAPI**
+&emsp; FastAPI is the foundation of all our services. Its **high performance** and native support for **asynchronous operations** (`async/await`) are essential for building a responsive and scalable platform, capable of handling a large volume of I/O operations (database queries, external API calls), in compliance with our performance requirements (`RNF-ED-01`).
 
-### Validação de Dados: Pydantic
-&emsp; O Pydantic é utilizado para definir schemas de dados claros para todas as operações de API. Adotamos o padrão de ter schemas específicos para entrada (Request Models) e saída (Response Models), o que nos proporciona:
+**Database Interaction: SQLAlchemy**
+&emsp; Communication with the **PostgreSQL** database is abstracted by **SQLAlchemy**, the standard ORM for the Python community. We exclusively use its **asynchronous engine** (`create_async_engine`), which integrates with FastAPI. Database tables are mapped to Python classes (`models`), which increases productivity and code safety.
 
-**Validação Automática:** Requisições com dados inválidos ou faltando são rejeitadas automaticamente pelo framework.
+**Data Validation: Pydantic**
+&emsp; Pydantic is used to define clear data schemas for all API operations. We adopt the standard of having specific schemas for input (**Request Models**) and output (**Response Models**), which provides us with:
+* **Automatic Validation:** Requests with invalid or missing data are automatically rejected by the framework.
+* **Security:** Prevents accidental leakage of internal data by exposing only the fields defined in the response schema.
+* **Automatic Documentation:** Pydantic schemas are the single source of truth for **OpenAPI documentation generation**.
 
-**Segurança:** Evita o vazamento acidental de dados internos, expondo apenas os campos definidos no schema de resposta.
+**Database Migrations: Alembic**
+&emsp; Every change to the database schema (SQLAlchemy models) must be accompanied by a migration script generated by **Alembic**. This ensures that database evolution is controlled, versioned, and can be applied safely and consistently in any environment.
 
-**Documentação Automática:** Os schemas Pydantic são a fonte da verdade para a geração da documentação OpenAPI.
+**Authentication and Authorization: JWT (OAuth2)**
+&emsp; Security between services is based on **JSON Web Tokens (JWT)**. The Accounts Service acts as the identity provider, issuing a JWT to the user after a successful login. All subsequent calls to any microservice must contain this token in the **Authorization header**. Each service is responsible for validating the token's signature and permissions before processing the request.
 
-### Migrações de Banco de Dados: Alembic
-&emsp; Toda alteração no schema do banco de dados (modelos do SQLAlchemy) deve ser acompanhada por um script de migração gerado pelo Alembic. Isso garante que a evolução do banco de dados seja controlada, versionada e possa ser aplicada de forma segura e consistente em qualquer ambiente.
+**Dependency Management: Poetry**
+&emsp; **Poetry** is the standard tool for dependency management and virtual environments across all projects. The use of `pyproject.toml` and `poetry.lock` ensures that all environments (development, testing, production) are **identical**, eliminating consistency issues.
 
-### Autenticação e Autorização: JWT (OAuth2)
-&emsp; A segurança entre os serviços é baseada em JSON Web Tokens. O Serviço de Contas atua como o provedor de identidade, emitindo um JWT para o usuário após um login bem-sucedido. Todas as chamadas subsequentes para qualquer microsserviço devem conter este token no cabeçalho Authorization. Cada serviço é responsável por validar a assinatura e as permissões do token antes de processar a requisição.
+**Testing: Pytest**
+&emsp; Software quality is ensured through an automated test suite written with **Pytest**. FastAPI provides a **TestClient** that facilitates writing integration tests, allowing API requests to be simulated without the need for a running server.
 
-### Gerenciamento de Dependências: Poetry
-&emsp; Poetry é a ferramenta padrão para gerenciamento de dependências e ambientes virtuais em todos os projetos. O uso do `pyproject.toml`e do poetry.lock garante que todos os ambientes (desenvolvimento, teste, produção) sejam idênticos, eliminando problemas de consistência.
+### Standard Directory Structure
 
-### Testes: Pytest
-&emsp;A qualidade do software é garantida através de uma suíte de testes automatizados escritos com Pytest. O FastAPI fornece um TestClient que facilita a escrita de testes de integração, permitindo simular requisições à API sem a necessidade de um servidor em execução.
-
-## Estrutura de Diretórios Padrão
-Para assegurar a consistência e facilitar a navegação entre os projetos, todos os microsserviços devem seguir a estrutura de diretórios abaixo:
-
+To ensure consistency and facilitate navigation between projects, all microservices must follow the directory structure below:
 ```md
-/nome-do-servico
-├── /alembic/                # Scripts de migração do banco de dados (Alembic)
+/service-name
+├── /alembic/                # Database migration scripts (Alembic)
 ├── /app/
-│   ├── /api/                  # Endpoints/Routers da API, camada de entrada de requisições.
-│   ├── /core/                 # Configurações centrais da aplicação (ex: settings).
-│   ├── /crud/                 # Funções de acesso aos dados (lógica de banco de dados).
-│   ├── /models/               # Classes que representam as tabelas do banco (SQLAlchemy).
-│   ├── /schemas/              # Classes de validação de dados da API (Pydantic).
-│   └── main.py                # Ponto de entrada da aplicação FastAPI.
-├── /tests/                    # Testes automatizados (Pytest).
-├── pyproject.toml             # Definição do projeto e dependências (Poetry).
-└── poetry.lock                # Arquivo de lock das dependências.
-
+│   ├── /api/                  # API Endpoints/Routers, request entry layer.
+│   ├── /core/                 # Central application configurations (e.g., settings).
+│   ├── /crud/                 # Data access functions (database logic).
+│   ├── /models/               # Classes representing database tables (SQLAlchemy).
+│   ├── /schemas/              # API data validation classes (Pydantic).
+│   └── main.py                # FastAPI application entry point.
+├── /tests/                    # Automated tests (Pytest).
+├── pyproject.toml             # Project definition and dependencies (Poetry).
+└── poetry.lock                # Dependency lock file.
 ```
 
+### Inter-Service Communication Patterns
 
-## Padrões de Comunicação entre Serviços
+&emsp; Communication within the Reevo microservice ecosystem follows two main patterns:
 
-&emsp;A comunicação no ecossistema de microsserviços do Reevo segue dois padrões principais:
+**Synchronous Communication (RESTful APIs)**
+* **When to use:** For command or query interactions that require an immediate response.
+* **Example:** The Frontend requests the list of available CPRs from the Marketplace Service. The request must be answered immediately with the data.
+* **Mechanism:** Direct **HTTP/S calls** between services, generally orchestrated through an **API Gateway**, which acts as the single entry point for all external requests.
 
-### Comunicação Síncrona (RESTful APIs)
-**Quando usar:** Para interações de comando ou consulta que exigem uma resposta imediata.
-
-> Exemplo: O Frontend solicita ao Serviço de Marketplace a lista de CPRs disponíveis. A requisição precisa ser respondida na hora com os dados.
-
-**Mecanismo:** Chamadas HTTP/S diretas entre os serviços, geralmente orquestradas através de um API Gateway, que atua como o ponto de entrada único para todas as requisições externas.
-
-### Comunicação Assíncrona (Orientada a Eventos)
-**Quando usar:** Para desacoplar os serviços e para processos que podem ser executados em background, sem que o solicitante precise esperar por uma resposta.
-
-> Exemplo: Quando o Serviço de Carteira confirma o pagamento de uma parcela, ele publica um evento PagamentoConfirmado. O Serviço de Notificações e o Serviço de Distribuição escutam este evento e reagem a ele de forma independente, sem que o Serviço de Carteira precise saber de sua existência.
-
-**Mecanismo:** Utilização de um Message Broker (como RabbitMQ ou AWS SQS), que já foi previsto em nossos diagramas de sequência.
+**Asynchronous Communication (Event-Driven)**
+* **When to use:** To **decouple services** and for processes that can be executed in the background, without the requester needing to wait for a response.
+* **Example:** When the Wallet Service confirms an installment payment, it publishes a `PaymentConfirmed` event. The Notifications Service and the Distribution Service listen to this event and react to it independently, without the Wallet Service needing to know of their existence.
+* **Mechanism:** Use of a **Message Broker** (such as RabbitMQ or AWS SQS), which has already been anticipated in our sequence diagrams.

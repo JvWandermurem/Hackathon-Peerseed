@@ -4,108 +4,108 @@ slug: /
 sidebar_position: 0
 ---
 
-# Visão Geral do Projeto Reevo
+# Project Overview (Reevo)
 
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/reevo.gif").default} style={{width: 1024}} alt="Banner Reevo - Agricultura e Tecnologia" />
+        <img src={require("../static/img/reevo.gif").default} style={{width: 1024}} alt="Reevo Banner - Agriculture and Technology" />
         <br/>
     </div>
 </div>
 
-## Introdução
+## Introduction
 
-&emsp;O **Reevo** é uma plataforma digital de crédito peer-to-peer (P2P) que conecta agricultores pequenos e médios a investidores pessoas físicas interessados em diversificação de portfólio e impacto socioambiental positivo.  
+&emsp;**Reevo** is a digital peer-to-peer (P2P) credit platform that connects small and medium-sized farmers with individual investors interested in portfolio diversification and positive socio-environmental impact.  
 
-&emsp;O projeto nasce da necessidade de oferecer crédito mais ágil, justo e transparente para o setor agrícola, reduzindo a dependência dos bancos tradicionais e valorizando práticas sustentáveis.
+&emsp;The project stems from the need to offer more agile, fair, and transparent credit to the agricultural sector, reducing reliance on traditional banks and valuing sustainable practices.
 
 ---
 
-## Problema
+## Problem
 
-&emsp;No Brasil, agricultores familiares representam 77% dos estabelecimentos rurais (IBGE, 2017), mas acessam menos de 15% do crédito rural formal. A alta burocracia, exigência de garantias e renda variável atrelada às safras tornam o crédito bancário restrito.  
+&emsp;In Brazil, family farmers represent 77% of rural establishments (IBGE, 2017), but they access less than 15% of formal rural credit. High bureaucracy, collateral requirements, and variable income tied to harvests make bank credit restrictive.  
 
-<p style={{textAlign: 'center'}}> Gráfico da Distribuição do Acesso a Crédito em Agricultores Familiares no Brasil</p>
+<p style={{textAlign: 'center'}}> Graph of Credit Access Distribution Among Family Farmers in Brazil</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/pictograma_infografico.png").default} style={{width: 1024}} alt="Gráfico da distribuição de crédito em agricultores familiares no Brasil." />
+        <img src={require("../static/img/pictograma_infografico.png").default} style={{width: 1024}} alt="Graph of credit distribution among family farmers in Brazil." />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-&emsp;Ao mesmo tempo, pequenos e médios investidores buscam alternativas para além da renda fixa tradicional, com retorno competitivo, liquidez flexível e impacto social direto.
+&emsp;Simultaneously, small and medium investors are seeking alternatives beyond traditional fixed income, looking for competitive returns, flexible liquidity, and direct social impact.
 
 ---
 
-## Proposta de Valor
+## Value Proposition
 
-- 🌱 **Para Agricultores**: acesso simplificado a crédito, taxas compatíveis com sua realidade e reconhecimento por boas práticas agrícolas.  
-- 💰 **Para Investidores**: oportunidade de investir valores acessíveis em operações agrícolas, com transparência via blockchain e indicadores claros de impacto socioambiental.  
-- 🔒 **Para Ambos**: segurança antifraude, contratos digitais garantidos por CPR e acompanhamento em tempo real.  
+- 🌱 **For Farmers**: Simplified access to credit, competitive rates compatible with their reality, and recognition for good agricultural practices.  
+- 💰 **For Investors**: Opportunity to invest accessible amounts in agricultural operations, with transparency via blockchain and clear socio-environmental impact indicators.  
+- 🔒 **For Both**: Anti-fraud security, digital contracts guaranteed by CPR (Rural Product Bill), and real-time monitoring.  
 
 :::info
-O Reevo atua como um ecossistema colaborativo, aproximando o capital urbano da produção rural.
+Reevo acts as a collaborative ecosystem, bringing urban capital closer to rural production.
 :::
 
 ---
 
-## Público-Alvo
+## Target Audience
 
-- **Agricultores pequenos e médios**: produtores familiares, jovens rurais e agroempreendedores que precisam de crédito rápido e menos burocrático.  
-- **Investidores pessoas físicas**: locais e urbanos, interessados em diversificação, impacto social e maior transparência nos investimentos.  
+- **Small and medium farmers**: Family producers, rural youth, and agri-entrepreneurs who need fast and less bureaucratic credit.  
+- **Individual investors**: Local and urban, interested in diversification, social impact, and greater transparency in investments.  
 
-<p style={{textAlign: 'center'}}> Público-Alvo da Solução</p>
+<p style={{textAlign: 'center'}}> Solution Target Audience</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/publico_alvo.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <img src={require("../static/img/publico_alvo.png").default} style={{width: 1024}} alt="Solution target audience." />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 
 ---
 
-## Tecnologias
+## Technologies
 
-- Machine Learning (ML) para análise de crédito automatizada e atribuição de score justo.  
-- Blockchain para registro de contratos e transparência em captação/investimentos.  
-- Arquitetura Web Responsiva para garantir acesso via desktop e mobile, mesmo em áreas com internet limitada. 
-- Telethon para acesso mais simplificado do agricultor às funcionalidades da aplicação.]
+- **Machine Learning (ML)** for automated credit analysis and fair score attribution.  
+- **Blockchain** for contract registration and transparency in fundraising/investments.  
+- **Responsive Web Architecture** to ensure access via desktop and mobile, even in areas with limited internet access. 
+- **Telethon** for simpler farmer access to application functionalities via Telegram.
 
-<p style={{textAlign: 'center'}}>Funcionalidades da Aplicação</p>
+<p style={{textAlign: 'center'}}>Application Functionalities</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/tech_features.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <img src={require("../static/img/tech_features.png").default} style={{width: 1024}} alt="Application functionalities." />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 
 ---
 
-## Diferenciais
+## Key Differentiators
 
-1. **Acessibilidade pelo Telegram**: além do número, explica os fatores que aumentaram ou reduziram a nota.  
-2. **Duplo Cadastro Agricultor e Investidor**: possibilidade de aceitar valores parciais, estender prazos ou cancelar.  
-3. **Investimentos para Além da Produção**: vitrine digital que conecta diretamente agricultores e investidores.  
+1. **Accessibility via Telegram**: In addition to the numerical score, explains the factors that increased or reduced the rating.  
+2. **Dual Registration (Farmer and Investor)**: Possibility of accepting partial values, extending deadlines, or cancelling the request.  
+3. **Investments Beyond Production**: Digital showcase that directly connects farmers and investors.  
 
-<p style={{textAlign: 'center'}}>Diferenciais da Aplicação</p>
+<p style={{textAlign: 'center'}}>Application Differentiators</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../static/img/diferenciais_app.png").default} style={{width: 1024}} alt="Público-alvo da solução." />
+        <img src={require("../static/img/diferenciais_app.png").default} style={{width: 1024}} alt="Application differentiators." />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 ---
 
-## Conclusão
+## Conclusion
 
-&emsp;O **Reevo** representa a convergência entre finanças digitais e agronegócio sustentável, criando um modelo inovador que beneficia tanto quem produz quanto quem investe.  
-Ao unir tecnologia, inclusão financeira e impacto socioambiental, a plataforma busca potencializar a vida de agricultores e oferecer novas oportunidades a investidores conscientes.
+&emsp;**Reevo** represents the convergence between digital finance and sustainable agribusiness, creating an innovative model that benefits both producers and investors.  
+By uniting technology, financial inclusion, and socio-environmental impact, the platform seeks to empower farmers' lives and offer new opportunities to conscious investors.
 
 ---

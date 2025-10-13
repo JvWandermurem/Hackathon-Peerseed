@@ -1,44 +1,44 @@
 ---
 sidebar_position: 1
-title: Mapeamento do Problema
+title: Problem Mapping
 ---
 
 
-## Contextualização do Setor
+## Sector Contextualization
 
-&emsp;O **crédito agrícola brasileiro** opera em um paradoxo de alta relevância: o agronegócio é um motor da economia nacional, mas seu sistema de financiamento é marcado pela **desigualdade**. O mercado é dominado por processos lentos e burocráticos que excluem o **Pequeno e Médio Produtor Rural (PME)**. A relevância do tema é crucial, pois, apesar de os agricultores familiares representarem **77% dos estabelecimentos rurais**, eles acessam **menos de 15% do crédito formal**. 
-
----
-## Principais Dores e Desafios Identificados
-
-&emsp;Os problemas afetam criticamente tanto quem precisa de capital (o Agricultor) quanto quem o fornece (o Investidor).
-
-### 🧑‍🌾 Dores do Agricultor PME (Sérgio)
-* **Acesso Restrito e Burocrático:** Dificuldade em acessar bancos tradicionais devido à exigência excessiva de garantias e à lentidão dos processos.
-* **Crédito Desalinhado:** As linhas de crédito não se adaptam ao **ciclo de safra** (carência e pagamentos) e a análise de risco é opaca.
-* **Exclusão por Dados:** A falta de dados financeiros estruturados e a desvalorização de ativos como o **CAR (Cadastro Ambiental Rural)** na análise de crédito.
-
-### 👩‍💻 Dores do Investidor (Marina)
-* **Falta de Transparência:** Não há rastreabilidade sobre o uso final do capital e o real impacto socioambiental do investimento.
-* **Iliquidez do Ativo:** Ativos de agronegócio (como a CPR) são tradicionalmente de longo prazo e difíceis de vender antecipadamente.
-* **Complexidade Regulatória:** Dificuldade em gerir a retenção de impostos (IR/IOF) e garantir a conformidade legal dos títulos de crédito.
+&emsp;The **Brazilian agricultural credit** operates in a paradox of high relevance: the agribusiness sector is a national economic engine, but its financing system is marked by **inequality**. The market is dominated by slow and bureaucratic processes that exclude the **Small and Medium Rural Producer (PME)**. The relevance of the theme is crucial, as, despite family farmers representing **77% of rural establishments**, they access **less than 15% of formal credit**.
 
 ---
-## Causas Raiz
+## Key Pains and Challenges Identified
 
-&emsp;Os problemas acima são originados por fatores estruturais no ecossistema de crédito:
+&emsp;The problems critically affect both those who need capital (the Farmer) and those who provide it (the Investor).
 
-* **Infraestrutura Defasada:** A formalização da **CPR** ainda depende de processos físicos ou sem padronização tecnológica (digitalização precária), elevando o custo operacional.
-* **Assimetria de Informação:** Bancos tradicionais não possuem modelos de *scoring* especializados no Agronegócio (**AgroScore**), resultando em alta aversão ao risco para PMEs.
-* **Falta de Desintermediação:** A cadeia de crédito é longa, com muitos intermediários, o que inflaciona o **Custo Efetivo Total (CET)** para o produtor e reduz o retorno para o investidor.
-* **Barreira Digital e Confiança:** O produtor tem baixa familiaridade e alta desconfiança em relação a novos canais digitais que não são endossados por sua rede local (Cooperativas).
+### 🧑‍🌾 Pains of the PME Farmer (Sérgio)
+* **Restricted and Bureaucratic Access:** Difficulty accessing traditional banks due to excessive collateral requirements and slow processes.
+* **Misaligned Credit:** Credit lines do not adapt to the **harvest cycle** (grace period and payments), and risk analysis is opaque.
+* **Data Exclusion:** The lack of structured financial data and the undervaluation of assets like the **CAR (Rural Environmental Registry)** in credit analysis.
+
+### 👩‍💻 Pains of the Investor (Marina)
+* **Lack of Transparency:** There is no traceability regarding the final use of capital and the real socio-environmental impact of the investment.
+* **Asset Illiquidity:** Agribusiness assets (like the CPR) are traditionally long-term and difficult to sell prematurely.
+* **Regulatory Complexity:** Difficulty managing tax withholding (IR/IOF) and ensuring the legal compliance of credit titles.
 
 ---
-## Consequências da Não-Solução
+## Root Causes
 
-&emsp;Não resolver esses problemas perpetua a ineficiência e os riscos no setor:
+&emsp;The above problems originate from structural factors in the credit ecosystem:
 
-* **Exclusão Financeira:** Manutenção de um **crédito reprimido** para a maioria dos produtores, limitando a modernização e a produtividade no campo.
-* **Custo de Capital Elevado:** O crédito torna-se mais caro para o PME, seja por *fees* de intermediação ou pela necessidade de recorrer a fontes informais.
-* **Baixa Eficiência do Investimento:** Investidores de impacto não conseguem alocar capital com segurança e rastreabilidade, minando o potencial do mercado ESG no agronegócio.
-* **Risco de Mercado:** A falta de transparência e a baixa liquidez do ativo (CPR)
+* **Outdated Infrastructure:** The formalization of the **CPR** still relies on physical processes or lacks technological standardization (precarious digitization), increasing operational costs.
+* **Information Asymmetry:** Traditional banks do not have specialized *scoring* models for Agribusiness (**AgroScore**), resulting in high risk aversion towards PMEs.
+* **Lack of Disintermediation:** The credit chain is long, with many intermediaries, which inflates the **Total Effective Cost (CET)** for the producer and reduces the return for the investor.
+* **Digital Barrier and Trust:** The producer has low familiarity and high distrust towards new digital channels that are not endorsed by their local network (Cooperatives).
+
+---
+## Consequences of Non-Solution
+
+&emsp;Failure to resolve these problems perpetuates inefficiency and risks in the sector:
+
+* **Financial Exclusion:** Maintenance of **repressed credit** for the majority of producers, limiting modernization and productivity in the field.
+* **High Capital Cost:** Credit becomes more expensive for the PME, either due to intermediation *fees* or the need to resort to informal sources.
+* **Low Investment Efficiency:** Impact investors cannot allocate capital securely and traceably, undermining the potential of the ESG market in agribusiness.
+* **Market Risk:** The lack of transparency and the low liquidity of the asset (CPR)
