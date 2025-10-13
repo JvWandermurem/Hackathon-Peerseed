@@ -1,67 +1,65 @@
 ---
-sidebar_label: "Público-Alvo"
+sidebar_label: "Target Audience"
 sidebar_position: 1
 ---
 
-# Público-Alvo
+# Target Audience
 
-## Entendimento do tópico
+## Topic Understanding
 
-&emsp;O **Reevo** foi concebido para conectar agricultores pequenos e médios com pessoas físicas interessadas em investir diretamente no campo, criando um ecossistema de crédito mais ágil, transparente e sustentável. A análise do público-alvo considera tanto os produtores rurais que demandam financiamento quanto os investidores que oferecem capital, garantindo assim a complementaridade essencial para o modelo P2P.
+&emsp;**Reevo** was conceived to connect small and medium-sized farmers with individuals interested in investing directly in the agricultural sector, creating a credit ecosystem that is more agile, transparent, and sustainable. The target audience analysis considers both rural producers demanding financing and investors providing capital, thus ensuring the essential complementarity for the P2P model.
 
 ---
 
-## Agricultores Familiares e Produtores Rurais
+## Family Farmers and Rural Producers
 
-&emsp;O primeiro grupo central do público-alvo é composto por agricultores familiares, jovens rurais e pequenos agroempreendedores de baixa e média escala de produção. Muitos possuem propriedades de até 50 hectares e atuam em culturas como milho, soja, café, leite e hortaliças. Esse segmento enfrenta barreiras significativas no acesso a crédito formal, seja pela burocracia, pela exigência de garantias ou pela renda variável atrelada à safra.  
+&emsp;The first central group of the target audience is composed of family farmers, young rural individuals, and small to medium-scale agro-entrepreneurs. Many own properties up to 50 hectares and operate in crops such as corn, soy, coffee, dairy, and vegetables. This segment faces significant barriers to accessing formal credit, whether due to bureaucracy, collateral requirements, or income variability tied to the harvest cycle.
 
-&emsp;Para os produtores de médio porte, que representam parcela relevante da produção nacional, a necessidade de crédito está vinculada a insumos, pequenas máquinas, tecnologias de irrigação e modernização produtiva. Esses agricultores valorizam soluções digitais que ofereçam rapidez, taxas mais adequadas e maior transparência.  
+&emsp;For medium-sized producers, who represent a relevant portion of national production, the credit need is linked to inputs, small machinery, irrigation technologies, and productive modernization. These farmers value digital solutions that offer speed, more suitable rates, and greater transparency.
 
 :::info
-Segundo o Censo Agropecuário 2017 (IBGE), os agricultores familiares representam 77% dos estabelecimentos rurais no Brasil, mas acessam menos de 15% do crédito rural formal.
+According to the 2017 Agricultural Census (IBGE), family farmers represent 77% of rural establishments in Brazil but access less than 15% of formal rural credit.
 :::
 
-&emsp;Além disso, cooperativas e associações rurais surgem como atores estratégicos. Elas concentram centenas de produtores e podem atuar como canais de captação de usuários do Reevo, beneficiando-se da oferta de crédito mais justo e ágil. Dados da OCB (2023) indicam que cooperativas agropecuárias movimentaram mais de R$ 600 bilhões em 2023, reforçando sua relevância no setor.
+&emsp;Furthermore, rural cooperatives and associations emerge as strategic players. They consolidate hundreds of producers and can act as channels for acquiring Reevo users, benefiting from the offer of fairer and more agile credit. Data from OCB (2023) indicates that agricultural cooperatives transacted over R\$ 600 billion in 2023, reinforcing their relevance in the sector.
 
 ---
 
-## Investidores Pessoas Físicas
+## Individual Investors
 
-&emsp;O outro lado do ecossistema do Reevo é formado por pessoas físicas interessadas em investir pequenos valores diretamente em operações agrícolas. Esse grupo busca diversificação de portfólio, retornos potenciais superiores à renda fixa tradicional e impacto social positivo no campo.  
+&emsp;The other side of the Reevo ecosystem is formed by individuals interested in investing small amounts directly into agricultural operations. This group seeks portfolio diversification, potential returns superior to traditional fixed income, and positive social impact in the rural sector.
 
-&emsp;Entre eles estão investidores locais, moradores de regiões rurais ou pequenas cidades, que veem no Reevo uma forma de apoiar o desenvolvimento de suas comunidades. Também se destacam os pequenos e médios investidores urbanos, atraídos pelo modelo inovador, pela rastreabilidade via blockchain e pela clareza de modelos de risco transparentes.  
+&emsp;Among them are local investors, residents of rural areas or small towns, who see Reevo as a way to support the development of their communities. Small and medium-sized urban investors also stand out, attracted by the innovative model, traceability via blockchain, and the clarity of transparent risk models.
 
 :::info
-Segundo relatório da ANBIMA (2023), mais de 5 milhões de brasileiros já investem fora da poupança, e o interesse em alternativas ligadas a impacto social e ESG cresce a taxas anuais acima de 20%.
+According to an ANBIMA report (2023), over 5 million Brazilians already invest outside of savings accounts, and interest in alternatives linked to social impact and ESG grows at annual rates above 20%.
 :::
 
 ---
 
-## Perfil Demográfico e Comportamental
+## Demographic and Behavioral Profile
 
-- Produtores rurais: predominância de 30 a 55 anos, baseados no Centro-Oeste, Sul e Sudeste, buscando soluções de crédito rápidas, simples e adaptadas ao ciclo agrícola.  
-- Investidores: perfil moderado, entre 25 e 45 anos, concentrados em áreas urbanas de médio e grande porte, além de pequenos centros locais. Buscam alternativas digitais com maior transparência, diversificação e impacto social.  
-- Ambos valorizam plataformas digitais, intuitivas e confiáveis, que combinem segurança tecnológica com benefícios econômicos reais.  
-
----
-
-## Problemas Comuns do Público-Alvo
-
-1. Agricultores enfrentam dificuldade no acesso a crédito justo.  
-2. Falta de garantias adequadas limita operações junto a bancos tradicionais.  
-3. Investidores encontram barreiras para diversificar com impacto social direto.  
-4. Pouca transparência e confiança em agentes convencionais de crédito.  
-5. Demanda por soluções que unam tecnologia, sustentabilidade e inclusão financeira.  
+- Rural Producers: Predominantly 30 to 55 years old, based in the Central-West, South, and Southeast, seeking credit solutions that are fast, simple, and adapted to the agricultural cycle.  
+- Investors: Moderate profile, aged 25 to 45, concentrated in medium and large urban areas, as well as small local centers. They seek digital alternatives with greater transparency, diversification, and social impact.  
+- Both value digital, intuitive, and reliable platforms that combine technological security with real economic benefits.  
 
 ---
 
-## Referências Bibliográficas
+## Common Problems of the Target Audience
 
-- IBGE. Censo Agropecuário 2017. Brasília, 2017.  
-- MAPA. Plano Safra 2023/2024. Brasília, 2023.  
-- OCB. Relatório Anual das Cooperativas Brasileiras. Brasília, 2023.  
-- Banco Central do Brasil. Relatório de Economia Bancária. Brasília, 2022.  
-- ANBIMA. Relatório de Investidores Pessoas Físicas. São Paulo, 2023.  
-- SEBRAE. Panorama do Agronegócio Familiar. Brasília, 2023.  
+1. Farmers face difficulty accessing fair credit.  
+2. Lack of adequate collateral limits operations with traditional banks.  
+3. Investors face barriers to diversifying with direct social impact.  
+4. Low transparency and trust in conventional credit agents.  
+5. Demand for solutions that unite technology, sustainability, and financial inclusion.  
 
 ---
+
+## Bibliographic References
+
+- IBGE. 2017 Agricultural Census. Brasília, 2017.  
+- MAPA. 2023/2024 Harvest Plan. Brasília, 2023.  
+- OCB. Annual Report of Brazilian Cooperatives. Brasília, 2023.  
+- Banco Central do Brasil. Banking Economy Report. Brasília, 2022.  
+- ANBIMA. Individual Investor Report. São Paulo, 2023.  
+- SEBRAE. Family Agribusiness Panorama. Brasília, 2023.

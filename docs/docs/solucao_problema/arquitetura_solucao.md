@@ -1,232 +1,230 @@
 ---
 sidebar_position: 3
-title: Arquitetura da Solução
+title: Solution Architecture
 ---
 
-## Introdução
+## Introduction
 
-&emsp; Para documentar e comunicar a arquitetura do Reevo de forma eficaz, adotamos o Modelo C4. Este modelo não é uma nova forma de projetar software, mas sim uma maneira de visualizar e descrever uma arquitetura existente ou proposta em diferentes níveis de abstração.
+&emsp; To effectively document and communicate the Reevo architecture, we adopted the **C4 Model**. This model is not a new way to design software, but rather a way to visualize and describe an existing or proposed architecture at different levels of abstraction.
 
-&emsp; A principal vantagem do C4 é que ele oferece a "quantidade certa de detalhes para a audiência certa". Podemos pensar nele como o Google Maps para a nossa arquitetura:
+&emsp; The main advantage of C4 is that it offers the "right amount of detail for the right audience." We can think of it as the Google Maps for our architecture:
 
-**Nível 1 (Contexto): A visão do mundo.**
+**Level 1 (Context): The view of the world.**
 
-**Nível 2 (Contêineres): A visão do país ou da cidade.**
+**Level 2 (Containers): The view of the country or city.**
 
-**Nível 3 (Componentes): A visão de um bairro ou de uma rua.**
+**Level 3 (Components): The view of a neighborhood or street.**
 
-**Nível 4 (Código): A visão de uma casa específica (geralmente coberto por diagramas de classe UML ou o próprio código).**
+**Level 4 (Code): The view of a specific house (usually covered by UML class diagrams or the code itself).**
 
-Para o nosso projeto, detalhamos os três primeiros níveis, que fornecem uma compreensão completa da estrutura e do funcionamento do Reevo.
+For our project, we detailed the first three levels, which provide a complete understanding of the Reevo's structure and functioning.
 
+## Level 1: System Context (The Helicopter View)
+&emsp; The first diagram establishes the general scenario, showing how our system fits into the world. It answers the question: "What is the Reevo system, who uses it, and what other systems does it interact with?".
 
-
-## Nível 1: Contexto do Sistema (A Visão do Helicóptero)
-&emsp; O primeiro diagrama estabelece o cenário geral, mostrando como o nosso sistema se encaixa no mundo. Ele responde à pergunta: "O que é o sistema Reevo, quem o utiliza e com quais outros sistemas ele interage?".
-
-<p style={{textAlign: 'center'}}> Arquitetura Nível C1</p>
+<p style={{textAlign: 'center'}}> Architecture Level C1</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/arquitetura_c1.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c1.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
->Para Melhor visualização [clique aqui](https://www.canva.com/design/DAG0SgLAcT8/hKnnOkM1vyxHNdrywB5QxA/edit?utm_content=DAG0SgLAcT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+>For Better visualization [click here](https://www.canva.com/design/DAG0SgLAcT8/hKnnOkM1vyxHNdrywB5QxA/edit?utm_content=DAG0SgLAcT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-**Os Atores:** Três atores principais interagem com o sistema:
+**The Actors:** Three main actors interact with the system:
 
-    - Agricultor(a): O tomador de crédito que busca financiamento de forma ágil e justa.
+    - Farmer: The credit borrower seeking agile and fair financing.
 
-    - Investidor(a): A pessoa física que oferece capital em busca de rentabilidade e impacto.
+    - Investor: The individual offering capital in pursuit of profitability and impact.
 
-    - Admin: O operador da plataforma, responsável pela gestão, suporte e validação manual de processos.
-
-
-**O Sistema Reevo:** No coração do diagrama está o Sistema Central, nossa plataforma de crédito P2P para o agronegócio.
+    - Admin: The platform operator, responsible for management, support, and manual process validation.
 
 
-**Os Sistemas Externos:** O Reevo não opera isoladamente. Ele depende de integrações críticas com sistemas externos para funcionar, incluindo:
+**The Reevo System:** At the heart of the diagram is the Central System, our P2P credit platform for agribusiness.
 
- - Autoridade Certificadora (ICP-Brasil): Para a assinatura digital e validação jurídica da Cédula de Produtor Rural (CPR).
 
-- Gateway de Pagamento: Para processar o fluxo financeiro (on/off-ramp) entre Reais (BRL) e a stablecoin (USDC).
+**External Systems:** Reevo does not operate in isolation. It relies on critical integrations with external systems to function, including:
 
-- Registradora de CPR: Para registrar oficialmente os contratos de crédito, conferindo-lhes validade legal.
+ - **Certifying Authority (ICP-Brasil):** For digital signature and legal validation of the Rural Product Bill (CPR).
 
-- Governo e Bureaus de Crédito: Para consultar dados externos que alimentam nosso motor de análise de risco.
+- **Payment Gateway:** To process the financial flow (on/off-ramp) between Brazilian Reais (BRL) and the stablecoin (USDC).
 
-Este diagrama é fundamental para que qualquer pessoa, técnica ou não, entenda o propósito e as fronteiras do nosso projeto.
+- **CPR Registrar:** To officially register credit contracts, granting them legal validity.
 
-## Nível 2: Contêineres (A Estrutura da Solução)
+- **Government and Credit Bureaus:** To consult external data that feeds our risk analysis engine.
 
-&emsp; Dando um zoom no "Sistema Reevo", o diagrama de contêineres expõe a arquitetura de alto nível da aplicação. Ele responde à pergunta: "Quais são os principais blocos de construção do sistema e como eles se comunicam?".
+This diagram is fundamental for anyone, technical or non-technical, to understand the purpose and boundaries of our project.
 
->Para Melhor visualização [clique aqui](https://www.canva.com/design/DAG0SgLAcT8/hKnnOkM1vyxHNdrywB5QxA/edit?utm_content=DAG0SgLAcT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+## Level 2: Containers (The Solution Structure)
 
-<p style={{textAlign: 'center'}}> Arquitetura Nível C2</p>
+&emsp; Zooming into the "Reevo System," the container diagram exposes the high-level architecture of the application. It answers the question: "What are the main building blocks of the system and how do they communicate?".
+
+>For Better visualization [click here](https://www.canva.com/design/DAG0SgLAcT8/hKnnOkM1vyxHNdrywB5QxA/edit?utm_content=DAG0SgLAcT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+<p style={{textAlign: 'center'}}> Architecture Level C2</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/arquitetura_c2.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/arquitetura_c2.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-> Nota: "Contêiner" aqui é um termo do C4 para um bloco de construção executável ou um armazenamento de dados, não necessariamente um contêiner Docker.
+> Note: "Container" here is a C4 term for an executable building block or a data store, not necessarily a Docker container.
 
-A arquitetura do Reevo é dividida em quatro camadas principais:
+The Reevo architecture is divided into four main layers:
 
-**Aplicação Web (Frontend):** A porta de entrada para nossos usuários. É uma série de páginas web/mobile que proporciona uma experiência de usuário fluida e responsiva para Agricultores e Investidores.
+**Web Application (Frontend):** The entry point for our users. It is a series of web/mobile pages that provides a fluid and responsive user experience for Farmers and Investors.
 
-**Serviços de Backend (Microsserviços):** O cérebro da plataforma. Adotamos uma arquitetura de microsserviços para garantir escalabilidade, modularidade e manutenibilidade. Cada serviço tem uma responsabilidade única e bem definida, como:
+**Backend Services (Microservices):** The platform's brain. We adopted a microservices architecture to ensure scalability, modularity, and maintainability. Each service has a unique and well-defined responsibility, such as:
 
-- **Serviço de Contas:** Gerencia identidade e autenticação.
+- **Accounts Service:** Manages identity and authentication.
 
-- **Serviço de Análise de Crédito:** Orquestra o cálculo do AgroScore.
+- **Credit Analysis Service:** Orchestrates the AgroScore calculation.
 
-- **Serviço de Marketplace:** Gerencia as oportunidades de investimento.
+- **Marketplace Service:** Manages investment opportunities.
 
-- **Serviço de Carteira Digital:** Controla os saldos e transações.
+- **Digital Wallet Service:** Controls balances and transactions.
 
-- **Serviço de Contratos:** Gerencia o ciclo de vida da CPR.
+- **Contracts Service:** Manages the CPR lifecycle.
 
-- **Serviço de Notificações:** Centraliza o envio de comunicações.
+- **Notifications Service:** Centralizes communication dispatch.
 
-**Armazenamento:** Utilizamos diferentes tecnologias de armazenamento para diferentes necessidades, uma abordagem conhecida como "persistência poliglota":
+**Storage:** We use different storage technologies for different needs, an approach known as **"polyglot persistence"**:
 
-  - **Database SQL:** Para dados transacionais e estruturados que exigem consistência.
+  - **Database SQL:** For transactional and structured data requiring consistency.
 
-  - **Database NoSQL:** Para dados semi-estruturados, como documentos de usuários e logs de auditoria.
+  - **Database NoSQL:** For semi-structured data, such as user documents and audit logs.
 
-  - **Cache:** Para dados voláteis e de acesso rápido, melhorando a performance.
+  - **Cache:** For volatile and frequently accessed data, improving performance.
 
-  - **Ledger Blockchain:** Para garantir a imutabilidade e transparência das transações de investimento (tokens).
+  - **Ledger Blockchain:** To ensure the immutability and transparency of investment transactions (tokens).
 
-  - **Logs:** Para centralizar os logs de todos os serviços, garantindo a observabilidade.
+  - **Logs:** To centralize logs from all services, ensuring observability.
 
-  Este diagrama mostra a decomposição lógica e tecnológica da nossa solução, servindo como o mapa principal para a equipe de desenvolvimento.
+  This diagram shows the logical and technological decomposition of our solution, serving as the main map for the development team.
 
 ---
-## Nível 3: Componentes (O Interior dos Microsserviços)
+## Level 3: Components (The Microservices Interior)
 
-&emsp; No nível mais profundo de detalhe, damos um zoom nos nossos contêineres (microsserviços) mais críticos para expor seus Componentes internos. Estes diagramas respondem à pergunta: "Como cada serviço é projetado por dentro e como ele cumpre sua responsabilidade?".
+&emsp; At the deepest level of detail, we zoom into our most critical containers (microservices) to expose their internal Components. These diagrams answer the question: "How is each service designed internally and how does it fulfill its responsibility?".
 
-&emsp; Este nível é o mapa que guia o desenvolvedor na organização do código e na implementação das funcionalidades de um serviço específico. A seguir, detalhamos os componentes de seis dos nossos serviços mais importantes.
+&emsp; This level is the map that guides the developer in organizing the code and implementing the functionalities of a specific service. Below, we detail the components of six of our most important services.
 
-### Serviço Contas
+### Accounts Service
 
-&emsp; Este serviço é a fundação da identidade e segurança do usuário na plataforma. Ele é a fonte da verdade para todos os dados cadastrais e de autenticação. Seus componentes internos são divididos por responsabilidade:
+&emsp; This service is the foundation of user identity and security on the platform. It is the single source of truth for all registration and authentication data. Its internal components are divided by responsibility:
 
-`Gerenciador de Autenticação`: lida com a segurança do acesso (login, senhas, 2FA).
+`Authentication Manager`: handles access security (login, passwords, 2FA).
 
-`Gerenciador de Perfil`: permite a gestão dos dados cadastrais do usuário.
+`Profile Manager`: allows management of user registration data.
 
-`Gerenciador de Onboarding/KYC`: orquestra o processo de verificação de identidade. Para comunicações essenciais, como o envio de e-mails de boas-vindas ou de redefinição de senha, ele utiliza um `Integrador de Notificações.`
+`Onboarding/KYC Manager`: orchestrates the identity verification process. For essential communications, such as sending welcome or password reset emails, it uses an `Integrator of Notifications.`
 
-<p style={{textAlign: 'center'}}> Serviço Contas</p>
+<p style={{textAlign: 'center'}}> Accounts Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_contas.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_contas.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 
-### Serviço Análise de Crédito
+### Credit Analysis Service
 
-&emsp; Este serviço orquestra o complexo processo de análise de risco. Seus componentes internos incluem:
+&emsp; This service orchestrates the complex risk analysis process. Its internal components include:
 
-`API Controller` como porta de entrada.
+`API Controller` as the entry port.
 
-`Coordenador de Análise` para gerenciar o fluxo.
+`Analysis Coordinator` to manage the flow.
 
-`Integradores` para se comunicar com sistemas externos (Bureaus e Backoffice).
+`Integrators` to communicate with external systems (Bureaus and Backoffice).
 
-`Motor de Score (ML)` que contém a lógica de cálculo.
+`Score Engine (ML)` which contains the calculation logic.
 
-`Repositório` para persistir os dados da análise.
+`Repository` to persist the analysis data.
 
-<p style={{textAlign: 'center'}}> Serviço Analise Credito</p>
+<p style={{textAlign: 'center'}}> Credit Analysis Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_analise_credito.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_analise_credito.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-### Serviço Contratos
-&emsp; Focado na dimensão jurídica da plataforma, este serviço gerencia o ativo legal mais importante: a Cédula de Produtor Rural (CPR).
+### Contracts Service
+&emsp; Focused on the platform's legal dimension, this service manages the most important legal asset: the Rural Product Bill (CPR).
 
-`Gerador de CPR`cria o documento a partir dos dados da análise de crédito.
+`CPR Generator` creates the document from the credit analysis data.
 
-`Coordenador de Assinatura Digital` gerencia a integração com o provedor ICP-Brasil para a coleta da assinatura do agricultor.
+`Digital Signature Coordinator` manages the integration with the ICP-Brasil provider for collecting the farmer's signature.
 
- Uma vez assinado, o `Coordenador de Registro de Ativos` assume, comunicando-se com a registradora oficial `(B3/CERC)` para garantir a validade e a conformidade legal do título.
-<p style={{textAlign: 'center'}}> Serviço Contratos</p>
+ Once signed, the `Asset Registration Coordinator` takes over, communicating with the official registrar `(B3/CERC)` to ensure the legal validity and compliance of the title.
+<p style={{textAlign: 'center'}}> Contracts Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_contratos.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_contratos.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-### Serviço Carteira Digital
+### Digital Wallet Service
 
-&emsp; Este serviço é o cofre digital da plataforma, atuando como um serviço de custódia completo e seguro. Sua responsabilidade é gerenciar todos os ativos financeiros dos usuários. Seus componentes incluem:
+&emsp; This service is the platform's digital vault, acting as a complete and secure custody service. Its responsibility is to manage all user financial assets. Its components include:
 
-`API Controller` como interface.
+`API Controller` as an interface.
 
-`Gerenciador de Carteira` para a lógica de negócio (saldos, transferências).
+`Wallet Manager` for business logic (balances, transfers).
 
-`Repositório de Ledger` para registrar todas as transações de forma imutável.
+`Ledger Repository` to record all transactions immutably.
 
-Para operações com criptomoedas, ele conta com um `Monitor de Blockchain` para detectar depósitos e um `Transmissor de Transação` para processar saques, que por sua vez interage com o componente mais crítico e isolado, o Gerenciador de Chaves (HSM), o único responsável por assinar transações e garantir a segurança dos fundos.
+For cryptocurrency operations, it relies on a `Blockchain Monitor` to detect deposits and a `Transaction Transmitter` to process withdrawals, which in turn interacts with the most critical and isolated component, the **Key Manager (HSM)**, the sole party responsible for signing transactions and ensuring fund security.
 
-<p style={{textAlign: 'center'}}> Serviço Carteira Digital</p>
+<p style={{textAlign: 'center'}}> Digital Wallet Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_carteira_digital.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_carteira_digital.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-### Serviço Marketplace
+### Marketplace Service
 
-&emsp; Atuando como a vitrine e o ambiente de negociação do Reevo, este serviço gerencia o ciclo de vida completo das oportunidades de investimento. É composto por:
+&emsp; Acting as Reevo's showcase and trading environment, this service manages the complete lifecycle of investment opportunities. It consists of:
 
-`API Controller` para a interação com o frontend e por dois componentes lógicos principais
-  - `Gerenciador de Ofertas Primárias`: que cuida da listagem e captação das novas CPRs.
+`API Controller` for frontend interaction and two main logical components
+  - `Primary Offer Manager`: which handles the listing and fundraising of new CPRs.
   
-  - `Gerenciador de Ofertas Secundárias`: que habilita a negociação P2P entre investidores.
+  - `Secondary Offer Manager`: which enables P2P trading among investors.
   
-  Para garantir a integridade financeira das operações, o `Coordenador de Transações` orquestra a comunicação com o **Serviço de Carteira Digital**, assegurando que as transferências de fundos e ativos ocorram de forma atômica e segura.
+  To ensure the financial integrity of operations, the `Transaction Coordinator` orchestrates communication with the **Digital Wallet Service**, ensuring that fund and asset transfers occur atomically and securely.
 
-<p style={{textAlign: 'center'}}> Serviço Marketplace</p>
+<p style={{textAlign: 'center'}}> Marketplace Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_marketplace.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_marketplace.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
-### Serviço Notificações
+### Notifications Service
 
-&emsp; Projetado para ser o centro de comunicação da plataforma, este serviço funciona de forma desacoplada e assíncrona.Sua principal porta de entrada é um `Message Consumer`, que escuta eventos de outros serviços (ex: UsuarioCadastrado, PagamentoRecebido) publicados em um Message Broker.
+&emsp; Designed to be the platform's communication hub, this service functions decoupled and asynchronously. Its main entry point is a `Message Consumer`, which listens for events from other services (e.g., UserRegistered, PaymentReceived) published to a Message Broker.
 
- Ao receber um evento, o `Gerenciador de Templates` popula a mensagem apropriada, e o `Orquestrador de Canais` decide como enviá-la _(Email, Push Notification, SMS)_ com base nas preferências do usuário, utilizando Gateways específicos para cada canal de comunicação. Essa arquitetura garante que o sistema de notificações seja resiliente e não atrase as operações principais da plataforma.
+ Upon receiving an event, the `Template Manager` populates the appropriate message, and the `Channel Orchestrator` decides how to send it _(Email, Push Notification, SMS)_ based on user preferences, utilizing specific Gateways for each communication channel. This architecture ensures that the notification system is resilient and does not delay the platform's main operations.
 
-<p style={{textAlign: 'center'}}> Serviço Notificações</p>
+<p style={{textAlign: 'center'}}> Notifications Service</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/servico_notificacoes.png").default} style={{width: 1024}} alt="Fluxo de Solicitação e Aprovação de Crédito" />
+        <img src={require("../../static/img/servico_notificacoes.png").default} style={{width: 1024}} alt="Credit Request and Approval Flow" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>

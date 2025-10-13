@@ -1,44 +1,42 @@
 ---
 sidebar_position: 1
-title: Proposta de Valor
+title: Value Proposition
 ---
 
-## Entrega de valor
+## Value Delivery
 
-&emsp;A proposta de valor do Reevo é entregue através de um conjunto integrado de produtos e serviços que utilizam tecnologia de ponta para desburocratizar o crédito rural e garantir transparência ao capital. As funcionalidades listadas abaixo são o cerne da solução, demonstrando como a plataforma resolve as principais dores do Agricultor e do Investidor ao longo de suas jornadas.
+&emsp; Reevo's value proposition is delivered through an integrated set of products and services that use cutting-edge technology to debureaucratize rural credit and ensure capital transparency. The functionalities listed below are the core of the solution, demonstrating how the platform addresses the main pain points of the Farmer and the Investor throughout their journeys.
 
-### Produtos & Serviços  
+### Products & Services  
 
-| **Produto/Serviço** | **Detalhamento/Função** | **Benefício** |
+| **Product/Service** | **Detail/Function** | **Benefit** |
 |----------------------|--------------------------|---------------|
-| **Plataforma P2P Digital e Unificada (RF-CAD)** | Interface para Agricultores e Investidores, com contas separadas, mas interligadas. | Centraliza a originação de crédito e a alocação de capital em um único ecossistema transparente. |
-| **Análise de Crédito Automatizada (AgroScore) (RF-AGR-002)** | Algoritmo que processa dados multifatoriais para gerar um Score numérico e uma classificação de risco de maneira mais eficiente que em outros modelos. | Resolve a lentidão e a falta de expertise bancária. |
-| **Geração e Assinatura Digital da CPR (RF-AGR-003)** | Serviço integrado que preenche automaticamente a Cédula de Produto Rural e permite a assinatura digital qualificada (ICP-Brasil), com validação biométrica. | Elimina a burocracia na formalização do crédito. |
-| **Marketplace** | Painel que lista oportunidades de investimento, permite o acompanhamento em tempo real da captação e exibe os dados detalhados do produtor e do risco (Score). | Permite ao investidor selecionar o ativo com base no risco e no impacto, e ao agricultor monitorar sua captação. |
-| **Mercado Secundário Integrado (RF-INV-003)** | Funcionalidade que permite a venda das cotas de investimento (tokens) entre investidores antes do vencimento do contrato. | Ataca a iliquidez do investimento em agronegócio, oferecendo uma via para o investidor realizar lucros ou sair da operação antecipadamente. |
+| **Unified Digital P2P Platform (RF-CAD)** | Interface for Farmers and Investors, with separate but interconnected accounts. | Centralizes credit origination and capital allocation in a single transparent ecosystem. |
+| **Automated Credit Analysis (AgroScore) (RF-AGR-002)** | Algorithm that processes multifactorial data to generate a numerical Score and risk classification more efficiently than other models. | Resolves the slowness and lack of banking expertise. |
+| **Generation and Digital Signature of CPR (RF-AGR-003)** | Integrated service that automatically fills out the Rural Product Bill and allows qualified digital signature (ICP-Brasil standard), with biometric validation. | Eliminates bureaucracy in loan formalization. |
+| **Marketplace** | Panel that lists investment opportunities, allows real-time monitoring of fundraising, and displays detailed data on the producer and risk (Score). | Allows the investor to select the asset based on risk and impact, and the farmer to monitor their fundraising. |
+| **Integrated Secondary Market (RF-INV-003)** | Functionality that allows the sale of investment shares (tokens) between investors before the contract maturity date. | Addresses the illiquidity of agribusiness investment, offering a way for the investor to realize profits or exit the operation early. |
 
 ---
 
-### Gain Creators (Criadores de Ganhos)  
+### Gain Creators (Gains Generated)  
 
-| **Criador de Ganho** | **Descrição e Vantagem Competitiva** |
+| **Gain Creator** | **Description and Competitive Advantage** |
 |-----------------------|---------------------------------------|
-| **Velocidade Recorde de Decisão** | O AgroScore entrega a aprovação de crédito em um tempo bem menor comparado ao mercado tradicional. |
-| **Transparência e Confiança Mútua** | A rastreabilidade das operações digitais e os dados detalhados da fazenda e do risco (incluindo CAR) criam confiança e reduzem a percepção de risco para o investidor. |
-| **Flexibilidade de Pagamento Adaptada à Safra** | O agricultor consegue estruturar o pagamento do crédito com carência e vencimentos alinhados ao seu ciclo de colheita, algo raro nas linhas de crédito padronizadas. |
-| **Investimento com Impacto Verificável** | O investidor recebe Relatórios de Impacto (RF-INV-007) sobre os hectares financiados e o perfil do produtor apoiado, alinhando retorno financeiro com valores ESG. |
-| **Liquidez e Gestão de Portfólio** | A funcionalidade de Mercado Secundário transforma um ativo tradicionalmente de longo prazo em um instrumento com potencial de liquidez, aumentando o controle da carteira do investidor. |
+| **Record Decision Speed** | The AgroScore delivers credit approval in a much shorter time compared to the traditional market. |
+| **Mutual Transparency and Trust** | The traceability of digital operations and detailed farm and risk data (including CAR) create trust and reduce the investor's perceived risk. |
+| **Payment Flexibility Adapted to Harvest Cycle** | The farmer can structure loan repayment with grace periods and deadlines aligned with their harvest cycle, which is rare in standardized credit lines. |
+| **Verifiable Impact Investment** | The investor receives Impact Reports (RF-INV-007) on hectares financed and the supported producer profile, aligning financial returns with ESG values. |
+| **Liquidity and Portfolio Management** | The Secondary Market functionality transforms a traditionally long-term asset into an instrument with liquidity potential, increasing investor portfolio control. |
 
 ---
 
-### Pain Relievers (Aliviadores de Dores)  
+### Pain Relievers (Pains Alleviated)  
 
-| **Aliviador de Dor** | **Descrição da Dor Eliminada ou Reduzida** |
+| **Pain Reliever** | **Description of Pain Eliminated or Reduced** |
 |-----------------------|--------------------------------------------|
-| **Processo Digital Guiado e Simples** | Elimina a burocracia, papelada e a necessidade de visitas presenciais ou múltiplos formulários, que são as principais dores do agricultor. |
-| **Modelo de Risco Didático** | Reduz a frustração do agricultor ao ser rejeitado sem explicação pelo banco. O AgroScore fornece feedback claro sobre os fatores que podem ser melhorados. |
-| **Conformidade Fiscal Integrada** | Alivia a dor do investidor de cálculo e retenção de impostos (IR/IOF), pois a plataforma realiza o serviço de retenção na fonte e fornece o Informe de Rendimentos anual (RF-TAX-002). |
-| **Gestão de Inadimplência Automatizada** | Reduz a exposição ao risco do investidor e as perdas, pois a plataforma aplica automaticamente multas e juros de mora e notifica as partes (RF-AGR-006). |
-| **Acesso ao Crédito em BRL com Segurança Digital** | Elimina a barreira tecnológica do investimento em ativos digitais, permitindo que a investidora use Pix sem a necessidade de gerenciar chaves complexas de wallets. |
-
----
+| **Simple and Guided Digital Process** | Eliminates bureaucracy, paperwork, and the need for in-person visits or multiple forms, which are the main pain points for the farmer. |
+| **Didactic Risk Model** | Reduces the farmer's frustration of being rejected without explanation by the bank. The AgroScore provides clear feedback on factors that can be improved. |
+| **Integrated Tax Compliance** | Alleviates the investor's pain of calculating and retaining taxes (IR/IOF), as the platform performs withholding at the source and provides the annual Income Statement (RF-TAX-002). |
+| **Automated Default Management** | Reduces the investor's exposure to risk and losses, as the platform automatically applies penalties and late payment interest and notifies the parties (RF-AGR-006). |
+| **Access to Credit in BRL with Digital Security** | Eliminates the technological barrier of digital asset investment, allowing the investor to use Pix without the need to manage complex wallet keys. |

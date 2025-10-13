@@ -1,33 +1,33 @@
 ---
 sidebar_position: 5
-title: Métricas de avaliação
+title: Evaluation metrics
 ---
 
-## Contextualização
+## Contextualization
 
-&emsp;Para medir o sucesso do Reevo, usaremos uma combinação de indicadores **quantitativos** (focados em volume e saúde financeira) e **qualitativos** (focados em satisfação e impacto), alinhados aos Requisitos Funcionais (RFs) e às Jornadas de Usuários (Sérgio e Marina).
+&emsp;To measure Reevo's success, we will use a combination of **quantitative** indicators (focused on volume and financial health) and **qualitative** indicators (focused on satisfaction and impact), aligned with the Functional Requirements (RFs) and User Journeys (Sérgio and Marina).
 
-## Indicadores Quantitativos (Desempenho e Financeiro)
-&emsp;Estes indicadores comprovam a viabilidade econômica e a escala da plataforma no mercado.
+## Quantitative Indicators (Performance and Financial)
+&emsp;These indicators prove the economic viability and market scale of the platform.
 
-| Indicador | Como será medido | Meta/Parâmetro de Sucesso |
+| Indicator | How it will be measured | Goal/Success Parameter |
 | :--- | :--- | :--- |
-| **Volume de Crédito Originado (GMV)** | Soma total dos empréstimos solicitados e financiados (CPR assinada) por Agricultores em um período. | **Meta Ano 1:** R$ 10 milhões (Validação de Mercado). **Crescimento:** Atingir 150% de crescimento do GMV no Ano 2. |
-| **Taxa de Inadimplência (*Default Rate*)** | Percentual do volume total de crédito que se encontra em atraso superior a 90 dias (RF-AGR-006). | Manter abaixo de **5%** após o primeiro ciclo de safra completo, comprovando a eficácia do **AgroScore**. |
-| **Custo de Aquisição do Cliente (CAC)** | Investimento total em marketing/vendas dividido pelo número de novos Agricultores e Investidores ativos. | Manter o CAC abaixo de **15% do LTV** (Valor do Tempo de Vida) médio do cliente, garantindo escalabilidade. |
-| **Taxa de Reinvestimento (Investidor)** | Percentual dos Investidores que reinvestem seus retornos na plataforma em uma nova oportunidade no mês subsequente (RF-INV-005). | Superior a **70%**, indicando alta satisfação e confiança no modelo de rendimento líquido e impacto. |
-| **Tempo Médio de Análise de Crédito** | Tempo médio (em minutos) desde o envio dos documentos pelo Agricultor até a geração do AgroScore (RF-AGR-002). | Manter em menos de **5 minutos** para 98% das solicitações, comprovando o diferencial de velocidade. |
-| **Fração de Captação (Marketplace)** | Percentual de solicitações de crédito que atingem 100% de financiamento no prazo estipulado. | Superior a **85%**, garantindo que a demanda do Agricultor seja atendida de forma consistente. |
+| **Gross Merchandise Volume (GMV)** | Total sum of loans requested and financed (CPR signed) by Farmers over a period. | **Year 1 Goal:** R$ 10 million (Market Validation). **Growth:** Achieve 150% GMV growth in Year 2. |
+| **Default Rate** | Percentage of the total loan volume that is past due by more than 90 days (RF-AGR-006). | Maintain below **5%** after the first complete crop cycle, proving the effectiveness of **AgroScore**. |
+| **Customer Acquisition Cost (CAC)** | Total investment in marketing/sales divided by the number of new active Farmers and Investors. | Maintain CAC below **15% of the LTV** (Lifetime Value) of the average customer, ensuring scalability. |
+| **Reinvestment Rate (Investor)** | Percentage of Investors who reinvest their returns on the platform into a new opportunity in the subsequent month (RF-INV-005). | Greater than **70%**, indicating high satisfaction and confidence in the net yield and impact model. |
+| **Average Credit Analysis Time** | Average time (in minutes) from the Farmer's document submission until the AgroScore is generated (RF-AGR-002). | Maintain below **5 minutes** for 98% of requests, proving the speed differential. |
+| **Funding Fraction (Marketplace)** | Percentage of loan requests that achieve 100% funding within the stipulated deadline. | Greater than **85%**, ensuring that the Farmer's demand is consistently met. |
 
 ---
 
-## 2. Indicadores Qualitativos (Satisfação e Valor Percebido)
+## 2. Qualitative Indicators (Satisfaction and Perceived Value)
 
-&emsp;Estes indicadores avaliam a experiência do usuário e o impacto intangível da solução.
+&emsp;These indicators assess user experience and the intangible impact of the solution.
 
-| Indicador | Como será medido | Meta/Parâmetro de Sucesso |
+| Indicator | How it will be measured | Goal/Success Parameter |
 | :--- | :--- | :--- |
-| **Net Promoter Score (NPS)** | Pesquisa rápida de 0 a 10 perguntando aos usuários a probabilidade de recomendarem o Reevo a um amigo/colega. | **NPS** acima de **50**, indicando alta fidelização e satisfação (principalmente após a primeira captação/investimento). |
-| **Taxa de Conclusão da Jornada** | Percentual de usuários que iniciam o cadastro (RF-CAD-001) e o concluem, ou que iniciam a solicitação de crédito e a finalizam (RF-AGR-001). | Taxa de conclusão de **cadastro (Onboarding)** superior a **80%**, refletindo a usabilidade da plataforma. |
-| **Feedback de Conformidade Legal** | Coleta de *feedback* dos Cartórios de Registro sobre a aceitação e o processo de registro da **CPR Digital (ICP-Brasil)**. | **Zero rejeições** da CPR digital por não conformidade, comprovando a robustez jurídica da solução (RF-AGR-003). |
-| **Engajamento com Relatórios de Impacto** | Número de Investidores que acessam ou fazem download dos **Relatórios de Impacto (RF-INV-007)** mensalmente. | Mais de **50%** dos Investidores ativos acessam os relatórios, validando o valor do diferencial ESG. |
+| **Net Promoter Score (NPS)** | Quick survey from 0 to 10 asking users the likelihood of recommending Reevo to a friend/colleague. | **NPS** above **50**, indicating high loyalty and satisfaction (especially after the first funding/investment). |
+| **Journey Completion Rate** | Percentage of users who start registration (RF-CAD-001) and complete it, or who start a loan request and finalize it (RF-AGR-001). | **Onboarding completion rate** greater than **80%**, reflecting the platform's usability. |
+| **Legal Compliance Feedback** | Collection of *feedback* from Registry Offices regarding the acceptance and registration process of the **Digital CPR (ICP-Brasil)**. | **Zero rejections** of the digital CPR due to non-compliance, proving the legal robustness of the solution (RF-AGR-003). |
+| **Engagement with Impact Reports** | Number of Investors who access or download the **Impact Reports (RF-INV-007)** monthly. | More than **50%** of active Investors accessing the reports, validating the value of the ESG differential. |

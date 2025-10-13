@@ -1,19 +1,19 @@
 ---
 sidebar_position: 0
-title: Arquitetura de Dados 
+title: Data Architecture
 ---
 
-## Camada de Armazenamento
+## Storage Layer
 
-&emsp; A arquitetura de dados do Reevo foi projetada sob o princípio de Persistência Poliglota, utilizando a tecnologia mais adequada para cada tipo de dado. A arquitetura garante a integridade transacional para operações financeiras, alta performance para consultas frequentes e observabilidade completa do sistema. A estrutura suporta o ciclo de vida completo do crédito P2P, desde o cadastro do usuário até a liquidação dos investimentos.
+&emsp; Reevo's data architecture was designed under the principle of **Polyglot Persistence**, utilizing the most appropriate technology for each data type. The architecture ensures **transactional integrity** for financial operations, high performance for frequent queries, and complete system observability. The structure supports the complete P2P credit lifecycle, from user registration to investment settlement.
 
-## Banco de Dados Relacional (PostgreSQL)
+## Relational Database (PostgreSQL)
 
-&emsp;  O coração da persistência de dados é um banco de dados PostgreSQL, que serve como a fonte única da verdade para todos os dados estruturados e transacionais.
+&emsp; The heart of data persistence is a PostgreSQL database, which serves as the **single source of truth** for all structured and transactional data.
 
-```SQL
--- Tipos Enumerados (Enums)
--- Utilizados para garantir a consistência e integridade dos dados em campos com valores pré-definidos.
+```sql
+-- Enumerated Types (Enums)
+-- Used to ensure consistency and data integrity in fields with predefined values.
 CREATE TYPE perfil_enum AS ENUM ('AGRICULTOR', 'INVESTIDOR', 'ADMIN');
 CREATE TYPE status_kyc_enum AS ENUM ('PENDENTE', 'VERIFICADO', 'REPROVADO', 'ANALISE_MANUAL');
 CREATE TYPE tipo_transacao_enum AS ENUM ('DEPOSITO_PIX', 'DEPOSITO_CRYPTO', 'SAQUE_PIX', 'SAQUE_CRYPTO', 'INVESTIMENTO_PRIMARIO', 'INVESTIMENTO_SECUNDARIO', 'RECEBIMENTO_PARCELA', 'VENDA_SECUNDARIO', 'TAXA_PLATAFORMA');
@@ -26,8 +26,8 @@ CREATE TYPE status_oferta_enum AS ENUM ('ABERTA', 'VENDIDA', 'CANCELADA');
 CREATE TYPE tipo_conta_enum AS ENUM ('CORRENTE', 'POUPANCA');
 CREATE TYPE status_verificacao_enum AS ENUM ('PENDENTE', 'VERIFICADA', 'INVALIDA');
 
--- Usuários
--- Armazena as informações de login e perfil de todos os participantes da plataforma.
+-- Users
+-- Stores login and profile information for all platform participants.
 CREATE TABLE usuarios (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     nome_completo VARCHAR(255) NOT NULL,
@@ -41,8 +41,8 @@ CREATE TABLE usuarios (
     data_atualizacao TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- Carteiras Digitais
--- Representa a carteira digital de cada usuário, onde os saldos em stablecoin (USDC) são mantidos.
+-- Digital Wallets
+-- Represents the digital wallet of each user, where stablecoin balances (USDC) are held.
 CREATE TABLE carteiras (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     usuario_id UUID UNIQUE NOT NULL REFERENCES usuarios(id) ON DELETE CASCADE,
@@ -51,8 +51,8 @@ CREATE TABLE carteiras (
     data_atualizacao TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- CPRs (Cédulas de Produtor Rural)
--- Modela a oportunidade de investimento, contendo os termos do empréstimo solicitado pelo agricultor.
+-- CPRs (Certificates of Rural Product)
+-- Models the investment opportunity, containing the terms of the loan requested by the farmer.
 CREATE TABLE cprs (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     agricultor_id UUID NOT NULL REFERENCES usuarios(id),
@@ -62,14 +62,14 @@ CREATE TABLE cprs (
     status status_cpr_enum NOT NULL DEFAULT 'ANALISE',
     score_risco risco_enum NOT NULL,
     total_cotas INT NOT NULL,
-    valor_por_cota_usdc DECIMAL(18, 8) NOT NULL, -- CORREÇÃO: Adicionada vírgula
+    valor_por_cota_usdc DECIMAL(18, 8) NOT NULL,
     data_emissao DATE,
     data_vencimento_final DATE,
     data_criacao TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- Parcelas
--- Detalha o cronograma de pagamentos de cada CPR.
+-- Installments
+-- Details the payment schedule for each CPR.
 CREATE TABLE parcelas (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     cpr_id UUID NOT NULL REFERENCES cprs(id) ON DELETE CASCADE,
@@ -80,12 +80,12 @@ CREATE TABLE parcelas (
     status status_parcela_enum NOT NULL DEFAULT 'PENDENTE',
     valor_multa_paga DECIMAL(18, 2) DEFAULT 0.0,
     valor_juros_mora_pago DECIMAL(18, 2) DEFAULT 0.0,
-    data_pagamento TIMESTAMPTZ, -- CORREÇÃO: Adicionada vírgula
-    UNIQUE(cpr_id, numero_parcela) -- CORREÇÃO: Adicionada constraint de unicidade
+    data_pagamento TIMESTAMPTZ,
+    UNIQUE(cpr_id, numero_parcela)
 );
 
--- Investimentos
--- Tabela de ligação que representa a participação de um investidor em uma CPR.
+-- Investments
+-- Linking table that represents an investor's participation in a CPR.
 CREATE TABLE investimentos (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     investidor_id UUID NOT NULL REFERENCES usuarios(id),
@@ -96,8 +96,8 @@ CREATE TABLE investimentos (
     data_investimento TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- Transações
--- Funciona como o livro-razão (ledger), registrando toda e qualquer movimentação nas carteiras.
+-- Transactions
+-- Functions as the ledger, recording any and all movements in the wallets.
 CREATE TABLE transacoes (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     carteira_id UUID NOT NULL REFERENCES carteiras(id),
@@ -106,24 +106,24 @@ CREATE TABLE transacoes (
     status status_transacao_enum NOT NULL DEFAULT 'PENDENTE',
     referencia_externa_id VARCHAR(255),
     descricao TEXT,
-    data_transacao TIMESTAMPTZ NOT NULL DEFAULT now(), -- CORREÇÃO: Adicionada vírgula
+    data_transacao TIMESTAMPTZ NOT NULL DEFAULT now(),
     referencia_id UUID,
     referencia_tipo VARCHAR(50)
 );
 
--- Mercado Secundário
--- Modela as ofertas de venda de cotas de investimento no mercado secundário.
+-- Secondary Market
+-- Models the offers for selling investment shares in the secondary market.
 CREATE TABLE ofertas_secundario (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    investimento_id UUID NOT NULL REFERENCES investimentos(id), -- SUGESTÃO: Avaliar se a constraint UNIQUE aqui é desejada
+    investimento_id UUID NOT NULL REFERENCES investimentos(id),
     quantidade_cotas_a_venda INT NOT NULL,
     preco_por_cota_usdc DECIMAL(18, 8) NOT NULL,
     status status_oferta_enum NOT NULL DEFAULT 'ABERTA',
     data_criacao TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- Contas Bancárias
--- Armazena os dados bancários dos usuários para a operação de saque (off-ramp) via Pix.
+-- Bank Accounts
+-- Stores users' bank details for withdrawal operations (off-ramp) via Pix.
 CREATE TABLE contas_bancarias (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     usuario_id UUID NOT NULL REFERENCES usuarios(id) ON DELETE CASCADE,
@@ -135,138 +135,152 @@ CREATE TABLE contas_bancarias (
     is_principal BOOLEAN NOT NULL DEFAULT false
 );
 
--- Ledger de Eventos
--- Garante a imutabilidade e a auditoria de operações críticas através de uma cadeia de hashes criptográficos.
+-- Event Ledger
+-- Ensures the immutability and auditing of critical operations through a chain of cryptographic hashes.
 CREATE TABLE ledger_eventos (
     id BIGSERIAL PRIMARY KEY,
     timestamp TIMESTAMPTZ NOT NULL DEFAULT now(),
     tipo_evento VARCHAR(100) NOT NULL,
     ator_id UUID REFERENCES usuarios(id),
     ator_tipo VARCHAR(50),
-    dados_evento JSONB NOT NULL, -- CORREÇÃO: Removido campo duplicado
+    dados_evento JSONB NOT NULL,
     hash_anterior VARCHAR(64),
     hash_atual VARCHAR(64) UNIQUE NOT NULL
-);
-
+); 
 ```
-## Cache em Memória (Redis)
 
-&emsp; O Redis, um repositório de dados em memória de alta performance, será utilizado como uma camada de cache distribuído para armazenar dados voláteis e de acesso frequente, com o objetivo de acelerar a resposta da aplicação e reduzir a carga sobre o PostgreSQL.
+## In-Memory Cache (Redis)
 
-### Casos de Uso Detalhados
-**Gerenciamento de Sessões:** Armazenar tokens de sessão de usuários logados `(RF-SEC-001)`, permitindo uma validação de sessão de baixíssima latência pela API Gateway e pelos microsserviços.
+&emsp; Redis, a high-performance in-memory data store, will be used as a distributed cache layer to store volatile and frequently accessed data, aiming to speed up application response and reduce the load on PostgreSQL.
 
-**Cache de Leituras (Cache-Aside):** Guardar cópias temporárias de dados que são lidos com frequência, como a lista de ofertas do marketplace (para usuários não logados), detalhes de CPRs públicas, e dados de perfil de usuários que não mudam constantemente.
+### Detailed Use Cases
+**Session Management:** Storing logged-in user session tokens `(RF-SEC-001)`, allowing for extremely low-latency session validation by the API Gateway and microservices.
 
-**Rate Limiting (Limitação de Taxa):** Proteger endpoints sensíveis (como login ou envio de OTP) contra ataques de força bruta, controlando o número de requisições por IP ou por usuário em uma janela de tempo.
+**Read Caching (Cache-Aside):** Store temporary copies of frequently read data, such as the marketplace offers list (for non-logged-in users), details of public CPRs, and user profile data that does not constantly change.
 
-**Filas de Baixa Latência:** Para tarefas assíncronas simples que não exigem a robustez de um message broker completo (ex: "enviar notificação de boas-vindas após o cadastro").
+**Rate Limiting:** Protecting sensitive endpoints (like login or OTP sending) against brute-force attacks by controlling the number of requests per IP or per user within a time window.
 
-### Estratégias de Implementação
+**Low-Latency Queues:** For simple asynchronous tasks that do not require the robustness of a full message broker (e.g., "send welcome notification after registration").
 
-**Padrão de Cache (Cache-Aside / Lazy Loading):**
+### Implementation Strategies
 
-A aplicação seguirá o padrão Cache-Aside. 
+**Cache Pattern (Cache-Aside / Lazy Loading):**
+
+The application will follow the Cache-Aside pattern.
 
 <details>
-<summary> Fluxo</summary>
+<summary> Flow</summary>
 
- 1 - A aplicação tenta ler o dado do Redis.
+1 - The application attempts to read the data from Redis.
 
- 2 - Se o dado existir **(cache hit)**, ele é retornado imediatamente.
+2 - If the data exists **(cache hit)**, it is returned immediately.
 
-3 - Se o dado não existir **(cache miss)**, a aplicação busca a informação no PostgreSQL, a salva no Redis com um tempo de expiração (TTL), e então a retorna.
+3 - If the data does not exist **(cache miss)**, the application retrieves the information from PostgreSQL, saves it in Redis with a Time-To-Live (TTL), and then returns it.
 
 </details>
 
-**Estratégia de Invalidação de Cache:**
+**Cache Invalidation Strategy:**
 
-Para garantir a consistência dos dados, duas estratégias serão usadas:
+To ensure data consistency, two strategies will be used:
 
-**TTL (Time-To-Live):** Todos os dados em cache terão um tempo de vida definido (ex: 5 minutos para a lista de ofertas do marketplace), garantindo que a informação seja periodicamente atualizada.
+**TTL (Time-To-Live):** All cached data will have a defined lifespan (e.g., 5 minutes for the marketplace offers list), ensuring the information is periodically refreshed.
 
-**Invalidação Ativa (Event-Driven):** Para dados críticos, quando um registro for alterado no PostgreSQL (ex: o status de uma CPR muda para "FINANCIADO"), a aplicação emitirá um evento para explicitamente deletar a chave correspondente no Redis, forçando uma nova leitura do banco na próxima requisição.
+**Active Invalidation (Event-Driven):** For critical data, when a record is changed in PostgreSQL (e.g., a CPR status changes to "FINANCIADO"), the application will emit an event to explicitly delete the corresponding key in Redis, forcing a new database read on the next request.
 
-### Considerações Operacionais
+### Operational Considerations
 
-**Estrutura de Chaves:** Será adotada uma convenção de nomenclatura de chaves para evitar colisões e facilitar a depuração. Ex: `session:{userId}`, `cpr:{cprId}:details`, `marketplace:offers:page:{pageNumber}`.
+**Key Structure:** A key naming convention will be adopted to prevent collisions and facilitate debugging. Ex: `session:{userId}`, `cpr:{cprId}:details`, `marketplace:offers:page:{pageNumber}`.
 
-**Política de Evicção:** Quando a memória do Redis estiver cheia, a política de evicção configurada será allkeys-lru (`Least Recently Used`), que remove as chaves menos utilizadas recentemente.
+**Eviction Policy:** When Redis memory is full, the configured eviction policy will be `allkeys-lru` (Least Recently Used), which removes the least recently used keys.
 
-**Alta Disponibilidade:** Em produção, o Redis não será uma instância única. Será configurado em modo de alta disponibilidade usando Redis Sentinel ou um serviço gerenciado de nuvem (como AWS ElastiCache ou Google Memorystore) com replicação e failover automático, em conformidade com o RNF de disponibilidade **(RNF-CF-01)**.
+**High Availability:** In production, Redis will not be a single instance. It will be configured in high availability mode using Redis Sentinel or a cloud managed service (such as AWS ElastiCache or Google Memorystore) with replication and automatic failover, in compliance with the availability RNF **(RNF-CF-01)**.
 
-## Logs Estruturados e Observabilidade
-A estratégia de observabilidade da Reevo se baseia na emissão de logs estruturados em formato JSON para a saída padrão (stdout) de cada microsserviço. Esta abordagem desacopla os serviços da infraestrutura de logging, uma prática recomendada para garantir a manutenibilidade (RNF-M-03).
+## Structured Logs and Observability
+Reevo's observability strategy is based on emitting structured logs in **JSON format** to the standard output (`stdout`) of each microservice. This approach decouples services from the logging infrastructure, a recommended practice to ensure maintainability (`RNF-M-03`).
 
-### Padrão de Estrutura do Log (Schema JSON)
-Para garantir que os logs sejam facilmente pesquisáveis e analisáveis, todo log gerado pela aplicação deve aderir a um schema comum:
+### Log Structure Pattern (JSON Schema)
+To ensure that logs are easily searchable and analyzable, every log generated by the application must adhere to a common schema:
 
-```JSON
+```json
 {
   "timestamp": "2025-09-30T14:40:00.123Z",
   "level": "INFO", // DEBUG, INFO, WARN, ERROR, CRITICAL
-  "service": "servico-de-analise-de-credito",
-  "correlation_id": "b1a4a233-1b2c-4b5c-8d6e-f7a8b9c0d1e2", // ID único que rastreia uma requisição através de múltiplos serviços
-  "user_id": "f4a5b6c7-d8e9-f0a1-b2c3-d4e5f6a7b8c9", // Opcional
-  "message": "Análise de crédito para a solicitação xyz concluída com sucesso.",
-  "payload": { // Objeto com dados de contexto
+  "service": "credit-analysis-service",
+  "correlation_id": "b1a4a233-1b2c-4b5c-8d6e-f7a8b9c0d1e2", // Unique ID that tracks a request across multiple services
+  "user_id": "f4a5b6c7-d8e9-f0a1-b2c3-d4e5f6a7b8c9", // Optional
+  "message": "Credit analysis for request xyz successfully completed.",
+  "payload": { // Object with context data
     "solicitacao_id": "xyz-123",
     "score_gerado": 750,
     "tempo_de_processamento_ms": 450
   }
 }
 ```
-### Arquitetura de Coleta e Armazenamento
 
-&emsp; A aplicação em si é agnóstica ao armazenamento. Para o MVP local, os logs são exibidos no terminal e armazenos em um arquivo json. Em um ambiente de produção, um agente coletor (como Fluentd ou Vector) captura os logs de stdout e os encaminha para um sistema de gerenciamento de logs centralizado (como AWS CloudWatch, Google Cloud Logging ou uma stack ELK), que implementará as políticas de retenção e permitirá a criação de dashboards e alertas.
+## In-Memory Cache (Redis)
 
-**Coleta:** Em produção, um agente coletor de logs (como Fluentd ou Vector) será executado em cada nó/container. Ele será responsável por capturar os logs stdout, adicionar metadados (ex: nome do container, nó) e enviá-los de forma assíncrona para a camada de armazenamento.
+&emsp; Redis, a high-performance in-memory data store, will be used as a distributed cache layer to store volatile and frequently accessed data, aiming to speed up application response and reduce the load on PostgreSQL.
 
-**Armazenamento:** Conforme nossa decisão anterior, a camada de armazenamento para logs será o próprio sistema, para um MPV, com possibilidade de estensão para um serviço da AWS cmo o Dynamo. Isso centraliza o armazenamento e permite o uso de SQL para consultas e análises.
+### Detailed Use Cases
+**Session Management:** Storing logged-in user session tokens `(RF-SEC-001)`, allowing for extremely low-latency session validation by the API Gateway and microservices.
 
+**Read Caching (Cache-Aside):** Store temporary copies of frequently read data, such as the marketplace offers list (for non-logged-in users), details of public CPRs, and user profile data that does not constantly change.
 
+**Rate Limiting:** Protecting sensitive endpoints (like login or OTP sending) against brute-force attacks by controlling the number of requests per IP or per user within a time window.
 
-### Estratégia de Retenção de Dados
-Logs podem consumir um grande volume de armazenamento.
+**Low-Latency Queues:** For simple asynchronous tasks that do not require the robustness of a full message broker (e.g., "send welcome notification after registration").
 
-A seguinte política de retenção será aplicada:
+### Collection and Storage Architecture
 
-**30 dias "Hot":** Logs dos últimos 30 dias serão mantidos localmente para consultas rápidas e depuração.
+&emsp; The application itself is storage agnostic. For the local MVP, logs are displayed in the terminal and stored in a json file. In a production environment, a collector agent (such as Fluentd or Vector) captures stdout logs and forwards them to a centralized log management system (such as AWS CloudWatch, Google Cloud Logging, or an ELK stack), which will implement retention policies and allow the creation of dashboards and alerts.
 
-**1 ano "Cold":** Após 30 dias, os logs serão automaticamente exportados para um armazenamento de baixo custo (como AWS S3 Glacier ou Google Cloud Storage Archive) e mantidos por 1 ano para fins de auditoria e conformidade, sendo então permanentemente excluídos.
+**Collection:** In production, a log collector agent (such as Fluentd or Vector) will run on each node/container. It will be responsible for capturing stdout logs, adding metadata (e.g., container name, node), and sending them asynchronously to the storage layer.
 
-### Segurança e Mascaramento de Dados (LGPD)
-Para estar em conformidade com a LGPD `(RNF-S-04)`, a aplicação NÃO deve registrar dados sensíveis em texto claro.
+**Storage:** According to our previous decision, the storage layer for logs will be the system itself, for an MVP, with the possibility of extension to an AWS service like Dynamo. This centralizes storage and allows the use of SQL for queries and analysis.
 
-**Ação:** As bibliotecas de logging da aplicação devem ser configuradas com filtros de mascaramento de dados para redigir automaticamente informações como CPF, senhas, tokens de acesso e dados de cartão/conta bancária antes de o log ser escrito. 
+### Data Retention Strategy
 
-> Exemplo: _"cpf": "123.***.***-00"._
+Logs can consume a large volume of storage.
 
-### Monitoramento e Alertas
-Os logs estruturados no TimescaleDB serão a base para o monitoramento e alertas `(RNF-M-03)`.
+The following retention policy will be applied:
 
-**Ação:** Ferramentas como o Grafana serão conectadas ao banco de dados para criar dashboards e configurar alertas baseados em consultas SQL. Por exemplo:
+**30 days "Hot":** Logs from the last 30 days will be kept locally for quick queries and debugging.
 
-**ALERTAR SE:** O número de logs com 'level' = 'ERROR' no 'service' = 'servico-de-pagamentos' for > 10 nos últimos 5 minutos.
+**1 year "Cold":** After 30 days, logs will be automatically exported to a low-cost storage ( such as AWS S3 Glacier or Google Cloud Storage Archive) and kept for 1 year for auditing and compliance purposes, then permanently deleted.
 
-**CRIAR GRÁFICO:** Tempo de processamento médio da análise de crédito (extraído do 'payload.tempo_de_processamento_ms').
+### Security and Data Masking (LGPD)
 
-## Conexão com os Requisitos Funcionais
+To comply with the LGPD (RNF-S-04), the application **MUST NOT** log sensitive data in clear text.
 
-Esta estrutura de armazenamento de dados foi projetada para atender diretamente aos requisitos funcionais e não funcionais:
+**Action:** Application logging libraries must be configured with data masking filters to automatically redact information such as CPF, passwords, access tokens, and card/bank account data before the log is written.
 
-| Requisito                                                               | Atendido por                   | Observação                                 |
-| ----------------------------------------------------------------------- | ------------------------------ | ------------------------------------------ |
-| **RF-CAD-001 / RF-CAD-002** (Cadastro e autenticação de usuários)       | `usuarios`                     | Campos de autenticação + status KYC        |
-| **RF-USR-002** (Gestão de dados do usuário)                             | `usuarios`, `contas_bancarias` | Controle de perfis e dados bancários       |
-| **RF-AGR-001 / RF-AGR-002** (Solicitação de crédito e análise de risco) | `cprs`                         | Campos de valor solicitado, status e score |
-| **RF-AGR-005** (Pagamento de parcelas)                                  | `parcelas`                     | Cronograma e status de pagamentos          |
-| **RF-AGR-006** (Gestão de inadimplência)                                | `parcelas` + `ledger_eventos`  | Registro imutável de inadimplências        |
-| **RF-INV-001 / RF-INV-004** (On/Off-ramp)                               | `carteiras` + `transacoes`     | Movimentação e saldo separado              |
-| **RF-INV-002 / RF-INV-005** (Investimento e distribuição)               | `investimentos` + `parcelas`   | Relação CPR ↔ Investidor                   |
-| **RF-INV-003** (Mercado secundário)                                     | `ofertas_secundario`           | Venda antecipada de cotas                  |
-| **RF-INV-006** (Extrato)                                                | `transacoes`                   | Ledger financeiro                          |
-| **RNF-S-02 / RNF-S-03** (Segurança e transparência)                     | `ledger_eventos`               | Cadeia de hashes para imutabilidade        |
-| **RNF-ED-01** (Performance)                                             | Redis                          | Cache de dados críticos                    |
-| **RNF-M-03** (Observabilidade)                                          | Logs JSON stdout               | Monitoramento estruturado                  |
+&emsp; Example: *"cpf": "123.***.***-00".*
 
+### Monitoring and Alerts
+
+The structured logs in TimescaleDB will be the basis for monitoring and alerts (RNF-M-03).
+
+**Action:** Tools like **Grafana** will be connected to the database to create dashboards and configure alerts based on SQL queries. For example:
+
+**ALERT IF:** The number of logs with 'level' = 'ERROR' in the 'service' = 'payments-service' is > 10 in the last 5 minutes.
+
+**CREATE CHART:** Average processing time for credit analysis (extracted from 'payload.tempo\_de\_processamento\_ms').
+
+## Connection to Functional Requirements
+
+This data storage structure was designed to directly meet the functional and non-functional requirements:
+
+| Requirement | Addressed by | Observação |
+| :--- | :--- | :--- |
+| **RF-CAD-001 / RF-CAD-002** (User registration and authentication) | `usuarios` | Authentication fields + KYC status |
+| **RF-USR-002** (User data management) | `usuarios`, `contas_bancarias` | Profile and bank data control |
+| **RF-AGR-001 / RF-AGR-002** (Credit request and risk analysis) | `cprs` | Requested value, status, and score fields |
+| **RF-AGR-005** (Installment payment) | `parcelas` | Payment schedule and status |
+| **RF-AGR-006** (Default management) | `parcelas` + `ledger_eventos` | Immutable record of defaults |
+| **RF-INV-001 / RF-INV-004** (On/Off-ramp) | `carteiras` + `transacoes` | Movement and separate balance |
+| **RF-INV-002 / RF-INV-005** (Investment and distribution) | `investimentos` + `parcelas` | CPR ↔ Investor relationship |
+| **RF-INV-003** (Secondary market) | `ofertas_secundario` | Early sale of shares |
+| **RF-INV-006** (Statement) | `transacoes` | Financial ledger |
+| **RNF-S-02 / RNF-S-03** (Security and transparency) | `ledger_eventos` | Hash chain for immutability |
+| **RNF-ED-01** (Performance) | Redis | Caching of critical data |
+| **RNF-M-03** (Observability) | Logs JSON stdout | Structured monitoring |

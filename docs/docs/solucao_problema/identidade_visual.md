@@ -1,92 +1,92 @@
 ---
-sidebar_label: "Identidade Visual"
+sidebar_label: "Visual Identity"
 sidebar_position: 6
 ---
 
-# Identidade Visual do Reevo
+# Reevo Visual Identity
 
-## Introdução
+## Introduction
 
-&emsp;A identidade visual do **Reevo** foi concebida para transmitir os valores centrais da plataforma: conexão P2P, confiança, impacto social no agro e sustentabilidade. Cada escolha de cor, tipografia e símbolo foi pensada para reforçar a proposta de um ecossistema financeiro digital, justo e acessível.
+&emsp;The visual identity of **Reevo** was designed to convey the platform's core values: P2P connection, trust, social impact in agribusiness, and sustainability. Every choice of color, typography, and symbol was made to reinforce the proposal of a digital, fair, and accessible financial ecosystem.
 
 ---
 
-## Paleta de Cores
+## Color Palette
 
-&emsp;A paleta do Reevo foi definida para equilibrar **tecnologia financeira** e **raízes no agronegócio**. O verde predomina como símbolo de **crescimento e vitalidade**, enquanto o preto e o branco oferecem contraste e sobriedade.  
+&emsp;The Reevo palette was defined to balance **financial technology** and **agribusiness roots**. Green predominates as a symbol of **growth and vitality**, while black and white offer contrast and sobriety.
 
-- **Verde Escuro (#12190f):** transmite solidez, confiança e conexão com o campo. Ideal para fundos, títulos e chamadas de impacto.  
-- **Verde Claro (#6fb36e):** reforça a ideia de frescor, inovação e acessibilidade. Usado em botões, destaques e ícones positivos.  
-- **Verde Suave (#eef7ea):** cor de apoio para áreas de fundo, caixas informativas e elementos que exigem suavidade visual.  
-- **Branco (#ffffff):** transmite clareza, neutralidade e simplicidade. Funciona como base para destacar o conteúdo.  
-- **Preto (#000000):** simboliza sobriedade, elegância e força. Usado principalmente em tipografia e elementos de contraste.  
+- **Dark Green (#12190f):** conveys solidity, trust, and connection to the field. Ideal for backgrounds, headings, and impact calls.
+- **Light Green (#6fb36e):** reinforces the idea of freshness, innovation, and accessibility. Used for buttons, highlights, and positive icons.
+- **Soft Green (#eef7ea):** supporting color for background areas, information boxes, and elements requiring visual softness.
+- **White (#ffffff):** conveys clarity, neutrality, and simplicity. Serves as a base to highlight content.
+- **Black (#000000):** symbolizes sobriety, elegance, and strength. Used primarily for typography and contrast elements.
 
-<p style={{textAlign: 'center'}}>Paleta de cores</p>
+<p style={{textAlign: 'center'}}>Color Palette</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/paleta_cores.png").default} style={{width: 1024}} alt="Paleta de cores" />
+        <img src={require("../../static/img/paleta_cores.png").default} style={{width: 1024}} alt="Color Palette" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 :::info
-Essa paleta garante acessibilidade ao oferecer contraste adequado entre texto e fundo, além de se adaptar bem a **dark mode** e interfaces móveis.
+This palette ensures accessibility by offering adequate contrast between text and background, and also adapts well to **dark mode** and mobile interfaces.
 :::
 
 ---
 
-## Tipografia
+## Typography
 
-&emsp;A tipografia escolhida Gotham combina **modernidade e legibilidade**, com fontes **geométricas e sem serifa**, ideais para plataformas digitais.  
+&emsp;The chosen typography, Gotham, combines **modernity and legibility**, with **geometric, sans-serif fonts**, ideal for digital platforms.
 
-- **Títulos:** Fonte robusta e arredondada, transmitindo inovação sem perder proximidade.  
-- **Corpo do texto:** Fonte limpa e versátil, garantindo fluidez na leitura em telas pequenas.  
-- **Elementos de destaque:** uso estratégico de pesos mais fortes para chamadas e botões.  
+- **Headings:** A robust and rounded font, conveying innovation without losing approachability.
+- **Body Text:** A clean and versatile font, ensuring reading fluency on small screens.
+- **Highlight Elements:** Strategic use of bolder weights for calls-to-action and buttons.
 
-<p style={{textAlign: 'center'}}>Tipografia</p>
+<p style={{textAlign: 'center'}}>Typography</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/tipografia.png").default} style={{width: 1024}} alt="Paleta de cores" />
+        <img src={require("../../static/img/tipografia.png").default} style={{width: 1024}} alt="Color Palette" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 
 ---
 
-## Logotipo
+## Logo
 
-&emsp;O logotipo do **Reevo** foi inspirado no conceito de **infinito/conexão** representado pelas duas letras **“ee”** estilizadas como **setas circulares**, reforçando o fluxo P2P.  
-&emsp;No contexto agro, essa forma também remete a **sementes** e ao **ciclo natural de cultivo**, criando uma ponte entre tecnologia e campo.
+&emsp;The **Reevo** logo was inspired by the concept of **infinity/connection** represented by the two **stylized "ee" letters** as **circular arrows**, reinforcing the P2P flow.
+&emsp;In the agro context, this shape also suggests **seeds** and the **natural cultivation cycle**, creating a bridge between technology and the field.
 
-- **Símbolo visual:** o “ee” estilizado em formato de infinito com detalhes de folha.  
-- **Cores aplicadas:** verde (agro) + preto (confiança).  
-- **Versões:** completa (com tipografia) e reduzida (apenas o símbolo).  
+- **Visual Symbol:** The stylized "ee" in an infinity shape with leaf details.
+- **Applied Colors:** Green (agro) + Black (trust).
+- **Versions:** Full (with typography) and reduced (symbol only).
 
-<p style={{textAlign: 'center'}}>Logotipo</p>
+<p style={{textAlign: 'center'}}>Logo</p>
 <div style={{margin: 15}}>
   <div style={{textAlign: 'center'}}>
         <img src={require("../../static/img/logo.png").default} style={{width: 1024}} alt="Logotipo" />
         <br/>
     </div>
 </div>
-<p style={{textAlign: 'center'}}> Fonte: Produzido pelos autores (2025).</p>
+<p style={{textAlign: 'center'}}> Source: Produced by the authors (2025).</p>
 ---
 
 
-## Diretrizes de Uso
+## Usage Guidelines
 
-- **Consistência:** usar sempre a paleta oficial, evitando variações não autorizadas.  
-- **Versatilidade:** garantir legibilidade em fundos claros e escuros.  
-- **Escalabilidade:** logotipo e ícones devem ser vetoriais para adaptação em materiais impressos e digitais.  
-- **Tom visual:** equilibrar modernidade fintech com proximidade do agro, evitando estética “corporativa fria”.
+- **Consistency:** always use the official palette, avoiding unauthorized variations.
+- **Versatility:** ensure legibility on both light and dark backgrounds.
+- **Scalability:** the logo and icons must be vector-based for adaptation across printed and digital materials.
+- **Visual Tone:** balance fintech modernity with the approachability of agro, avoiding a "cold corporate" aesthetic.
 
 
 ---
 
-## Conclusão
+## Conclusion
 
-&emsp;A identidade visual do Reevo busca transmitir **credibilidade e inovação**, aproximando agricultores e investidores em um mesmo ecossistema. Ela traduz a **missão da plataforma**: semear confiança e colher prosperidade no campo e na cidade.  
+&emsp;The Reevo visual identity seeks to convey **credibility and innovation**, bringing farmers and investors closer together in the same ecosystem. It translates the **platform's mission**: to sow trust and harvest prosperity in the field and the city.
 
 ---

@@ -1,39 +1,36 @@
 ---
-title: "Próximos Passos"
+title: "Roadmap"
 sidebar_label: "Roadmap"
 sidebar_position: 7
 ---
 
-## Fase 1: Validação e MVP (Meses 1-12)
+## Phase 1: Validation and MVP (Months 1-12)
 
-&emsp;Esta fase é financiada pela Rodada **Seed** (R$ 4,5 milhões), focada em provar o *Product-Market Fit* (PMF), mitigar o risco de *default* e validar a usabilidade do ciclo P2P.
+&emsp;This phase is funded by the **Seed** Round (R$ 4.5 million), focused on proving the *Product-Market Fit* (PMF), mitigating default risk, and validating the usability of the P2P cycle.
 
-| Foco Estratégico | Prioridade de Implementação Técnica (Microsserviços) | Marcos de Negócio e Financeiros |
+| Strategic Focus | Technical Implementation Priority (Microservices) | Business and Financial Milestones |
 | :--- | :--- | :--- |
-| **Mitigação do Risco (AgroScore)** | **Serviço de Análise de Crédito:** Desenvolvimento e *deployment* do **Motor de Score (ML)** (RF-AGR-002) e integração com APIs de Bureaus/Governo. | **Validação do AgroScore:** Taxa de rejeição inicial controlada. |
-| **Núcleo Legal e Jurídico** | **Serviço de Contratos:** Geração da **CPR** e integração com **Provedor ICP-Brasil** (RF-AGR-003) e Registradora Oficial (B3/CERC). | **Ativo Legalizado:** Primeira CPR tokenizada e registrada com sucesso. |
-| **Ciclo P2P Mínimo (MVP)** | **Serviço de Contas (KYC/Onboarding)** (RF-CAD) e **Serviço de Carteira Digital** (BRL $\leftrightarrow$ USDC On/Off-Ramp RF-INV-001/004) e **Marketplace de Ofertas Primárias**. | **Geração de GMV:** Atingir **R\$ 10 milhões** em GMV. |
-| **Primeiros Pagamentos** | **Serviço de Notificações** e desenvolvimento do **Fluxo de Distribuição Assíncrona** (RF-INV-005) para processar os primeiros pagamentos. | **Prova de Valor:** 99% dos pagamentos distribuídos corretamente (margem de erro financeira). |
+| **Risk Mitigation (AgroScore)** | **Credit Analysis Service:** Development and *deployment* of the **Score Engine (ML)** (RF-AGR-002) and integration with Bureaus/Government APIs. | **AgroScore Validation:** Controlled initial rejection rate. |
+| **Legal and Judicial Core** | **Contracts Service:** Generation of the **CPR** and integration with **ICP-Brasil Provider** (RF-AGR-003) and Official Registry (B3/CERC). | **Legalized Asset:** First tokenized and successfully registered CPR. |
+| **Minimum P2P Cycle (MVP)** | **Accounts Service (KYC/Onboarding)** (RF-CAD) and **Digital Wallet Service** (BRL $\leftrightarrow$ USDC On/Off-Ramp RF-INV-001/004) and **Primary Offers Marketplace**. | **GMV Generation:** Achieve **R$ 10 million** in GMV. |
+| **First Payments** | **Notifications Service** and development of the **Asynchronous Distribution Flow** (RF-INV-005) to process the first payments. | **Proof of Value:** 99% of payments distributed correctly (financial error margin). |
 
-### Fase 2: Escala e Otimização (Meses 13-36)
+### Phase 2: Scale and Optimization (Months 13-36)
 
-&emsp;Foco na escalabilidade horizontal e no aumento da retenção, introduzindo o diferencial DeFi e o valor agregado para o Investidor.
+&emsp;Focus on horizontal scalability and increased retention, introducing the DeFi differential and added value for the Investor.
 
-| Foco Estratégico | Prioridade de Implementação Técnica (Microsserviços) | Marcos de Negócio e Financeiros |
+| Strategic Focus | Technical Implementation Priority (Microservices) | Business and Financial Milestones |
 | :--- | :--- | :--- |
-| **Liquidez e Retenção** | **Serviço de Marketplace:** Desenvolvimento do **Gerenciador de Ofertas Secundárias** (RF-INV-003) e integração do módulo de **Staking (Token SEED)**. | **Atração de Capital:** Taxa de Inadimplência cai para **6%**; Aumento da **Taxa de Reinvestimento** para > 70%. |
-| **Monetização B2B/ESG** | **Serviço de Análise/Backend:** Criação da API de **Relatórios de Impacto (RF-INV-007)** e implementação dos **Serviços Corporativos** (assinaturas B2B). | **Sustentabilidade:** Atingir o **Break-Even Operacional** (EBITDA >= 0) e preparar a plataforma para a rodada Série A. |
-| **Crescimento de GMV** | Otimização do CAC via integração profunda com APIs de **Cooperativas e ERPs Agrícolas**. | **Escala:** Atingir **R\$ 50 milhões** em GMV. |
+| **Liquidity and Retention** | **Marketplace Service:** Development of the **Secondary Offers Manager** (RF-INV-003) and integration of the **Staking (Token SEED)** module. | **Capital Attraction:** Default Rate drops to **6%**; Increase in **Reinvestment Rate** to > 70%. |
+| **B2B/ESG Monetization** | **Analysis/Backend Service:** Creation of the **Impact Reports API (RF-INV-007)** and implementation of **Corporate Services** (B2B subscriptions). | **Sustainability:** Achieve **Operational Break-Even** (EBITDA $\ge$ 0) and prepare the platform for the Series A round. |
+| **GMV Growth** | Optimization of CAC via deep integration with **Cooperatives and Agricultural ERPs** APIs. | **Scale:** Achieve **R$ 50 million** in GMV. |
 
-### Fase 3: Liderança e Expansão (Meses 37+)
+### Phase 3: Leadership and Expansion (Months 37+)
 
-&emsp;Foco em diversificação de produtos, expansão regional e consolidação como *player* dominante do mercado *AgriFintech*.
+&emsp;Focus on product diversification, regional expansion, and consolidation as the dominant *AgriFintech* market *player*.
 
-| Foco Estratégico | Implementação Técnica (Inovação e Expansão) | Marcos de Negócio e Financeiros |
+| Strategic Focus | Technical Implementation (Innovation and Expansion) | Business and Financial Milestones |
 | :--- | :--- | :--- |
-| **Diversificação de Produtos** | Desenvolvimento do módulo de **Renda Variável/Parceria de Safra** (risco compartilhado) e criação de novos tipos de Tokens de Ativo (ex: Token de Armazenagem). | **Expansão de Receita:** A receita de Serviços B2B e Taxa de Performance se tornam majoritárias. |
-| **Governança Total** | Descentralização progressiva das decisões de Taxa/Parâmetros para os detentores do **Token SEED**. | **Maturação da Governança:** Plataforma operando como uma DAO (Organização Autônoma Descentralizada). |
-| **Expansão Regional** | Implantação de infraestrutura (VPC e K8s) em novas regiões/países, com adaptações regulatórias. | **Liderança de Mercado:** Consolidação do Reevo como a principal via de crédito digital no setor PME. |
-
-
----
+| **Product Diversification** | Development of the **Variable Income/Harvest Partnership** module (shared risk) and creation of new types of Asset Tokens (e.g., Storage Token). | **Revenue Expansion:** B2B Services and Performance Fee revenue become the majority. |
+| **Full Governance** | Progressive decentralization of Fee/Parameter decisions to **Token SEED holders**. | **Governance Maturity:** Platform operating as a DAO (Decentralized Autonomous Organization). |
+| **Regional Expansion** | Deployment of infrastructure (VPC and K8s) in new regions/countries, with regulatory adaptations. | **Market Leadership:** Consolidation of Reevo as the main digital credit avenue in the SME sector. |

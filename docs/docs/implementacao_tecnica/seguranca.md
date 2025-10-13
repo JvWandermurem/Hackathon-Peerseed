@@ -1,125 +1,117 @@
 ---
 sidebar_position: 5
-title: Segurança
+title: Security
 ---
 import Admonition from '@theme/Admonition';
 
 
 ## Introdução
 
-&emsp; A segurança é o pilar fundamental que sustenta a confiança de agricultores e investidores na plataforma Reevo. **Nossa abordagem é proativa, não reativa**, e segue os princípios de Segurança por Design (Secure by Design) e Defesa em Profundidade (Defense in Depth). Isso significa que a segurança não é uma camada externa, mas uma responsabilidade integrada em cada componente da nossa arquitetura: desde a infraestrutura e a rede até o código da aplicação e os processos de DevOps.
+&emsp; Security is the fundamental pillar that sustains the **trust** of farmers and investors in the Reevo platform. Our approach is **proactive, not reactive**, and follows the principles of **Secure by Design** and **Defense in Depth**. This means that security is not an external layer, but an integrated responsibility in every component of our architecture: from infrastructure and networking to application code and DevOps processes.
 
 ---
-## A Tríade CIA
-&emsp; A nossa estratégia de segurança é construída sobre a Tríade CIA, um modelo que representa os três objetivos mais importantes da segurança da informação.
+## The CIA Triad
+&emsp; Our security strategy is built upon the **CIA Triad**, a model that represents the three most important objectives of information security.
 
-### Confidencialidade (Confidentiality)
+### Confidentiality (Confidentiality)
 
-- Garantir que os dados sejam acessíveis apenas por pessoas autorizadas.
+- Ensuring that data is accessible only by authorized individuals.
+- The protection of the **personal and financial data** of Sérgio and Marina is our highest priority.
 
-- A proteção dos dados pessoais e financeiros de Sérgio e Marina é nossa maior prioridade.
+Controles Implemented:
 
-Controles Implementados:
+**Encryption in Transit:** All communication between the user and the platform, as well as between internal microservices, is mandatorily encrypted using **TLS 1.3**. This prevents data interception `(RNF-S-01)`.
 
-**Criptografia em Trânsito:** Toda a comunicação entre o usuário e a plataforma, bem como entre os microsserviços internos, é obrigatoriamente criptografada usando TLS 1.3. Isso impede a interceptação de dados `(RNF-S-01)`.
+**Encryption at Rest:** All data stored in our databases (PostgreSQL) and file systems (Object Storage) is encrypted at the disk level using the **AES-256** standard, leveraging the capabilities of managed cloud services `(RNF-S-01)`.
 
-**Criptografia em Repouso:** Todos os dados armazenados em nossos bancos de dados (PostgreSQL) e sistemas de arquivos (Object Storage) são criptografados em nível de disco com o padrão AES-256, utilizando os recursos dos serviços gerenciados em nuvem `(RNF-S-01)`.
+**Secrets Management:** Credentials of access to databases, API keys, and other secrets are managed by a **secret vault service** (such as AWS Secrets Manager or Google Secret Manager). They are never exposed in code or insecure environment variables.
 
-**Gestão de Segredos:** Credenciais de acesso a bancos de dados, chaves de API e outros segredos são gerenciados por um serviço de cofre de segredos (como AWS Secrets Manager ou Google Secret Manager). Eles nunca são expostos em código ou variáveis de ambiente não seguras.
+**Strict Access Control:** Access to data is governed by the principle of **least privilege**. In the application, **JWT token validation** ensures that a user can only access their own data.
 
-**Controle de Acesso Rigoroso:** O acesso aos dados é governado pelo princípio do mínimo privilégio. Na aplicação, a validação de tokens JWT garante que um usuário só possa acessar seus próprios dados. Na infraestrutura, políticas de IAM (Identity and Access Management) garantem que cada serviço só possa acessar os recursos estritamente necessários.
+**Data Masking (LGPD):** As defined in our logging plan and in compliance with **LGPD** (`RNF-S-04`), sensitive data (such as CPF/Tax ID) is automatically **masked** before being written to any log, preventing accidental exposure.
 
-**Mascaramento de Dados (LGPD):** Conforme definido em nosso plano de logging e em conformidade com a LGPD (RNF-S-04), dados sensíveis (como CPF) são automaticamente mascarados antes de serem escritos em qualquer log, prevenindo a exposição acidental.
+### Integrity (Integrity)
 
-### Integridade (Integrity)
+- Ensuring that data is accurate, consistent, and protected against unauthorized modification.
+- Financial transactions and contracts must be **immutable and accurate**.
 
-- Garantir que os dados são precisos, consistentes e protegidos contra alterações não autorizadas.
+Controles Implemented:
 
-- As transações financeiras e os contratos devem ser inalteráveis e precisos.
+**Atomic Transactions (ACID):** The choice of PostgreSQL as the main database ensures that all financial operations adhere to **ACID** properties. An investment, for example, is either entirely completed successfully (debit from the investor's wallet, credit to the CPR's fundraising) or entirely rolled back, never leaving data in an inconsistent state `(RNF-S-02)`.
 
-Controles Implementados:
+**Ledger with Hash Chaining:** The `ledger_eventos` table creates an auditable record with evidence against tampering. Every critical event is **cryptographically chained** to the previous one, making it impossible to alter a past record without invalidating the entire chain. This guarantees the integrity of the most important operations `(RNF-S-02)`.
 
-**Transações Atômicas (ACID):** A escolha do PostgreSQL como banco de dados principal garante que todas as operações financeiras sigam as propriedades ACID. Um investimento, por exemplo, ou é concluído com sucesso por inteiro (débito na carteira do investidor, crédito na captação da CPR) ou é totalmente revertido, nunca deixando os dados em estado inconsistente `(RNF-S-02)`.
+**Input Data Validation:** The use of **Pydantic** in FastAPI ensures that all data received by the API is validated against a predefined schema, preventing the input of malformed or malicious data that could corrupt the system state.
 
-**Ledger com Hash Chaining:** A tabela ledger_eventos cria um registro de auditoria com evidência de adulteração. Cada evento crítico é criptograficamente encadeado ao anterior, tornando impossível alterar um registro passado sem invalidar toda a cadeia. Isso garante a integridade das operações mais importantes `(RNF-S-02)`.
+**Digital Signatures:** The integrity of user sessions is ensured by the digital signature of JWT tokens. The legal integrity of contracts is guaranteed by **qualified digital signatures (ICP-Brasil standard)** on the CPR (`RF-AGR-003`, `RNF-S-03`).
 
-**Validação de Dados na Entrada:** O uso do Pydantic no FastAPI garante que todos os dados recebidos pela API sejam validados contra um schema pré-definido, prevenindo a entrada de dados malformados ou maliciosos que poderiam corromper o estado do sistema.
+### Availability (Availability)
+- Ensuring that the platform is operational and accessible when our users need it.
+- Access to credit and investments is **time-sensitive**. The platform needs to be reliable.
 
-**Assinaturas Digitais:** A integridade das sessões de usuário é garantida pela assinatura digital dos tokens JWT. A integridade jurídica dos contratos é garantida pela assinatura digital qualificada (ICP-Brasil) na CPR (`RF-AGR-003`, `RNF-S-03`).
+Controles Implemented:
 
-### Disponibilidade (Availability)
-- Garantir que a plataforma esteja operacional e acessível quando nossos usuários precisarem dela.
+**High-Availability Infrastructure:** As per the infrastructure document, we use managed services (Kubernetes, Databases) configured across multiple **Availability Zones (Multi-AZ)**. If an entire data center fails, the platform continues to operate from another, ensuring our goal of **99.9% uptime** `(RNF-CF-01)`.
 
-- O acesso ao crédito e aos investimentos é sensível ao tempo. A plataforma precisa ser confiável.
+**Automatic Scalability:** **Kubernetes** is configured to scale horizontally, adding more service instances as demand increases. This prevents traffic spikes from causing slowdowns or unavailability `(RNF-ED-04)`.
 
-Controles Implementados:
+**Backups and Disaster Recovery:** Our managed databases perform continuous and **automatic backups**, allowing system recovery to a specific **Point-in-Time Recovery** in the event of a catastrophic failure `(RNF-CF-03)`.
 
-**Infraestrutura de Alta Disponibilidade:** Conforme o documento de infraestrutura, utilizamos serviços gerenciados (Kubernetes, Bancos de Dados) configurados em múltiplas Zonas de Disponibilidade (Multi-AZ). Se um datacenter inteiro falhar, a plataforma continua operando a partir de outro, garantindo nossa meta de 99.9% de uptime `(RNF-CF-01)`.
-
-**Escalabilidade Automática:** O Kubernetes é configurado para escalar horizontalmente, adicionando mais instâncias de um serviço conforme a demanda aumenta. Isso previne que picos de tráfego causem lentidão ou indisponibilidade `(RNF-ED-04)`.
-
-**Backups e Recuperação de Desastres:** Nossos bancos de dados gerenciados realizam backups automáticos e contínuos, permitindo a recuperação do sistema a um ponto específico no tempo (Point-in-Time Recovery) em caso de uma falha catastrófica `(RNF-CF-03)`.
-
-**Proteção contra Ataques de Negação de Serviço (DDoS):** Utilizamos os serviços de proteção DDoS nativos do provedor de nuvem, implementados na camada de borda (API Gateway, Load Balancer), para mitigar ataques que visam tirar a plataforma do ar.
+**Protection against Denial of Service (DDoS) Attacks:** We utilize the native **DDoS protection services** of the cloud provider, implemented at the edge layer (API Gateway, Load Balancer), to mitigate attacks aimed at taking the platform offline.
 
 ---
-## Mitigação de Riscos: OWASP Top 10
+## Risk Mitigation: OWASP Top 10
 
-Nossa arquitetura e processos de desenvolvimento são projetados para mitigar proativamente os riscos de segurança mais comuns identificados pelo OWASP (Open Web Application Security Project).
+Our architecture and development processes are designed to proactively mitigate the most common security risks identified by the **OWASP** (Open Web Application Security Project).
 
-<Details>
-  <summary> **A01 - Broken Access Control (Quebra de Controle de Acesso)** </summary>
+<details>
+<summary> A01 - Broken Access Control </summary>
 
-&emsp; Além da autenticação via JWT, cada endpoint da API implementa verificações de autorização explícitas para garantir que um usuário só possa ver ou modificar os recursos que lhe pertencem.
+&emsp; In addition to JWT authentication, every API endpoint implements explicit authorization checks to ensure a user can only view or modify the resources that belong to them.
+Ex: "Is the user attempting to view CPR X actually the farmer who created it?".
+</details>
 
-> Ex: "O usuário que está tentando ver a CPR X é de fato o agricultor que a criou?".
-</Details>
+<details>
+<summary> A02 - Cryptographic Failures</summary>
+&emsp; We follow the rule of never "inventing" cryptography. We use **robust and audited industry standards (TLS 1.3, AES-256)** and delegate the complexity of key management to managed cloud services.
+</details>
 
-<Details>
-  <summary> **A02 - Cryptographic Failures (Falhas Criptográficas)**</summary>
+<details>
+<summary>A03 - Injection</summary>
+&emsp; The use of **SQLAlchemy ORM** with prepared statements virtually eliminates the risk of **SQL Injection**. Rigorous input data validation by **Pydantic** serves as an additional defense against other types of injection attacks.
+</details>
 
-&emsp; Seguimos a regra de nunca "inventar" criptografia. Utilizamos padrões de mercado robustos e auditados (TLS 1.3, AES-256) e delegamos a complexidade da gestão de chaves para os serviços gerenciados da nuvem.
-</Details>
+<details>
+<summary>A05 - Security Misconfiguration</summary>
+&emsp; The use of **Infrastructure as Code (Terraform)** ensures that our infrastructure is provisioned **consistently and securely**, from audited templates. We avoid manual, error-prone configurations.
+</details>
 
-<Details>
-  <summary>**A03 - Injection (Injeção)**</summary>
-
-&emsp; O uso do SQLAlchemy ORM com prepared statements elimina virtualmente o risco de SQL Injection. A validação rigorosa de dados de entrada pelo Pydantic serve como uma defesa adicional contra outros tipos de ataques de injeção.
-</Details>
-
-
-<Details>
-  <summary>**A05 - Security Misconfiguration (Configuração Incorreta de Segurança)**</summary>
-
-&emsp; O uso de Infraestrutura como Código (Terraform) garante que nossa infraestrutura seja provisionada de forma consistente e segura, a partir de templates auditados. Evitamos configurações manuais e propensas a erro.
-</Details>
-
-<Details>
-  <summary>**A08 - Software and Data Integrity Failures (Falhas de Integridade de Software e Dados)**</summary>
-
-&emsp; Nosso pipeline de CI/CD inclui análise de vulnerabilidades das dependências e das imagens Docker, garantindo que não estamos implantando software com falhas de segurança conhecidas. A integridade dos dados, como já mencionado, é garantida pelo nosso ledger com hash chaining.
-</Details>
+<details>
+<summary>A08 - Software and Data Integrity Failures</summary>
+&emsp; Our **CI/CD pipeline** includes vulnerability analysis of dependencies and Docker images, ensuring that we are not deploying software with known security flaws. Data integrity, as already mentioned, is guaranteed by our ledger with hash chaining.
+</details>
 
 ---
 
 ## Análise de Trade-offs Arquiteturais
 
-&emsp; Toda arquitetura de software robusta é o resultado de uma série de decisões e, consequentemente, de trade-offs. Não existe uma solução "perfeita", mas sim uma solução ótima para um contexto específico. No Reevo, fizemos escolhas conscientes para priorizar os aspectos mais críticos para uma plataforma fintech de crédito: confiança, segurança e integridade.
+&emsp; Every robust software architecture is the result of a series of decisions and, consequently, trade-offs. There is no "perfect" solution, but rather an optimal solution for a specific context. At Reevo, we made conscious choices to prioritize the most critical aspects for a credit fintech platform: trust, security, and integrity.
 
-### Segurança vs. Usabilidade: A Prioridade da Confiança
-**O Trade-off:** Medidas de segurança mais rigorosas frequentemente introduzem etapas adicionais nos fluxos do usuário, criando uma fricção que pode impactar a simplicidade da experiência.
+### Security vs. Usability: The Priority of Trust
+**The Trade-off:** Stricter security measures often introduce additional steps in user workflows, creating friction that can impact the simplicity of the experience.
 
-**Nossa Decisão:** Em todos os momentos, priorizamos a segurança em detrimento da conveniência marginal, pois a confiança é o ativo mais valioso da nossa plataforma.
-<Admonition type="info" title="Exemplos">
-Exemplo 1: Autenticação de Dois Fatores (2FA): O requisito RF-CAD-003 (2FA obrigatório ou fortemente incentivado) adiciona um passo ao processo de login. Para a investidora Marina, que gerencia seu capital na plataforma, essa pequena fricção é um preço baixo a se pagar pela garantia de que sua conta está protegida contra acessos não autorizados.
+**Our Decision:** At all times, we **prioritize security over marginal convenience**, as **trust is the most valuable asset** of our platform.
+<details>
+<summary>Examples</summary>
+Example 1: **Two-Factor Authentication (2FA):** Requirement **RF-CAD-003** (mandatory or strongly encouraged 2FA) adds a step to the login process. For investor Marina, this slight friction is a small price to pay for the assurance that her account is protected against unauthorized access.
 
-Exemplo 2: Verificação de Identidade (KYC): O processo de onboarding, que exige o envio de documentos e selfie (RF-CAD-001), é o maior ponto de atrito na jornada inicial do usuário. Poderíamos ter um cadastro mais simples, mas isso abriria a plataforma para fraudes e impediria a conformidade regulatória. Escolhemos conscientemente essa barreira inicial para garantir um ecossistema seguro e legal para todos os participantes, protegendo os investimentos de Marina e a legitimidade dos empréstimos de Sérgio.
-</Admonition>
+Example 2: **Identity Verification (KYC):** The onboarding process, which requires submitting documents and a selfie (**RF-CAD-001**), is the biggest point of friction in the user's initial journey. We consciously chose this initial barrier to ensure a secure and legal ecosystem for all participants, protecting Marina's investments and the legitimacy of Sérgio's loans.
+</details>
 
-### Consistência Forte vs. Performance/Disponibilidade
+### Strong Consistency vs. Performance/Availability
 
-**O Trade-off:** Em sistemas distribuídos, existe um trade-off clássico (descrito pelo Teorema CAP) entre garantir que todos os dados estejam sempre 100% consistentes e ter a latência mais baixa ou a maior disponibilidade possível.
+**The Trade-off:** In distributed systems, there is a classic trade-off (described by the CAP Theorem) between ensuring that all data is always 100% consistent and having the lowest possible latency or highest availability.
 
-**Nossa Decisão:** Para todas as operações financeiras e de negócio, optamos por consistência forte.
+**Our Decision:** For all financial and business operations, we opted for **strong consistency**.
 
-**Justificativa:** A escolha do PostgreSQL como nosso banco de dados principal e o uso de suas garantias ACID (`RNF-S-02`) é uma decisão deliberada. Quando Marina investe em uma CPR, é absolutamente inaceitável que seu saldo seja debitado sem que o investimento seja registrado, ou vice-versa. Preferimos arcar com alguns milissegundos a mais de latência em uma transação para ter a garantia matemática de que os dados financeiros estão sempre corretos e consistentes. Para uma fintech, a integridade dos dados prevalece sobre a performance bruta.
+**Justification:** The choice of **PostgreSQL** as our main database and the use of its **ACID guarantees** (`RNF-S-02`) is a deliberate decision. When Marina invests in a CPR, it is absolutely unacceptable for her balance to be debited without the investment being recorded, or vice-versa. We prefer to bear a few extra milliseconds of latency in a transaction to have the **mathematical assurance that the financial data is always correct and consistent**. For a fintech, **data integrity prevails over raw performance**.

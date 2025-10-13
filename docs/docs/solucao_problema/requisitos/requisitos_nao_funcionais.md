@@ -1,124 +1,124 @@
 ---
 sidebar_position: 2
-title: Requisitos Não Funcionais
+title: Non-Functional Requirements
 ---
 
-## Contextualização
-&emsp; Requisitos não funcionais (RNFs) definem como um sistema deve operar e não o que ele faz, abrangendo atributos de qualidade como desempenho, segurança e usabilidade, enquanto a **ISO/IEC 25010** é um padrão que fornece um modelo para categorizar e avaliar esses atributos de qualidade, dividindo-os em características de produto e de uso para garantir que o software atenda às expectativas dos utilizadores e stakeholders.
+## Contextualization
+&emsp; Non-Functional Requirements (NFRs) define how a system must operate, rather than what it does, covering quality attributes such as performance, security, and usability. The **ISO/IEC 25010** is a standard that provides a model for categorizing and evaluating these quality attributes, dividing them into product and usage characteristics to ensure the software meets the expectations of users and stakeholders.
 
-&emsp; A ISO 25010 fornece um vocabulário e uma estrutura para os requisitos não funcionais e utiliza um modelo com várias características e subcaracterísticas para classificar e organizar os diferentes atributos de qualidade (RNFs), como eficiência de desempenho, segurança, usabilidade, confiabilidade e compatibilidade. Ao usar a ISO 25010, as organizações podem garantir que estão a abordar todos os aspectos importantes da qualidade do software, tanto do ponto de vista do produto quanto da sua utilização.
-
----
-
-### 1. Adequação Funcional (Functional Suitability)
-Esta característica mede o grau em que o produto satisfaz as necessidades declaradas e implícitas.
-
-#### RNF-AF-01 (Completude Funcional)
-O sistema deve implementar todas as funcionalidades descritas nos módulos de Requisitos Funcionais (RF-CAD, RF-AGR, RF-INV, etc.).  
-A ausência de qualquer requisito funcional listado será considerada um defeito.
+&emsp; ISO 25010 provides a vocabulary and framework for non-functional requirements and uses a model with various characteristics and sub-characteristics to classify and organize the different quality attributes (NFRs), such as performance efficiency, security, usability, reliability, and compatibility. By using ISO 25010, organizations can ensure they are addressing all important aspects of software quality, both from the product's perspective and its usage.
 
 ---
 
-### 2. Eficiência de Desempenho (Performance Efficiency)
+### 1. Functional Suitability
+This characteristic measures the degree to which the product satisfies stated and implied needs.
 
-#### RNF-ED-01 (Comportamento em Relação ao Tempo)
-- **Carregamento de Páginas:** 95% das páginas interativas da plataforma devem carregar completamente em menos de 2,5 segundos em uma conexão de banda larga padrão (≥ 10 Mbps).  
-- **Tempo de Resposta de APIs:** 99% de todas as chamadas de API devem ter um tempo de resposta (time to first byte) inferior a 400ms.  
-- **Processamento Crítico:** A análise de crédito (RF-AGR-002) deve atender ao seu tempo de processamento (< 60s) mesmo sob carga de 50 análises concorrentes.
-
-#### RNF-ED-02 (Utilização de Recursos)
-A aplicação, sob carga nominal (definida em RNF-ED-03), não deve utilizar mais de 70% dos recursos de CPU ou memória dos servidores, garantindo uma margem de 30% para picos de uso.
-
-#### RNF-ED-03 (Capacidade)
-O sistema deve suportar, no lançamento, uma carga nominal de 1000 usuários simultâneos, na primeira versão do projeto, podendo atingir até 100x esse valor 1 ano após o lançamento do projeto. O sistema deve, também, processar um mínimo de 10 transações de investimento por segundo na primeira versão e 100x esse valor 1 ano após o lançamento do projeto.
-
-#### RNF-ED-04 (Escalabilidade)
-A arquitetura do sistema deve ser projetada para escalar horizontalmente.  
-O sistema deve suportar um crescimento para até 10.000 usuários simultâneos e 100 transações por segundo com a adição de recursos computacionais (ex: mais instâncias de servidor), sem a necessidade de uma re-arquitetura fundamental.
+#### RNF-AF-01 (Functional Completeness)
+The system must implement all functionalities described in the Functional Requirements modules (RF-CAD, RF-AGR, RF-INV, etc.).  
+The absence of any listed functional requirement will be considered a defect.
 
 ---
 
-### 3. Compatibilidade (Compatibility)
+### 2. Performance Efficiency
 
-#### RNF-C-01 (Interoperabilidade)
-O sistema deve se integrar de forma segura e eficiente com os seguintes serviços de terceiros via API:  
-- Gateway de Pagamentos (Pix, On/Off-Ramp BRL/USDC)  
-- Provedor de Assinatura Digital (ICP-Brasil)  
-- Registradora da CPR  
-- Serviço de disparo de SMS/Push  
-- Fontes de dados para análise de crédito (Receita Federal, Serasa, SCR)
+#### RNF-ED-01 (Time Behavior)
+- **Page Loading:** 95% of the platform's interactive pages must load completely in less than 2.5 seconds on a standard broadband connection (≥ 10 Mbps).  
+- **API Response Time:** 99% of all API calls must have a time to first byte of less than 400ms.  
+- **Critical Processing:** Credit analysis (RF-AGR-002) must meet its processing time (< 60s) even under a load of 50 concurrent analyses.
 
----
+#### RNF-ED-02 (Resource Utilization)
+The application, under nominal load (defined in RNF-ED-03), must not utilize more than 70% of the servers' CPU or memory resources, ensuring a 30% margin for usage peaks.
 
-### 4. Usabilidade (Usability)
+#### RNF-ED-03 (Capacity)
+The system must support a nominal load of 1000 simultaneous users at launch in the first version of the project, with the potential to reach up to 100x this value 1 year after the project launch. The system must also process a minimum of 10 investment transactions per second in the first version and 100x this value 1 year after the project launch.
 
-#### RNF-U-01 (Acessibilidade)
-A interface web da plataforma deve seguir as diretrizes do WCAG 2.1, nível AA.
-
-#### RNF-U-02 (Operabilidade)
-O sistema deve ser totalmente funcional e renderizado corretamente nas duas últimas versões dos principais navegadores (Google Chrome, Mozilla Firefox, Apple Safari).
-
-#### RNF-U-03 (Proteção Contra Erros)
-Mensagens de erro devem ser claras, humanas e indicar como o usuário pode corrigir o problema.
-
-#### RNF-U-04 (Responsividade)
-A aplicação deve ser totalmente responsiva e utilizável em dispositivos móveis (smartphones e tablets), adaptando-se a larguras de tela de no mínimo 360 pixels.
+#### RNF-ED-04 (Scalability)
+The system architecture must be designed to scale horizontally.  
+The system must support growth to up to 10,000 simultaneous users and 100 transactions per second with the addition of computational resources (e.g., more server instances), without the need for a fundamental re-architecture.
 
 ---
 
-### 5. Confiabilidade (Reliability)
+### 3. Compatibility
 
-#### RNF-CF-01 (Disponibilidade)
-- A plataforma deve ter uma disponibilidade de 99.9% ("três noves"), medida mensalmente. Isso se traduz em um tempo máximo de inatividade de aproximadamente 43 minutos por mês.  
-- Janelas de manutenção devem ser comunicadas com 48 horas de antecedência e realizadas em horários de baixo tráfego.
-
-#### RNF-CF-02 (Tolerância a Falhas)
-O sistema deve lidar de forma controlada com falhas de serviços externos (ex: API de terceiros indisponível), registrando o erro e informando o usuário, sem causar instabilidade geral na plataforma.
-
-#### RNF-CF-03 (Recuperabilidade)
-- **RPO (Recovery Point Objective):** A perda máxima de dados de transações aceitável é de zero. Para dados não-transacionais, o RPO é de 15 minutos.  
-- **RTO (Recovery Time Objective):** O tempo máximo para restaurar o sistema a um estado operacional após uma falha total de uma região é de 2 horas. A recuperação de uma falha de AZ deve ser automática e ocorrer em menos de 5 minutos.
+#### RNF-C-01 (Interoperability)
+The system must integrate securely and efficiently with the following third-party services via API:  
+- Payment Gateway (Pix, On/Off-Ramp BRL/USDC)  
+- Digital Signature Provider (ICP-Brasil)  
+- CPR Registrar  
+- SMS/Push Notification Service  
+- Data sources for credit analysis (Receita Federal, Serasa, SCR)
 
 ---
 
-### 6. Segurança (Security)
+### 4. Usability
 
-#### RNF-S-01 (Confidencialidade)
-Toda a comunicação deve ser criptografada via TLS 1.3. Dados sensíveis em repouso devem ser criptografados com AES-256. Dados sensíveis não devem ser expostos em ambientes de teste (data masking).
+#### RNF-U-01 (Accessibility)
+The platform's web interface must follow the WCAG 2.1 guidelines, level AA.
 
-#### RNF-S-02 (Integridade)
-Todas as transações financeiras devem seguir as propriedades ACID. O log de auditoria (RF-SEC-002) deve ser protegido contra adulteração.
+#### RNF-U-02 (Operability)
+The system must be fully functional and rendered correctly in the last two versions of the main browsers (Google Chrome, Mozilla Firefox, Apple Safari).
 
-#### RNF-S-03 (Não Repúdio e Prestação de Contas)
-A combinação da assinatura digital (RF-AGR-003) e do log de auditoria (RF-SEC-002) deve garantir a irrefutabilidade das ações críticas.
+#### RNF-U-03 (Error Protection)
+Error messages must be clear, human-readable, and indicate how the user can correct the problem.
 
-#### RNF-S-04 (Conformidade Regulatória)
-O sistema e seus processos operacionais devem ser projetados para estar em total conformidade com a Lei Geral de Proteção de Dados (LGPD) e com os regulamentos do Banco Central (Bacen) aplicáveis às Sociedades de Empréstimo entre Pessoas (SEP).
-
-#### RNF-S-05 (Testes de Segurança Proativos)
-- O sistema deve passar por testes de intrusão (Pentest) externos realizados por uma empresa especializada ao menos uma vez por semestre, ou antes de cada release major.  
-- Análises estáticas (SAST) e dinâmicas (DAST) de segurança de código devem ser integradas ao pipeline de CI/CD para identificar vulnerabilidades de forma contínua.
+#### RNF-U-04 (Responsiveness)
+The application must be fully responsive and usable on mobile devices (smartphones and tablets), adapting to screen widths of at least 360 pixels.
 
 ---
 
-### 7. Manutenibilidade (Maintainability)
+### 5. Reliability
 
-#### RNF-M-01 (Modularidade)
-A arquitetura do software deve ser modular, permitindo que as equipes trabalhem de forma independente em diferentes partes do sistema.
+#### RNF-CF-01 (Availability)
+- The platform must have an availability of **99.9%** ("three nines"), measured monthly. This translates to a maximum downtime of approximately 43 minutes per month.  
+- Maintenance windows must be communicated 48 hours in advance and performed during low-traffic hours.
 
-#### RNF-M-02 (Testabilidade)
-O código-fonte deve ter uma cobertura de testes unitários de no mínimo 85% para as lógicas de negócio críticas.
+#### RNF-CF-02 (Fault Tolerance)
+The system must handle failures of external services (e.g., third-party API unavailable) in a controlled manner, logging the error and informing the user, without causing general instability in the platform.
 
-#### RNF-M-03 (Observabilidade)
-- O sistema deve expor métricas de saúde técnica (latência de APIs, uso de CPU/memória, taxa de erros 5xx) e de negócio (cadastros/hora, investimentos/hora, pagamentos processados) em um formato padrão (ex: Prometheus).  
-- Devem ser configurados dashboards (ex: Grafana) e alertas automáticos (ex: via Alertmanager, PagerDuty) para notificar a equipe de operações quando métricas críticas ultrapassarem thresholds pré-definidos.
+#### RNF-CF-03 (Recoverability)
+- **RPO (Recovery Point Objective):** The maximum acceptable data loss for transaction data is **zero**. For non-transactional data, the RPO is 15 minutes.  
+- **RTO (Recovery Time Objective):** The maximum time to restore the system to an operational state after a total regional failure is 2 hours. Recovery from an AZ failure must be automatic and occur in less than 5 minutes.
 
 ---
 
-### 8. Portabilidade (Portability)
+### 6. Security
 
-#### RNF-P-01 (Adaptabilidade)
-A aplicação deve ser totalmente containerizada (Docker), orquestrada (Kubernetes) e agnóstica em relação ao provedor de nuvem, evitando dependência excessiva de serviços proprietários.
+#### RNF-S-01 (Confidentiality)
+All communication must be encrypted via **TLS 1.3**. Sensitive data at rest must be encrypted with **AES-256**. Sensitive data must not be exposed in testing environments (data masking).
 
-#### RNF-P-02 (Instalabilidade)
-O processo de implantação deve ser totalmente automatizado via pipeline de CI/CD, permitindo deploys em produção com zero downtime (blue-green ou canary deployment).
+#### RNF-S-02 (Integrity)
+All financial transactions must adhere to **ACID** properties. The audit log (RF-SEC-002) must be protected against tampering.
+
+#### RNF-S-03 (Non-Repudiation and Accountability)
+The combination of the digital signature (RF-AGR-003) and the audit log (RF-SEC-002) must guarantee the **irrefutability of critical actions**.
+
+#### RNF-S-04 (Regulatory Compliance)
+The system and its operational processes must be designed to be in **full compliance** with the General Data Protection Law (LGPD) and with the Bank Central (Bacen) regulations applicable to Peer-to-Peer Lending Societies (SEP).
+
+#### RNF-S-05 (Proactive Security Testing)
+- The system must undergo external intrusion tests (**Pentest**) performed by a specialized company at least once every six months, or before each major release.  
+- Static (SAST) and dynamic (DAST) security analyses of code must be integrated into the CI/CD pipeline to identify vulnerabilities continuously.
+
+---
+
+### 7. Maintainability
+
+#### RNF-M-01 (Modularity)
+The software architecture must be **modular**, allowing teams to work independently on different parts of the system.
+
+#### RNF-M-02 (Testability)
+The source code must have a **unit test coverage of at least 85%** for critical business logic.
+
+#### RNF-M-03 (Observability)
+- The system must expose technical health metrics (API latency, CPU/memory usage, 5xx error rate) and business metrics (registrations/hour, investments/hour, payments processed) in a standard format (e.g., Prometheus).  
+- Dashboards (e.g., Grafana) and automatic alerts (e.g., via Alertmanager, PagerDuty) must be configured to notify the operations team when critical metrics exceed predefined thresholds.
+
+---
+
+### 8. Portability
+
+#### RNF-P-01 (Adaptability)
+The application must be fully **containerized (Docker)**, **orchestrated (Kubernetes)**, and **cloud-agnostic**, avoiding excessive dependence on proprietary services.
+
+#### RNF-P-02 (Installability)
+The deployment process must be fully **automated** via a CI/CD pipeline, allowing production deploys with **zero downtime** (blue-green or canary deployment).
