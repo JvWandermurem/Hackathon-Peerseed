@@ -1,0 +1,16 @@
+# Framework web e servidor ASGI
+fastapi
+uvicorn[standard]
+
+# ORM e Migrações de Banco de Dados
+sqlalchemy[asyncio]
+alembic
+asyncpg
+
+# Validação de dados
+pydantic
+pydantic[email]
+
+
+# Adicione esta linha para lidar com JWT
+python-jose[cryptography]

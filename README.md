@@ -49,9 +49,9 @@
 
 The complete project documentation, including architecture, flows, and data model, can be found on our Docusaurus site.
 
-**[>> Access the Complete Documentation Here <<](https://jvwandermurem.github.io/Hackathon-Reevo/)**
-**[>> Access the explanatory video on the platform's technical structure <<](https://drive.google.com/file/d/1hJQIJXGkipL9sOwm_O3_qHIpd2iZJpLP/view?usp=sharing)**
 
+**[>> Access the Complete Documentation Here <<](https://jvwandermurem.github.io/Hackathon-Peerseed/)**
+**[>> Access the explanatory video on the platform's technical structure <<](https://drive.google.com/file/d/1hJQIJXGkipL9sOwm_O3_qHIpd2iZJpLP/view?usp=sharing)**
 
 ### Problem Solved
 
@@ -92,5 +92,3 @@ The system operates based on key concepts that ensure its functionality and tran
 ### 4. **Integrated Digital Wallet**
 - Management of balances, statements, and transactions (deposits, withdrawals, investments).
 - Support for operations via Pix and cryptocurrencies (USDC stablecoin).
-
-## Folder Structure

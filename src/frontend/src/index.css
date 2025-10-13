@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Reevo Agro Colors */
+    --dark-green: 100 32% 8%;
+    --light-green: 119 36% 57%;
+    --soft-green: 106 47% 95%;
+    
+    --background: 0 0% 100%;
+    --foreground: 100 32% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 100 32% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 100 32% 8%;
+
+    --primary: 119 36% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 106 47% 95%;
+    --secondary-foreground: 100 32% 8%;
+
+    --muted: 106 47% 95%;
+    --muted-foreground: 100 20% 40%;
+
+    --accent: 119 36% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 106 30% 90%;
+    --input: 106 30% 90%;
+    --ring: 119 36% 57%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 100 32% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 119 36% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 100 32% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 100 20% 15%;
+    --sidebar-ring: 119 36% 57%;
+
+    /* Status colors */
+    --status-pending: 45 93% 58%;
+    --status-approved: 119 36% 57%;
+    --status-rejected: 0 84.2% 60.2%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 119 36% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 119 36% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 119 36% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
